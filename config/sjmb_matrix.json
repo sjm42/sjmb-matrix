@@ -1,0 +1,7 @@
+{
+    "url_regex": "<(https?://[^>]+)>",
+    "url_log_db": "$HOME/sjmb_slack/data/urllog.db",
+    "matrix_server": "https://example.org",
+    "matrix_user_id": "exampleuser",
+    "matrix_password": "xyzzy"
+}

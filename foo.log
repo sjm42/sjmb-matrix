@@ -1,0 +1,105 @@
+[2023-03-27T22:40:54Z INFO  sjmb_matrix::config] Starting up sjmb_matrix v0.1.0...
+[2023-03-27T22:40:54Z DEBUG sjmb_matrix::config] Git branch: master
+[2023-03-27T22:40:54Z DEBUG sjmb_matrix::config] Git commit: 41db623de08f8452a0be3a1a411fbd4d57cb8c06
+[2023-03-27T22:40:54Z DEBUG sjmb_matrix::config] Source timestamp: 2023-03-27T17:20:08Z
+[2023-03-27T22:40:54Z DEBUG sjmb_matrix::config] Compiler version: rustc 1.68.1 (8460ca823 2023-03-20)
+[2023-03-27T22:40:54Z INFO  sjmb_matrix::matrixbot] Reading config file /home/sjm/sjmb_matrix/config/sjmb_matrix.json
+[2023-03-27T22:40:55Z INFO  sjmb_matrix::matrixbot] New runtime config successfully created in 831 ms.
+#[Rust_Embedded] <cr1901>: http://gopher.wdj-consulting.com:70/paste/bc0dabaf-de20-45db-867e-6072ff89fd5c.txt I don't have an RP2040 debugger; why might this code hang/stop all writes if I press any key at the terminal?
+[2023-03-27T22:41:01Z INFO  sjmb_matrix::matrixbot] *** on Rust_Embedded detected url: http://gopher.wdj-consulting.com:70/paste/bc0dabaf-de20-45db-867e-6072ff89fd5c.txt
+#[Rust_Embedded] <cr1901>: (writes work perfectly as long as I don't send any data)
+#[Rust_Embedded] <Amelia_Dionne>: Hmmm
+#[Tre_Hacklab_yleiskanava] <Pisami>: https://www.humblebundle.com/books/diy-at-home-wiley-books diy books for sale
+[2023-03-27T22:41:02Z INFO  sjmb_matrix::matrixbot] *** on Tre_Hacklab_yleiskanava detected url: https://www.humblebundle.com/books/diy-at-home-wiley-books
+#[Tre_Hacklab_yleiskanava] <sjmbot>: "Humble Tech Book Bundle: DIY at Home by Wiley (pay what you want and help charity)"
+#[Tre_Hacklab_yleiskanava] <sjm>: hmm
+#[Tre_Hacklab_yleiskanava] <sjm>: hmmmmm
+#[Tre_Hacklab_yleiskanava] <sjm>: hmm
+#[Tre_Hacklab_yleiskanava] <sjm>: foo
+#[Tre_Hacklab_yleiskanava] <sjm>: bar
+#[Kotiautomaatio] <ttilus>: Mites noi valokatkaisijat hoidetaan? Siihen on varmaan olemassa joku semmonen systeemi, että fyysinen valoa ohjaava seinäkatkaisija on olemassa ja valoa pystyy silti aina ohjata myös älyhärpättimellä.
+#[Kotiautomaatio] <Maakuth>: Siitähän ei pääse yli eikä ympäri, että jos fyysisestä katkaisijasta pannaan virta poikki, niin äly ei sitä takaisin saa
+#[Kotiautomaatio] <Maakuth>: Mutta semmosia älynappuloita on mitkä tulee valokatkaisijanomaisesti seinälle ja joista niitä sitten voi ohjailla
+#[Kotiautomaatio] <ttilus>: Olisko siinä vielä jotain semmosta sähköturvallisuusvaatimusta, että virransyöttö pitää pystyä pistämään fyysisestä katkaisijasta pois.
+#[Kotiautomaatio] <Pisami>: Ei
+#[Kotiautomaatio] <ttilus>: Eli ainakin teoriassa vois vaihtaa tavallisen katkaisijan tilalle pelkästään automaatiolle juttelevan katkaisijan.
+#[Kotiautomaatio] <Pisami>: Tai saahan ne aina sähkökeskuksesta
+#[Kotiautomaatio] <ttilus>: No viimeistään sulakkeista lähtee kaikki pois.
+#[Kotiautomaatio] <Pisami>: Shellythän on just tollasia
+#[Rust_Finland] <Paul_Houghton>: Finally- someone validates the way I build mobile apps! Now there is a growing community we can still count on one hand 🫢
+
+Crux: functional Rust core with native mobile or web UI: https://m.youtube.com/watch?v=cWCZms92-1g
+[2023-03-27T22:41:02Z INFO  sjmb_matrix::matrixbot] *** on Rust_Finland detected url: https://m.youtube.com/watch?v=cWCZms92-1g
+#[Rust_Finland] <Lars_Wirzenius>: I'm doing Rust training for a client this week, and I'm reminded of Rust Finland and that we've not had a meetup in a while. Anyone else interested, even if just meeting in a pub of cafe for a beverage?
+#[Rust_Finland] <sjm42>: Geez this Amos is just one brilliant guy.
+
+https://www.youtube.com/watch?v=DpnXaNkM9_M
+[2023-03-27T22:41:02Z INFO  sjmb_matrix::matrixbot] *** on Rust_Finland detected url: https://www.youtube.com/watch?v=DpnXaNkM9_M
+#[tori.trehacklab] <paisti>: Okei, huomenna onnistuu kans
+#[tori.trehacklab] <teemudulator>: monenko aikaan ehtisit? Tietäis suurinpiirtein missä meidän lavasteporukka huitelee
+#[tori.trehacklab] <paisti>: Aika joustavasti pääsen liikahtamaan mut esim neljän jälkeen
+#[tori.trehacklab] <teemudulator>: neljän jälkeen ovat Tohlopissa, Mediapoliksen studiolla.
+#[tori.trehacklab] <paisti>: Okei, sieltä varmaan sitten nouto
+#[tori.trehacklab] <Henri_Aa>: > <outolempi> Metallipuolella on yhdessä boksisa ollu laakerikuulia. Siellä on myös joitain huonokuntoisia isoja laakereita mitkä voi pistää palasiks
+
+Kiitos
+#[tori.trehacklab] <Pisami>: Kaleva prisma
+#[Rintamamiestalo] <luilutin>: jep, ei toss kyll oo ku inspectaajan merkintä ett emt mitä se loppujen lopuks meinaa
+#[Rintamamiestalo] <luilutin>: hitto ku jäätyy vessaa aina ku hellassa on tuli
+#[Rintamamiestalo] <cos>: imasee ulkoilmaa jostain vessan kautta?
+#[Rintamamiestalo] <luilutin>: ei siin oikee muitaka mahiksia oo
+#[Rintamamiestalo] <sjm42>: FOO
+#[Rintamamiestalo] <luilutin>: koo
+#[Rintamamiestalo] <luilutin>: hiljane kannu
+#[Rintamamiestalo] <luilutin>: täällä pitäs kertoa nyt lumitilanteista
+#[Rintamamiestalo] <luilutin>: liikaa lunta
+#[Rintamamiestalo] <luilutin>: T: mä
+#[Tre_Hacklab_asiakanava] <ATS_>: mutta ei vielä ehditty
+#[Tre_Hacklab_asiakanava] <ATS_>: > <@pisami:hacklab.fi> Se terän kallistus oli jotenkin tosi epäintuitiivinen
+
+tällä ei kyllä ole mitään tekemistä intuition kanssa
+#[Tre_Hacklab_asiakanava] <Pauli_Timonen>: Mä luovutin sen oikohöylän kanssa eilen ku ei lastu lähteny eikä jaksanu aivottaa. Kiinnostaa kans että mitämitä
+#[Tre_Hacklab_asiakanava] <ATS_>: mun mielestä siinä oli teräs säädetty päin prinkkalaa
+#[Tre_Hacklab_asiakanava] <ATS_>: * mun mielestä siinä oli terä säädetty päin prinkkalaa
+#[Tre_Hacklab_asiakanava] <Esa_Multanen>: Höylä höyläs hyvin 13.3, kun teroitettu terät asennettiin. Oisko säätö 0/0, eli pöydät tasan, eli ei höylää.
+#[Tre_Hacklab_asiakanava] <ATS_>: Esa Multanen: meneekös ne pöydät edes ihan tasan? mut ei ollu 0,0.
+#[Tre_Hacklab_asiakanava] <ATS_>: voihan se olla, että ne terät ovat säätyneet tässä välillä jo uusiksi ota ja tiedä mitä tapahtunut
+#[Tre_Hacklab_asiakanava] <ATS_>: ja toisaalta ymmärtää senkin, että terä on noin säädetty eipähän pääse kukaan osaamaton käyttämään ja ajelemaan teriä lommoille
+#[Tre_Hacklab_asiakanava] <Holly>: Reposting Rowan's request here, because time-sensitive:  Is there someone who could go pick up the second electronics workstation and bring it to the lab?
+#[Ohjelmoijat] <Anna>: ChatGPT:ltä pyysin logoon nimen ja sloganin, ja sitten logon itsessään toteutti toinen AI. Eli on tuttu :)
+
+Oma näkemykseni on, että tuntuu ehkä hieman surulliselta miten kaiken voi kohta tehdä AI:n avulla ilman varsinaista osaamista. Esim. ihmisten kielitaito rappeutuu, kun kaikki tulee käytettyä deeplin tai google translaten kautta, ja nykyään asiakaspalvelujärjestelmissä AI jopa muotoilee sun vastaukset kohteliaammiksi asiakkaita varten. Tokihan meillä no ollut pitkään esim. WordPress, Squarespace jne. joilla luoda suhteellisen automaattisesti hienojakin sivuja, mutta sen jälkeen on tosiaan tullut hyvinkin taitavat kielikääntäjät, visuaaliset suunnittelijat jne. Ehkä oon vaan vanha :D
+#[Ohjelmoijat] <homebeach>: Mutta ei tonne varmaan mitään firman koodia voi laittaa.
+#[Ohjelmoijat] <flux>: tässäkin hieman käsitellään aihetta: https://www.vincit.com/blog/using-chatgpt-for-programming
+[2023-03-27T22:41:03Z INFO  sjmb_matrix::matrixbot] *** on Ohjelmoijat detected url: https://www.vincit.com/blog/using-chatgpt-for-programming
+#[Ohjelmoijat] <Anna>: * ChatGPT:ltä pyysin logoon nimen ja sloganin, ja sitten logon itsessään toteutti toinen AI. Eli on tuttu :)
+
+Oma näkemykseni on, että tuntuu ehkä hieman surulliselta miten kaiken voi kohta tehdä AI:n avulla ilman varsinaista osaamista. Esim. ihmisten kielitaito rappeutuu, kun kaikki tulee käytettyä deeplin tai google translaten kautta, ja nykyään asiakaspalvelujärjestelmissä AI jopa muotoilee sun vastaukset kohteliaammiksi asiakkaita varten. Tokihan meillä on ollut pitkään esim. WordPress, Squarespace jne. joilla luoda suhteellisen automaattisesti hienojakin sivuja, mutta sen jälkeen on tosiaan tullut hyvinkin taitavat kielikääntäjät, visuaaliset suunnittelijat jne. Ehkä oon vaan vanha :D
+#[Ohjelmoijat] <flux>: yritin muuten joskus ChatGPT 3.5:llä generoida liki niin yksinkertaisen formaalin speksin kuin mahdollista, mutta eipä onnistunut. ehkä 4.0 suorituisi paremmin.
+
+se olisi kova jos saisi konetuotettua speksejä jotka voisi varmistaa ja sitten konetuotettua koodia joka noudattaisi ko. speksiä ja senkin voisi tarkistaa. en usko että ollaan kovin lähellä tätä paitsi ei-kiinnostavissa tapauksissa.
+#[Ohjelmoijat] <homebeach>: > <Anna> Joo oon. En vaan tiennyt, mitä tuo "sillan poisto" käytännössä tarkoitti (ts. näkeekö vaan Telegramissa olevat mun viestit).
+
+Kun silta poistuu, viestit näyttivät välittyvän edelleen Matrixiin. Sun viestit tuli Matrixissa, vaikka silta ei ollut. Sen sijaan Matrixista tulevat viestit eivät välity, kun silta ei ole niitä välittämässä.
+#[Ohjelmoijat] <homebeach>: @nuuzeli en tiedä oletko kokeillut Matrixia, mutta sieltä pääsee esimerkiksi ircissä libera.chat ja freenoden kanaville, jossa aika paljon open source -projekteihin liittyviä kanavia. Eli jos vaikka Haskelliin liittyviä kysymyksiä niin siellä oli Haskelille oma kanavansa, jossa ne muut oli yleensä aika valmiina vastaamaan kysymyksiin.
+#[Ohjelmoijat] <Anna>: Matrix ei oo tuttu ja irkistä on tuttu vaan IRC-galleria melkein 20 vuoden takaa, siinäpä se :D
+#[Ohjelmoijat] <flux>: itse koen että matrix on irc:n (joka ei irc-galleriaan juuri liity) hengellinen jatkaja. siinäkin voi eri tahojen pyörittämät palvelimet välittää viestejä keskenään, vähän kuten sähköpostissakin. ei ole mitään tiettyä keskitettyä tahoja jonka kautta viestien pitää kulkea, kuten facebookissa, discordissa, slackissa, teamsissa ja telegrammissa.
+
+tuon ansiosta esimerkiksi https://pikaviestin.fi tarjoaa pääsyä matrix-verkkoon suomalaisesta kulmasta katsoen. itse palvelin pyörii kapsin infrastruktuurissa.
+[2023-03-27T22:41:03Z INFO  sjmb_matrix::matrixbot] *** on Ohjelmoijat detected url: https://pikaviestin.fi
+#[IIoT_-_Teollinen_Internet] <mf2hd>: kuvaa en viitti ottaa kun toi mun työpöytä on tollanen tunkio :D
+#[IIoT_-_Teollinen_Internet] <sakkuli>: itellä alko olla ongelmaa töitöipaikan pöydän kaa ku läppäri, hiiri + sen vaatima tila ja näppis ei meinannu mahtua näyttöjen etee
+#[IIoT_-_Teollinen_Internet] <sakkuli>: oli pakko siivota kokaiinikolatölkit kauppaan, ny taas on tilaa :)
+#[IIoT_-_Teollinen_Internet] <sakkuli>: kotiniassa onneks on leveempi pöytä, sinne kertyy vähempi bonkkia ja selän takana on ruokapöytä mihin voi kasailla tölkit yms muun vaan vähän aikaa olevan ryönän
+#[IIoT_-_Teollinen_Internet] <stn>: > <@_ircnet_sakkuli:irc.snt.utwente.nl> oli pakko siivota kokaiinikolatölkit kauppaan, ny taas on tilaa :)
+
+Tulee jostain mieleen se sun yks kaveri, nimeä en enää muista, mutta jolla oli teltta hervannassa kämpässä
+#[IIoT_-_Teollinen_Internet] <sakkuli>: mikko
+#[IIoT_-_Teollinen_Internet] <stn>: Tyyliin polku kulki vaan teltalle
+#[IIoT_-_Teollinen_Internet] <sakkuli>: seki on ryhdistäytyny ~10-15v sitte ja elää enemmän normaalisti nykyää :(
+#[IIoT_-_Teollinen_Internet] <stn>: Kuulostaa tutulta nimeltä, hyvinkin mahdollista
+#[IIoT_-_Teollinen_Internet] <sakkuli>: samaa vuksiryhmää mun kaa
+#[Kotiautomaatio] <sjm42>: niijust
+#[Rust_Embedded] <cr1901>: Yea it also hangs when if I clear the buffer in a loop. Can't really debug this w/ my current hardware, so I'll just leave as is for tonight.
+#[Rust_Embedded] <cr1901>: http://gopher.wdj-consulting.com:70/paste/0e86cb3d-2984-4c5a-95f6-f3d902289433.txt
+[2023-03-27T22:43:08Z INFO  sjmb_matrix::matrixbot] *** on Rust_Embedded detected url: http://gopher.wdj-consulting.com:70/paste/0e86cb3d-2984-4c5a-95f6-f3d902289433.txt
