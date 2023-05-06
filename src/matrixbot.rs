@@ -81,11 +81,7 @@ impl Bot {
         let (tx, rx) =
             mpsc::unbounded_channel::<(Arc<Bot>, OriginalSyncRoomMessageEvent, Room, Client)>();
 
-        handles.push(tokio::spawn(async move {
-            if let Err(e) = handle_messages(rx).await {
-                error!("Message handling error: {e}");
-            }
-        }));
+        handles.push(tokio::spawn(async move { handle_messages(rx).await }));
 
         bot.client.as_ref().unwrap().add_event_handler(handle_event);
         MY_BOT.set(BotState { bot, tx }).ok();
@@ -112,57 +108,66 @@ async fn handle_event(ev: OriginalSyncRoomMessageEvent, room: Room, client: Clie
 
 async fn handle_messages(
     mut rx: UnboundedReceiver<(Arc<Bot>, OriginalSyncRoomMessageEvent, Room, Client)>,
-) -> anyhow::Result<()> {
+) {
     while let Some((bot, event, room, _client)) = rx.recv().await {
         // debug!("Got message: {msg:#?}");
-
-        // We only want to listen to joined rooms.
-        let room = match room {
-            Room::Joined(room) => room,
-            _ => continue,
-        };
-
-        // We only want to log text messages.
-        let msgtype = match &event.content.msgtype {
-            MessageType::Text(msgtype) => msgtype,
-            _ => continue,
-        };
-
-        let nick = match room.get_member(&event.sender).await {
-            Ok(Some(m)) => m.name().to_string(),
-            _ => "UNKNOWN".into(),
+        if let Err(e) = handle_msg(bot, event, room).await {
+            error!("Matrix msg handling failed: {e:?}");
         }
-        .ws_convert();
+    }
+}
 
-        let room_name = room.name().unwrap_or_else(|| "NONE".to_string());
-        let room_name = room_name.ws_convert();
-        let text = msgtype.body.trim();
-        println!("#[{room_name}] <{nick}>: {text}",);
+async fn handle_msg(
+    bot: Arc<Bot>,
+    event: OriginalSyncRoomMessageEvent,
+    room: Room,
+) -> anyhow::Result<()> {
+    // We only want to listen to joined rooms.
+    let room = match room {
+        Room::Joined(room) => room,
+        _ => return Ok(()),
+    };
 
-        for url_cap in bot
-            .url_re
-            .as_ref()
-            .ok_or_else(|| anyhow!("No url_regex_re"))?
-            .captures_iter(text)
-        {
-            let url_s = url_cap[1].to_string();
-            info!("*** on {room_name} detected url: {url_s}");
-            let mut dbc = start_db(&bot.url_log_db).await?;
+    // We only want to log text messages.
+    let msgtype = match &event.content.msgtype {
+        MessageType::Text(msgtype) => msgtype,
+        _ => return Ok(()),
+    };
 
-            info!(
-                "Urllog: inserted {} row(s)",
-                db_add_url(
-                    &mut dbc,
-                    &UrlCtx {
-                        ts: Utc::now().timestamp(),
-                        chan: format!("matrix-{}", room_name),
-                        nick: nick.clone(),
-                        url: url_s,
-                    },
-                )
-                .await?
-            );
-        }
+    let nick = match room.get_member(&event.sender).await {
+        Ok(Some(m)) => m.name().to_string(),
+        _ => "UNKNOWN".into(),
+    }
+    .ws_convert();
+
+    let room_name = room.name().unwrap_or_else(|| "NONE".to_string());
+    let room_name = room_name.ws_convert();
+    let text = msgtype.body.trim();
+    info!("#[{room_name}] <{nick}>: {text}",);
+
+    for url_cap in bot
+        .url_re
+        .as_ref()
+        .ok_or_else(|| anyhow!("No url_regex_re"))?
+        .captures_iter(text)
+    {
+        let url_s = url_cap[1].to_string();
+        info!("*** on {room_name} detected url: {url_s}");
+        let mut dbc = start_db(&bot.url_log_db).await?;
+
+        info!(
+            "Urllog: inserted {} row(s)",
+            db_add_url(
+                &mut dbc,
+                &UrlCtx {
+                    ts: Utc::now().timestamp(),
+                    chan: format!("matrix-{}", room_name),
+                    nick: nick.clone(),
+                    url: url_s,
+                },
+            )
+            .await?
+        );
     }
     Ok(())
 }
