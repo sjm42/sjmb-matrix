@@ -795,9 +795,6 @@ name = "either"
 version = "1.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a26ae43d7bcc3b814de94796a5e736d4029efb0ee900c12e2d54c993ad1a1e07"
-dependencies = [
- "serde",
-]
 
 [[package]]
 name = "encoding_rs"
@@ -2744,7 +2741,7 @@ checksum = "7bd3e3206899af3f8b12af284fafc038cc1dc2b41d1b89dd17297221c5d225de"
 
 [[package]]
 name = "sjmb_matrix"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "anyhow",
  "build-data",
@@ -2878,7 +2875,6 @@ dependencies = [
  "once_cell",
  "paste",
  "percent-encoding",
- "serde",
  "sha2 0.10.7",
  "smallvec",
  "sqlformat",
@@ -2898,12 +2894,9 @@ dependencies = [
  "dotenvy",
  "either",
  "heck 0.4.1",
- "hex",
  "once_cell",
  "proc-macro2 1.0.66",
  "quote 1.0.32",
- "serde",
- "serde_json",
  "sha2 0.10.7",
  "sqlx-core",
  "sqlx-rt",
