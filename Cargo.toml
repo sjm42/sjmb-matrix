@@ -1,6 +1,6 @@
 [package]
 name = "sjmb_matrix"
-version = "1.0.1"
+version = "1.0.2"
 edition = "2021"
 resolver = "2"
 authors = ["Sami J. Mäkinen <sjm@iki.fi>"]
@@ -32,7 +32,7 @@ sqlx = { version = "0.6", features = [
     "sqlite",
 ] }
 structopt = "0.3"
-tokio = { version = "1.29", features = ["full"] }
+tokio = { version = "1.31", features = ["full"] }
 
 
 [build-dependencies]
