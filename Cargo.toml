@@ -1,6 +1,6 @@
 [package]
 name = "sjmb_matrix"
-version = "1.0.3"
+version = "1.0.4"
 edition = "2021"
 resolver = "2"
 authors = ["Sami J. Mäkinen <sjm@iki.fi>"]
@@ -21,7 +21,7 @@ http = "0.2"
 log = "0.4"
 matrix-sdk = "0.6"
 once_cell = "1.18"
-regex = "1.9"
+regex = "1.10"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 shellexpand = { version = "3.1", features = ["full"] }
@@ -32,7 +32,7 @@ sqlx = { version = "0.6", features = [
     "sqlite",
 ] }
 structopt = "0.3"
-tokio = { version = "1.32", features = ["full"] }
+tokio = { version = "1.33", features = ["full"] }
 
 
 [build-dependencies]
