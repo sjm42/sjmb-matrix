@@ -8,7 +8,7 @@ use matrix_sdk::{
     config::SyncSettings,
     room::Room,
     ruma::events::room::message::{MessageType, OriginalSyncRoomMessageEvent},
-    Client,
+    Client, RoomState,
 };
 use once_cell::sync::OnceCell;
 use regex::Regex;
@@ -60,6 +60,7 @@ impl Bot {
             .await?;
 
         client
+            .matrix_auth()
             .login_username(&bot.matrix_user_id, &bot.matrix_password)
             .send()
             .await?;
@@ -122,11 +123,10 @@ async fn handle_msg(
     event: OriginalSyncRoomMessageEvent,
     room: Room,
 ) -> anyhow::Result<()> {
-    // We only want to listen to joined rooms.
-    let room = match room {
-        Room::Joined(room) => room,
+    match room.state() {
+        RoomState::Joined => {}
         _ => return Ok(()),
-    };
+    }
 
     // We only want to log text messages.
     let msgtype = match &event.content.msgtype {
