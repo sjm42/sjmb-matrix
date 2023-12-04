@@ -1,19 +1,19 @@
 // config.rs
 
+use clap::Parser;
 use log::*;
 use std::env;
-use structopt::StructOpt;
 
-#[derive(Debug, Clone, StructOpt)]
+#[derive(Debug, Clone, Parser)]
 pub struct OptsCommon {
-    #[structopt(short, long)]
+    #[arg(short, long)]
     pub verbose: bool,
-    #[structopt(short, long)]
+    #[arg(short, long)]
     pub debug: bool,
-    #[structopt(short, long)]
+    #[arg(short, long)]
     pub trace: bool,
 
-    #[structopt(
+    #[arg(
         short,
         long,
         default_value = "$HOME/sjmb_matrix/config/sjmb_matrix.json"
