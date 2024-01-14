@@ -1,6 +1,6 @@
 [package]
 name = "sjmb_matrix"
-version = "1.1.2"
+version = "1.1.3"
 edition = "2021"
 resolver = "2"
 authors = ["Sami J. Mäkinen <sjm@iki.fi>"]
@@ -11,21 +11,27 @@ keywords = ["matrix", "bot"]
 license = "MIT OR Apache-2.0"
 
 
+#[dependencies.matrix-sdk]
+#aquamarine = "0.5"
+
 [dependencies]
 anyhow = "1"
 chrono = "0"
 chrono-tz = "0"
-clap = { version = "4.4", features = ["derive"] }
+clap = { version = "4", features = ["derive"] }
 env_logger = "0"
 futures = "0"
 http = "1"
 log = "0"
-matrix-sdk = { git = "https://github.com/matrix-org/matrix-rust-sdk.git", default-features = false, features = [
+# matrix-sdk = { git = "https://github.com/matrix-org/matrix-rust-sdk.git", default-features = false, features = ["e2e-encryption","anyhow","rustls-tls","sqlite"] }
+matrix-sdk = { git = "https://github.com/sjm42/matrix-rust-sdk.git", branch = "fix-aquamarine-dep", default-features = false, features = [
     "e2e-encryption",
     "anyhow",
     "rustls-tls",
     "sqlite",
 ] }
+# matrix-sdk = { version = "0.7", default-features = false, features = ["e2e-encryption","anyhow","rustls-tls","sqlite"] }
+
 once_cell = "1"
 regex = "1"
 serde = { version = "1", features = ["derive"] }
@@ -41,7 +47,7 @@ tokio = { version = "1", features = ["full"] }
 
 
 [build-dependencies]
-build-data = "0.1"
+build-data = "0"
 
 
 [profile.release]
