@@ -869,16 +869,26 @@ dependencies = [
 ]
 
 [[package]]
-name = "env_logger"
-version = "0.10.2"
+name = "env_filter"
+version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4cd405aab171cb85d6735e5c8d9db038c17d3ca007a4d2c25f337935c3d90580"
+checksum = "a009aa4810eb158359dda09d0c87378e4bbb89b5a801f016885a4707ba24f7ea"
 dependencies = [
- "humantime",
- "is-terminal",
  "log",
  "regex",
- "termcolor",
+]
+
+[[package]]
+name = "env_logger"
+version = "0.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9eeb342678d785662fd2514be38c459bb925f02b68dd2a3e0f21d7ef82d979dd"
+dependencies = [
+ "anstream",
+ "anstyle",
+ "env_filter",
+ "humantime",
+ "log",
 ]
 
 [[package]]
@@ -1411,9 +1421,9 @@ dependencies = [
 
 [[package]]
 name = "imbl-sized-chunks"
-version = "0.1.1"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e6957ea0b2541c5ca561d3ef4538044af79f8a05a1eb3a3b148936aaceaa1076"
+checksum = "144006fb58ed787dcae3f54575ff4349755b00ccc99f4b4873860b654be1ed63"
 dependencies = [
  "bitmaps",
 ]
@@ -1492,17 +1502,6 @@ name = "ipnet"
 version = "2.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f518f335dce6725a761382244631d86cf0ccb2863413590b31338feb467f9c3"
-
-[[package]]
-name = "is-terminal"
-version = "0.4.10"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0bad00257d07be169d870ab665980b06cdb366d792ad690bf2e76876dc503455"
-dependencies = [
- "hermit-abi",
- "rustix",
- "windows-sys 0.52.0",
-]
 
 [[package]]
 name = "itertools"
@@ -1728,7 +1727,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a3fe9c357b1dc2e3d4d49800e0ffe525763612df"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f0a1e0ce747c580cc9e9c0e58eb6162da24f20a"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1775,7 +1774,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a3fe9c357b1dc2e3d4d49800e0ffe525763612df"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f0a1e0ce747c580cc9e9c0e58eb6162da24f20a"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1798,7 +1797,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a3fe9c357b1dc2e3d4d49800e0ffe525763612df"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f0a1e0ce747c580cc9e9c0e58eb6162da24f20a"
 dependencies = [
  "async-trait",
  "futures-core",
@@ -1820,7 +1819,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a3fe9c357b1dc2e3d4d49800e0ffe525763612df"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f0a1e0ce747c580cc9e9c0e58eb6162da24f20a"
 dependencies = [
  "aes",
  "as_variant",
@@ -1857,7 +1856,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a3fe9c357b1dc2e3d4d49800e0ffe525763612df"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f0a1e0ce747c580cc9e9c0e58eb6162da24f20a"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -1882,7 +1881,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a3fe9c357b1dc2e3d4d49800e0ffe525763612df"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f0a1e0ce747c580cc9e9c0e58eb6162da24f20a"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
@@ -1904,7 +1903,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a3fe9c357b1dc2e3d4d49800e0ffe525763612df"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f0a1e0ce747c580cc9e9c0e58eb6162da24f20a"
 dependencies = [
  "blake3",
  "chacha20poly1305",
@@ -2565,8 +2564,7 @@ dependencies = [
 [[package]]
 name = "ruma"
 version = "0.9.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2779c38df072964c63476259d9300efb07d0d1a7178c6469893636ce0c547a36"
+source = "git+https://github.com/ruma/ruma?rev=a7e1d7fa49d93f4d9cbc369aa28378a89b3dc9e4#a7e1d7fa49d93f4d9cbc369aa28378a89b3dc9e4"
 dependencies = [
  "assign",
  "js_int",
@@ -2580,8 +2578,7 @@ dependencies = [
 [[package]]
 name = "ruma-client-api"
 version = "0.17.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "641837258fa214a70823477514954ef0f5d3bc6ae8e1d5d85081856a33103386"
+source = "git+https://github.com/ruma/ruma?rev=a7e1d7fa49d93f4d9cbc369aa28378a89b3dc9e4#a7e1d7fa49d93f4d9cbc369aa28378a89b3dc9e4"
 dependencies = [
  "assign",
  "bytes",
@@ -2599,8 +2596,7 @@ dependencies = [
 [[package]]
 name = "ruma-common"
 version = "0.12.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3bca4c33c50e47b4cdceeac71bdef0c04153b0e29aa992d9030ec14a62323e85"
+source = "git+https://github.com/ruma/ruma?rev=a7e1d7fa49d93f4d9cbc369aa28378a89b3dc9e4#a7e1d7fa49d93f4d9cbc369aa28378a89b3dc9e4"
 dependencies = [
  "as_variant",
  "base64",
@@ -2630,8 +2626,7 @@ dependencies = [
 [[package]]
 name = "ruma-events"
 version = "0.27.11"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d20a52770e5a9fb30b7a1c14ba8b3dcf76dadc01674e58e40094f78e6bd5e3f1"
+source = "git+https://github.com/ruma/ruma?rev=a7e1d7fa49d93f4d9cbc369aa28378a89b3dc9e4#a7e1d7fa49d93f4d9cbc369aa28378a89b3dc9e4"
 dependencies = [
  "as_variant",
  "indexmap",
@@ -2653,8 +2648,7 @@ dependencies = [
 [[package]]
 name = "ruma-federation-api"
 version = "0.8.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e1901c1f27bc327652d58af2a130c73acef3198abeccd24cee97f7267fdf3fe7"
+source = "git+https://github.com/ruma/ruma?rev=a7e1d7fa49d93f4d9cbc369aa28378a89b3dc9e4#a7e1d7fa49d93f4d9cbc369aa28378a89b3dc9e4"
 dependencies = [
  "js_int",
  "ruma-common",
@@ -2666,8 +2660,7 @@ dependencies = [
 [[package]]
 name = "ruma-identifiers-validation"
 version = "0.9.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bf8ad1259274f2f57c20901bd1cc5e4a8f23169d1c1d887b6338b02f058e9b41"
+source = "git+https://github.com/ruma/ruma?rev=a7e1d7fa49d93f4d9cbc369aa28378a89b3dc9e4#a7e1d7fa49d93f4d9cbc369aa28378a89b3dc9e4"
 dependencies = [
  "js_int",
  "thiserror",
@@ -2676,8 +2669,7 @@ dependencies = [
 [[package]]
 name = "ruma-macros"
 version = "0.12.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0280534a4b3e34416f883285fac4f9c408cd0b737890ae66f3e7a7056d14be80"
+source = "git+https://github.com/ruma/ruma?rev=a7e1d7fa49d93f4d9cbc369aa28378a89b3dc9e4#a7e1d7fa49d93f4d9cbc369aa28378a89b3dc9e4"
 dependencies = [
  "once_cell",
  "proc-macro-crate 2.0.1",
@@ -3029,9 +3021,9 @@ dependencies = [
 
 [[package]]
 name = "smallvec"
-version = "1.13.0"
+version = "1.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3b187f0231d56fe41bfb12034819dd2bf336422a5866de41bc3fec4b2e3883e8"
+checksum = "e6ecd384b10a64542d77071bd64bd7b231f4ed5940fba55e98c3de13824cf3d7"
 
 [[package]]
 name = "socket2"
@@ -3355,15 +3347,6 @@ dependencies = [
  "redox_syscall",
  "rustix",
  "windows-sys 0.52.0",
-]
-
-[[package]]
-name = "termcolor"
-version = "1.4.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "06794f8f6c5c898b3275aebefa6b8a1cb24cd2c6c79397ab15774837a0bc5755"
-dependencies = [
- "winapi-util",
 ]
 
 [[package]]
@@ -3868,15 +3851,6 @@ name = "winapi-i686-pc-windows-gnu"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
-
-[[package]]
-name = "winapi-util"
-version = "0.1.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f29e6f9198ba0d26b4c9f07dbe6f9ed633e1f3d5b8b414090084349e46a52596"
-dependencies = [
- "winapi",
-]
 
 [[package]]
 name = "winapi-x86_64-pc-windows-gnu"
