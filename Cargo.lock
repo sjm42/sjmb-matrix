@@ -109,9 +109,9 @@ dependencies = [
 
 [[package]]
 name = "anstyle"
-version = "1.0.4"
+version = "1.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7079075b41f533b8c61d2a4d073c4676e1f8b249ff94a393b0595db304e0dd87"
+checksum = "2faccea4cc4ab4a667ce676a30e8ec13922a692c99bb8f5b11f1502c72e04220"
 
 [[package]]
 name = "anstyle-parse"
@@ -1523,9 +1523,9 @@ dependencies = [
 
 [[package]]
 name = "itertools"
-version = "0.12.0"
+version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "25db6b064527c5d482d0423354fcd07a89a2dfe07b67892e62411946db7f07b0"
+checksum = "ba291022dbbd398a455acf126c1e341954079855bc60dfdda641363bd6922569"
 dependencies = [
  "either",
 ]
@@ -1717,7 +1717,7 @@ version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "93779aa78d39c2fe34746287b10a866192cf8af1b81767fff76bd64099acc0f5"
 dependencies = [
- "proc-macro-crate 2.0.1",
+ "proc-macro-crate 2.0.2",
  "proc-macro-error",
  "proc-macro2",
  "quote",
@@ -1727,7 +1727,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.7.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#18eefcffdb705fdaf2964bd099331dbc19b678e0"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#6e3892528cfc81cc7a56350835e7629e967670fa"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1774,7 +1774,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#18eefcffdb705fdaf2964bd099331dbc19b678e0"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#6e3892528cfc81cc7a56350835e7629e967670fa"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1797,7 +1797,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#18eefcffdb705fdaf2964bd099331dbc19b678e0"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#6e3892528cfc81cc7a56350835e7629e967670fa"
 dependencies = [
  "async-trait",
  "futures-core",
@@ -1819,7 +1819,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#18eefcffdb705fdaf2964bd099331dbc19b678e0"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#6e3892528cfc81cc7a56350835e7629e967670fa"
 dependencies = [
  "aes",
  "as_variant",
@@ -1834,7 +1834,7 @@ dependencies = [
  "futures-util",
  "hkdf",
  "hmac",
- "itertools 0.12.0",
+ "itertools 0.12.1",
  "matrix-sdk-common",
  "pbkdf2",
  "rand",
@@ -1856,7 +1856,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#18eefcffdb705fdaf2964bd099331dbc19b678e0"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#6e3892528cfc81cc7a56350835e7629e967670fa"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -1881,11 +1881,11 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#18eefcffdb705fdaf2964bd099331dbc19b678e0"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#6e3892528cfc81cc7a56350835e7629e967670fa"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
- "itertools 0.12.0",
+ "itertools 0.12.1",
  "matrix-sdk-base",
  "matrix-sdk-crypto",
  "matrix-sdk-store-encryption",
@@ -1903,7 +1903,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#18eefcffdb705fdaf2964bd099331dbc19b678e0"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#6e3892528cfc81cc7a56350835e7629e967670fa"
 dependencies = [
  "blake3",
  "chacha20poly1305",
@@ -2296,9 +2296,9 @@ dependencies = [
 
 [[package]]
 name = "proc-macro-crate"
-version = "2.0.1"
+version = "2.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "97dc5fea232fc28d2f597b37c4876b348a40e33f3b02cc975c8d006d78d94b1a"
+checksum = "b00f26d3400549137f92511a46ac1cd8ce37cb5598a96d382381458b992a5d24"
 dependencies = [
  "toml_datetime",
  "toml_edit 0.20.2",
@@ -2673,7 +2673,7 @@ version = "0.12.0"
 source = "git+https://github.com/ruma/ruma?rev=684ffc789877355bd25269451b2356817c17cc3f#684ffc789877355bd25269451b2356817c17cc3f"
 dependencies = [
  "once_cell",
- "proc-macro-crate 2.0.1",
+ "proc-macro-crate 2.0.2",
  "proc-macro2",
  "quote",
  "ruma-identifiers-validation",
@@ -3067,7 +3067,7 @@ version = "0.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ce81b7bd7c4493975347ef60d8c7e8b742d4694f4c49f93e0a12ea263938176c"
 dependencies = [
- "itertools 0.12.0",
+ "itertools 0.12.1",
  "nom",
  "unicode_categories",
 ]
