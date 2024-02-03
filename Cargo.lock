@@ -1844,7 +1844,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.7.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#40e006658cfee2d56e7b3e36d97fc9a78de08295"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b9ef5d6270ec080540e3aecf2a0b859c58ce5d6b"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1891,7 +1891,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#40e006658cfee2d56e7b3e36d97fc9a78de08295"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b9ef5d6270ec080540e3aecf2a0b859c58ce5d6b"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1915,7 +1915,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#40e006658cfee2d56e7b3e36d97fc9a78de08295"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b9ef5d6270ec080540e3aecf2a0b859c58ce5d6b"
 dependencies = [
  "async-trait",
  "futures-core",
@@ -1937,7 +1937,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#40e006658cfee2d56e7b3e36d97fc9a78de08295"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b9ef5d6270ec080540e3aecf2a0b859c58ce5d6b"
 dependencies = [
  "aes",
  "as_variant",
@@ -1974,7 +1974,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#40e006658cfee2d56e7b3e36d97fc9a78de08295"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b9ef5d6270ec080540e3aecf2a0b859c58ce5d6b"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -1999,7 +1999,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#40e006658cfee2d56e7b3e36d97fc9a78de08295"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b9ef5d6270ec080540e3aecf2a0b859c58ce5d6b"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
@@ -2021,7 +2021,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#40e006658cfee2d56e7b3e36d97fc9a78de08295"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b9ef5d6270ec080540e3aecf2a0b859c58ce5d6b"
 dependencies = [
  "base64",
  "blake3",
@@ -3591,9 +3591,9 @@ checksum = "1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20"
 
 [[package]]
 name = "tokio"
-version = "1.35.1"
+version = "1.36.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c89b4efa943be685f629b149f53829423f8f5531ea21249408e8e2f8671ec104"
+checksum = "61285f6515fa018fb2d1e46eb21223fff441ee8db5d0f1435e8ab4f5cdb80931"
 dependencies = [
  "backtrace",
  "bytes",
@@ -3788,9 +3788,9 @@ checksum = "e36a83ea2b3c704935a01b4642946aadd445cea40b10935e3f8bd8052b8193d6"
 
 [[package]]
 name = "ulid"
-version = "1.1.1"
+version = "1.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7e3c3b4dcec1e4729aab50688a1a0631483d79e65b194851425e7748287715a6"
+checksum = "34778c17965aa2a08913b57e1f34db9b4a63f5de31768b55bf20d2795f921259"
 dependencies = [
  "getrandom",
  "rand",
@@ -4186,9 +4186,9 @@ dependencies = [
 
 [[package]]
 name = "webpki-roots"
-version = "0.25.3"
+version = "0.25.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1778a42e8b3b90bff8d0f5032bf22250792889a5cdc752aa0020c84abe3aaf10"
+checksum = "5f20c57d8d7db6d3b86154206ae5d8fba62dd39573114de97c2cb0578251f8e1"
 
 [[package]]
 name = "weedle2"
@@ -4376,9 +4376,9 @@ checksum = "dff9641d1cd4be8d1a070daf9e3773c5f67e78b4d9d42263020c057706765c04"
 
 [[package]]
 name = "winnow"
-version = "0.5.36"
+version = "0.5.37"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "818ce546a11a9986bc24f93d0cdf38a8a1a400f1473ea8c82e59f6e0ffab9249"
+checksum = "a7cad8365489051ae9f054164e459304af2e7e9bb407c958076c8bf4aef52da5"
 dependencies = [
  "memchr",
 ]
