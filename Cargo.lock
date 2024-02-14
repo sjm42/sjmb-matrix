@@ -41,9 +41,9 @@ dependencies = [
 
 [[package]]
 name = "aes"
-version = "0.8.3"
+version = "0.8.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ac1f845298e95f983ff1944b728ae08b8cebab80d684f0a832ed0fc74dfa27e2"
+checksum = "b169f7a6d4742236a0a00c541b845991d0ac43e546831af1249753ab4c3aa3a0"
 dependencies = [
  "cfg-if",
  "cipher",
@@ -515,9 +515,12 @@ dependencies = [
 
 [[package]]
 name = "cc"
-version = "1.0.85"
+version = "1.0.83"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9b918671670962b48bc23753aef0c51d072dca6f52f01f800854ada6ddb7f7d3"
+checksum = "f1174fb0b6ec23863f8b971027804a42614e347eafb0a95bf0b12cdae21fc4d0"
+dependencies = [
+ "libc",
+]
 
 [[package]]
 name = "cfg-if"
@@ -968,9 +971,9 @@ dependencies = [
 
 [[package]]
 name = "env_logger"
-version = "0.11.1"
+version = "0.11.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "05e7cf40684ae96ade6232ed84582f40ce0a66efcd43a5117aef610534f8e0b8"
+checksum = "6c012a26a7f605efc424dd53697843a72be7dc86ad2d01f7814337794a12231d"
 dependencies = [
  "anstream",
  "anstyle",
@@ -1371,9 +1374,9 @@ dependencies = [
 
 [[package]]
 name = "hermit-abi"
-version = "0.3.5"
+version = "0.3.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d0c62115964e08cb8039170eb33c1d0e2388a256930279edca206fff675f82c3"
+checksum = "bd5256b483761cd23699d0da46cc6fd2ee3be420bbe6d020ae4a091e70b7e9fd"
 
 [[package]]
 name = "hex"
@@ -1852,7 +1855,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.7.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#060eaeffc04ded6648e292f38ab9058c448b6875"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#74931768e59d610588e9916289193aadffadad47"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1900,7 +1903,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#060eaeffc04ded6648e292f38ab9058c448b6875"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#74931768e59d610588e9916289193aadffadad47"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1924,7 +1927,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#060eaeffc04ded6648e292f38ab9058c448b6875"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#74931768e59d610588e9916289193aadffadad47"
 dependencies = [
  "async-trait",
  "futures-core",
@@ -1946,7 +1949,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#060eaeffc04ded6648e292f38ab9058c448b6875"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#74931768e59d610588e9916289193aadffadad47"
 dependencies = [
  "aes",
  "as_variant",
@@ -1983,7 +1986,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#060eaeffc04ded6648e292f38ab9058c448b6875"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#74931768e59d610588e9916289193aadffadad47"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2008,7 +2011,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#060eaeffc04ded6648e292f38ab9058c448b6875"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#74931768e59d610588e9916289193aadffadad47"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
@@ -2030,7 +2033,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#060eaeffc04ded6648e292f38ab9058c448b6875"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#74931768e59d610588e9916289193aadffadad47"
 dependencies = [
  "base64",
  "blake3",
@@ -2400,9 +2403,9 @@ dependencies = [
 
 [[package]]
 name = "pkg-config"
-version = "0.3.29"
+version = "0.3.30"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2900ede94e305130c13ddd391e0ab7cbaeb783945ae07a279c268cb05109c6cb"
+checksum = "d231b230927b5e4ad203db57bbcbee2802f6bce620b1e4a9024a07d94e2907ec"
 
 [[package]]
 name = "plain"
