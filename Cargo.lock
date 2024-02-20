@@ -450,9 +450,9 @@ dependencies = [
 
 [[package]]
 name = "bumpalo"
-version = "3.15.0"
+version = "3.15.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d32a994c2b3ca201d9b263612a374263f05e7adde37c4707f693dcd375076d1f"
+checksum = "c764d619ca78fccbf3069b37bd7af92577f044bb15236036662d79b6559f25b7"
 
 [[package]]
 name = "byteorder"
@@ -1855,7 +1855,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.7.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#88d7a2fe287b037ebab71c33461522660ade0a67"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dcf00697539321cf4eac5cd4929d45347b947da7"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1903,7 +1903,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#88d7a2fe287b037ebab71c33461522660ade0a67"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dcf00697539321cf4eac5cd4929d45347b947da7"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1927,7 +1927,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#88d7a2fe287b037ebab71c33461522660ade0a67"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dcf00697539321cf4eac5cd4929d45347b947da7"
 dependencies = [
  "async-trait",
  "futures-core",
@@ -1949,7 +1949,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#88d7a2fe287b037ebab71c33461522660ade0a67"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dcf00697539321cf4eac5cd4929d45347b947da7"
 dependencies = [
  "aes",
  "as_variant",
@@ -1986,7 +1986,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#88d7a2fe287b037ebab71c33461522660ade0a67"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dcf00697539321cf4eac5cd4929d45347b947da7"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2011,7 +2011,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#88d7a2fe287b037ebab71c33461522660ade0a67"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dcf00697539321cf4eac5cd4929d45347b947da7"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
@@ -2033,7 +2033,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#88d7a2fe287b037ebab71c33461522660ade0a67"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dcf00697539321cf4eac5cd4929d45347b947da7"
 dependencies = [
  "base64",
  "blake3",
@@ -3577,9 +3577,9 @@ dependencies = [
 
 [[package]]
 name = "thread_local"
-version = "1.1.7"
+version = "1.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3fdd6f064ccff2d6567adcb3873ca630700f00b5ad3f060c25b5dcfd9a4ce152"
+checksum = "8b9ef9bad013ada3808854ceac7b46812a6465ba368859a37e2100283d2d719c"
 dependencies = [
  "cfg-if",
  "once_cell",
@@ -3837,9 +3837,9 @@ checksum = "3b09c83c3c29d37506a3e260c08c03743a6bb66a9cd432c6934ab501a190571f"
 
 [[package]]
 name = "unicode-normalization"
-version = "0.1.22"
+version = "0.1.23"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5c5713f0fc4b5db668a2ac63cdb7bb4469d8c9fed047b1d0292cc7b0ce2ba921"
+checksum = "a56d1686db2308d901306f92a263857ef59ea39678a5458e7cb17f01415101f5"
 dependencies = [
  "tinyvec",
 ]
