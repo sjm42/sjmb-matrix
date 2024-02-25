@@ -428,9 +428,9 @@ dependencies = [
 
 [[package]]
 name = "bstr"
-version = "1.9.0"
+version = "1.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c48f0051a4b4c5e0b6d365cd04af53aeaa209e3cc15ec2cdb69e73cc87fbd0dc"
+checksum = "05efc5cfd9110c8416e471df0e96702d58690178e206e61b7173706673c93706"
 dependencies = [
  "memchr",
  "regex-automata",
@@ -515,9 +515,9 @@ dependencies = [
 
 [[package]]
 name = "cc"
-version = "1.0.86"
+version = "1.0.87"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f9fa1897e4325be0d68d48df6aa1a71ac2ed4d27723887e7754192705350730"
+checksum = "3286b845d0fccbdd15af433f61c5970e711987036cb468f437ff6badd70f4e24"
 
 [[package]]
 name = "cfg-if"
@@ -1371,9 +1371,9 @@ dependencies = [
 
 [[package]]
 name = "hermit-abi"
-version = "0.3.6"
+version = "0.3.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bd5256b483761cd23699d0da46cc6fd2ee3be420bbe6d020ae4a091e70b7e9fd"
+checksum = "379dada1584ad501b383485dd706b8afb7a70fcbc7f4da7d780638a5a6124a60"
 
 [[package]]
 name = "hex"
@@ -1852,7 +1852,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.7.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#40ba98b95e9c9816d392dd0a2b99e68549633108"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b68bcf9cff85bf8deab721ae7b779eb54b4cd8e2"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1900,7 +1900,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#40ba98b95e9c9816d392dd0a2b99e68549633108"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b68bcf9cff85bf8deab721ae7b779eb54b4cd8e2"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1924,7 +1924,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#40ba98b95e9c9816d392dd0a2b99e68549633108"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b68bcf9cff85bf8deab721ae7b779eb54b4cd8e2"
 dependencies = [
  "async-trait",
  "futures-core",
@@ -1946,7 +1946,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#40ba98b95e9c9816d392dd0a2b99e68549633108"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b68bcf9cff85bf8deab721ae7b779eb54b4cd8e2"
 dependencies = [
  "aes",
  "as_variant",
@@ -1983,7 +1983,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#40ba98b95e9c9816d392dd0a2b99e68549633108"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b68bcf9cff85bf8deab721ae7b779eb54b4cd8e2"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2008,7 +2008,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#40ba98b95e9c9816d392dd0a2b99e68549633108"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b68bcf9cff85bf8deab721ae7b779eb54b4cd8e2"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
@@ -2030,7 +2030,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#40ba98b95e9c9816d392dd0a2b99e68549633108"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b68bcf9cff85bf8deab721ae7b779eb54b4cd8e2"
 dependencies = [
  "base64",
  "blake3",
@@ -3208,12 +3208,12 @@ checksum = "b7c388c1b5e93756d0c740965c41e8822f866621d41acbdf6336a6a168f8840c"
 
 [[package]]
 name = "socket2"
-version = "0.5.5"
+version = "0.5.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7b5fac59a5cb5dd637972e5fca70daf0523c9067fcdc4842f053dae04a18f8e9"
+checksum = "05ffd9c0a93b7543e062e759284fcf5f5e3b098501104bfbdde4d404db792871"
 dependencies = [
  "libc",
- "windows-sys 0.48.0",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
