@@ -1,6 +1,6 @@
 [package]
 name = "sjmb_matrix"
-version = "1.1.4"
+version = "1.1.5"
 edition = "2021"
 resolver = "2"
 authors = ["Sami J. Mäkinen <sjm@iki.fi>"]
@@ -37,7 +37,7 @@ regex = "1"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 shellexpand = { version = "3", features = ["full"] }
-sqlx = { version = "0.7", features = [
+sqlx = { version = "0", features = [
     "macros",
     "migrate",
     "runtime-tokio-rustls",
