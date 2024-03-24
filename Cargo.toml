@@ -1,6 +1,6 @@
 [package]
 name = "sjmb_matrix"
-version = "1.2.0"
+version = "1.2.1"
 edition = "2021"
 resolver = "2"
 authors = ["Sami J. Mäkinen <sjm@iki.fi>"]
@@ -27,7 +27,6 @@ matrix-sdk = { git = "https://github.com/matrix-org/matrix-rust-sdk.git", defaul
     "e2e-encryption",
     "anyhow",
     "rustls-tls",
-    "sqlite",
 ] }
 # matrix-sdk = { git = "https://github.com/sjm42/matrix-rust-sdk.git", branch = "fix-aquamarine-dep", default-features = false, features = ["e2e-encryption","anyhow","rustls-tls","sqlite"] }
 # matrix-sdk = { version = "0.7", default-features = false, features = ["e2e-encryption","anyhow","rustls-tls","sqlite"] }
