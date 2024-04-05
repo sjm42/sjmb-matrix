@@ -201,7 +201,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f28243a43d821d11341ab73c80bed182dc015c514b951616cf79bd4af39af0c3"
 dependencies = [
  "concurrent-queue",
- "event-listener 5.2.0",
+ "event-listener 5.3.0",
  "event-listener-strategy",
  "futures-core",
  "pin-project-lite",
@@ -301,15 +301,6 @@ name = "base64ct"
 version = "1.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8c3c1a368f70d6cf7302d78f8f7093da241fb8e8807c05cc9e51a125895a6d5b"
-
-[[package]]
-name = "bincode"
-version = "1.3.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b1f45e9417d87227c7a56d22e471c6206462cba514c7590c09aff4cf6d1ddcad"
-dependencies = [
- "serde",
-]
 
 [[package]]
 name = "bitflags"
@@ -419,12 +410,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a3e368af43e418a04d52505cf3dbc23dda4e3407ae2fa99fd0e4f308ce546acc"
 
 [[package]]
-name = "camino"
-version = "1.1.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c59e92b5a388f549b863a7bea62612c09f24c8393560709a54558a9abdfb3b9c"
-
-[[package]]
 name = "cbc"
 version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -497,9 +482,9 @@ dependencies = [
 
 [[package]]
 name = "chrono-tz"
-version = "0.8.6"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d59ae0466b83e838b81a54256c39d5d7c20b9d7daa10510a242d9b75abd5936e"
+checksum = "93698b29de5e97ad0ae26447b344c482a7284c737d9ddc5f9e52b74a336671bb"
 dependencies = [
  "chrono",
  "chrono-tz-build",
@@ -508,9 +493,9 @@ dependencies = [
 
 [[package]]
 name = "chrono-tz-build"
-version = "0.2.1"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "433e39f13c9a060046954e0592a8d0a4bcb1040125cbf91cb8ee58964cfb350f"
+checksum = "0c088aee841df9c3041febbb73934cfc39708749bf96dc827e3359cd39ef11b1"
 dependencies = [
  "parse-zoneinfo",
  "phf",
@@ -954,9 +939,9 @@ dependencies = [
 
 [[package]]
 name = "event-listener"
-version = "5.2.0"
+version = "5.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2b5fb89194fa3cad959b833185b3063ba881dbfc7030680b314250779fb4cc91"
+checksum = "6d9944b8ca13534cdfb2800775f8dd4902ff3fc75a50101466decadfdf322a24"
 dependencies = [
  "concurrent-queue",
  "parking",
@@ -969,7 +954,7 @@ version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "332f51cb23d20b0de8458b86580878211da09bcd4503cb579c225b3d124cabb3"
 dependencies = [
- "event-listener 5.2.0",
+ "event-listener 5.3.0",
  "pin-project-lite",
 ]
 
@@ -1069,15 +1054,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e13624c2627564efccf4934284bdd98cbaa14e79b0b5a141218e507b3a823456"
 dependencies = [
  "percent-encoding",
-]
-
-[[package]]
-name = "fs-err"
-version = "2.11.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "88a41f105fe1d5b6b34b2055e3dc59bb79b46b48b2040b9e6c7b4b5de097aa41"
-dependencies = [
- "autocfg",
 ]
 
 [[package]]
@@ -1557,15 +1533,6 @@ dependencies = [
 
 [[package]]
 name = "itertools"
-version = "0.11.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b1c173a5686ce8bfa551b3563d0c2170bf24ca44da99c7ca4bfdab5418c3fe57"
-dependencies = [
- "either",
-]
-
-[[package]]
-name = "itertools"
 version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ba291022dbbd398a455acf126c1e341954079855bc60dfdda641363bd6922569"
@@ -1769,7 +1736,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.7.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#8a8ad229613b3aa2c78eb5f986efc2c62fca1036"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#327e0aef9923264375da4856e6d2c4a375f66491"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1817,7 +1784,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#8a8ad229613b3aa2c78eb5f986efc2c62fca1036"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#327e0aef9923264375da4856e6d2c4a375f66491"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1835,13 +1802,12 @@ dependencies = [
  "thiserror",
  "tokio",
  "tracing",
- "uniffi",
 ]
 
 [[package]]
 name = "matrix-sdk-common"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#8a8ad229613b3aa2c78eb5f986efc2c62fca1036"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#327e0aef9923264375da4856e6d2c4a375f66491"
 dependencies = [
  "async-trait",
  "futures-core",
@@ -1863,7 +1829,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#8a8ad229613b3aa2c78eb5f986efc2c62fca1036"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#327e0aef9923264375da4856e6d2c4a375f66491"
 dependencies = [
  "aes",
  "as_variant",
@@ -1902,7 +1868,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#8a8ad229613b3aa2c78eb5f986efc2c62fca1036"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#327e0aef9923264375da4856e6d2c4a375f66491"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -1927,7 +1893,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#8a8ad229613b3aa2c78eb5f986efc2c62fca1036"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#327e0aef9923264375da4856e6d2c4a375f66491"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
@@ -1948,7 +1914,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#8a8ad229613b3aa2c78eb5f986efc2c62fca1036"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#327e0aef9923264375da4856e6d2c4a375f66491"
 dependencies = [
  "base64 0.21.7",
  "blake3",
@@ -2116,12 +2082,6 @@ name = "once_cell"
 version = "1.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3fdb12b2476b595f9358c5161aa467c2438859caa136dec86c26fdd2efe17b92"
-
-[[package]]
-name = "oneshot-uniffi"
-version = "0.1.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6c548d5c78976f6955d72d0ced18c48ca07030f7a1d4024529fedd7c1c01b29c"
 
 [[package]]
 name = "opaque-debug"
@@ -2391,9 +2351,9 @@ dependencies = [
 
 [[package]]
 name = "prost"
-version = "0.12.3"
+version = "0.12.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "146c289cda302b98a28d40c8b3b90498d6e526dd24ac2ecea73e4e491685b94a"
+checksum = "d0f5d036824e4761737860779c906171497f6d55681139d8312388f8fe398922"
 dependencies = [
  "bytes",
  "prost-derive",
@@ -2401,12 +2361,12 @@ dependencies = [
 
 [[package]]
 name = "prost-derive"
-version = "0.12.3"
+version = "0.12.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "efb6c9a1dd1def8e2124d17e83a20af56f1570d6c2d2bd9e266ccb768df3840e"
+checksum = "19de2de2a00075bf566bee3bd4db014b11587e84184d3f7a791bc17f1a8e9e48"
 dependencies = [
  "anyhow",
- "itertools 0.11.0",
+ "itertools 0.12.1",
  "proc-macro2",
  "quote",
  "syn 2.0.58",
@@ -2735,7 +2695,7 @@ dependencies = [
  "ruma-identifiers-validation",
  "serde",
  "syn 2.0.58",
- "toml 0.8.2",
+ "toml",
 ]
 
 [[package]]
@@ -3326,12 +3286,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "static_assertions"
-version = "1.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
-
-[[package]]
 name = "stringprep"
 version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3559,15 +3513,6 @@ dependencies = [
 
 [[package]]
 name = "toml"
-version = "0.5.11"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f4f7f0dd8d50a853a531c426359045b1998f04219d88799810762cd4ad314234"
-dependencies = [
- "serde",
-]
-
-[[package]]
-name = "toml"
 version = "0.8.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "185d8ab0dfbb35cf1399a6344d8484209c088f75f8f68230da55d48d95d43e3d"
@@ -3731,68 +3676,6 @@ name = "unicode_categories"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "39ec24b3121d976906ece63c9daad25b85969647682eee313cb5779fdd69e14e"
-
-[[package]]
-name = "uniffi"
-version = "0.26.1"
-source = "git+https://github.com/mozilla/uniffi-rs?rev=789a9023b522562a95618443cee5a0d4f111c4c7#789a9023b522562a95618443cee5a0d4f111c4c7"
-dependencies = [
- "anyhow",
- "uniffi_core",
- "uniffi_macros",
-]
-
-[[package]]
-name = "uniffi_checksum_derive"
-version = "0.26.1"
-source = "git+https://github.com/mozilla/uniffi-rs?rev=789a9023b522562a95618443cee5a0d4f111c4c7#789a9023b522562a95618443cee5a0d4f111c4c7"
-dependencies = [
- "quote",
- "syn 2.0.58",
-]
-
-[[package]]
-name = "uniffi_core"
-version = "0.26.1"
-source = "git+https://github.com/mozilla/uniffi-rs?rev=789a9023b522562a95618443cee5a0d4f111c4c7#789a9023b522562a95618443cee5a0d4f111c4c7"
-dependencies = [
- "anyhow",
- "bytes",
- "camino",
- "log",
- "once_cell",
- "oneshot-uniffi",
- "paste",
- "static_assertions",
-]
-
-[[package]]
-name = "uniffi_macros"
-version = "0.26.1"
-source = "git+https://github.com/mozilla/uniffi-rs?rev=789a9023b522562a95618443cee5a0d4f111c4c7#789a9023b522562a95618443cee5a0d4f111c4c7"
-dependencies = [
- "bincode",
- "camino",
- "fs-err",
- "once_cell",
- "proc-macro2",
- "quote",
- "serde",
- "syn 2.0.58",
- "toml 0.5.11",
- "uniffi_meta",
-]
-
-[[package]]
-name = "uniffi_meta"
-version = "0.26.1"
-source = "git+https://github.com/mozilla/uniffi-rs?rev=789a9023b522562a95618443cee5a0d4f111c4c7#789a9023b522562a95618443cee5a0d4f111c4c7"
-dependencies = [
- "anyhow",
- "bytes",
- "siphasher",
- "uniffi_checksum_derive",
-]
 
 [[package]]
 name = "universal-hash"
