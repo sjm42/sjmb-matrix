@@ -1,18 +1,18 @@
 // slackbot.rs
 
+use std::{fs::File, io::BufReader, sync::Arc};
+
 use ::serde::{Deserialize, Serialize};
 use anyhow::anyhow;
 use chrono::*;
-use log::*;
 use matrix_sdk::{
+    Client,
     config::SyncSettings,
     room::Room,
-    ruma::events::room::message::{MessageType, OriginalSyncRoomMessageEvent},
-    Client, RoomState,
+    RoomState, ruma::events::room::message::{MessageType, OriginalSyncRoomMessageEvent},
 };
 use once_cell::sync::OnceCell;
 use regex::Regex;
-use std::{fs::File, io::BufReader, sync::Arc};
 use tokio::sync::mpsc::{self, UnboundedReceiver, UnboundedSender};
 
 use crate::*;
@@ -138,7 +138,7 @@ async fn handle_msg(
         Ok(Some(m)) => m.name().to_string(),
         _ => "UNKNOWN".into(),
     }
-    .ws_convert();
+        .ws_convert();
 
     let room_name = room.name().unwrap_or_else(|| "NONE".to_string());
     let room_name = room_name.ws_convert();

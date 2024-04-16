@@ -2,9 +2,10 @@
 
 use chrono::*;
 use futures::TryStreamExt;
-use log::*;
 use sqlx::{Pool, Postgres};
-use tokio::time::{sleep, Duration};
+use tokio::time::{Duration, sleep};
+
+use crate::*;
 
 const RETRY_CNT: usize = 5;
 const RETRY_SLEEP: u64 = 1;
@@ -24,8 +25,8 @@ pub struct UrlCtx {
 }
 
 pub async fn start_db<S>(db_url: S) -> anyhow::Result<DbCtx>
-where
-    S: AsRef<str>,
+    where
+        S: AsRef<str>,
 {
     let dbc = sqlx::PgPool::connect(db_url.as_ref()).await?;
     let db = DbCtx {
@@ -36,6 +37,7 @@ where
 }
 
 const SQL_UPDATE_CHANGE: &str = "update url_changed set last = $1";
+
 pub async fn db_mark_change(dbc: &Pool<Postgres>) -> anyhow::Result<()> {
     sqlx::query(SQL_UPDATE_CHANGE)
         .bind(Utc::now().timestamp())
@@ -47,6 +49,7 @@ pub async fn db_mark_change(dbc: &Pool<Postgres>) -> anyhow::Result<()> {
 const SQL_INSERT_URL: &str = "insert into url \
     (seen, channel, nick, url) \
     values ($1, $2, $3, $4)";
+
 pub async fn db_add_url(db: &mut DbCtx, ur: &UrlCtx) -> anyhow::Result<u64> {
     let mut rowcnt = 0;
     let mut retry = 0;
@@ -91,6 +94,7 @@ pub struct CheckUrl {
 
 const SQL_CHECK_URL: &str = "select count(id) as cnt, min(seen) as min, max(seen) as max \
      from url where url = $1 and channel = $2 and seen > $3";
+
 pub async fn db_check_url(
     db: &mut DbCtx,
     url: &str,

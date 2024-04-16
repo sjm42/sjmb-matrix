@@ -1,8 +1,10 @@
 // config.rs
 
-use clap::Parser;
-use log::*;
 use std::env;
+
+use clap::Parser;
+
+use crate::*;
 
 #[derive(Debug, Clone, Parser)]
 pub struct OptsCommon {
@@ -14,9 +16,9 @@ pub struct OptsCommon {
     pub trace: bool,
 
     #[arg(
-        short,
-        long,
-        default_value = "$HOME/sjmb_matrix/config/sjmb_matrix.json"
+    short,
+    long,
+    default_value = "$HOME/sjmb_matrix/config/sjmb_matrix.json"
     )]
     pub bot_config: String,
 }
@@ -26,26 +28,27 @@ impl OptsCommon {
         self.bot_config = shellexpand::full(&self.bot_config)?.into_owned();
         Ok(())
     }
-    pub fn get_loglevel(&self) -> LevelFilter {
+
+    pub fn get_loglevel(&self) -> Level {
         if self.trace {
-            LevelFilter::Trace
+            Level::TRACE
         } else if self.debug {
-            LevelFilter::Debug
+            Level::DEBUG
         } else if self.verbose {
-            LevelFilter::Info
+            Level::INFO
         } else {
-            LevelFilter::Error
+            Level::ERROR
         }
     }
+
     pub fn start_pgm(&self, name: &str) {
-        env_logger::Builder::new()
-            .filter_module(env!("CARGO_PKG_NAME"), self.get_loglevel())
-            .filter_module(name, self.get_loglevel())
-            .format_timestamp_secs()
+        tracing_subscriber::fmt()
+            .with_max_level(self.get_loglevel())
+            .with_target(false)
             .init();
+
         info!(
-            "Starting up {} v{}...",
-            env!("CARGO_PKG_NAME"),
+            "Starting up {name} v{}...",
             env!("CARGO_PKG_VERSION")
         );
         debug!("Git branch: {}", env!("GIT_BRANCH"));
