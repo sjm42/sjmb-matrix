@@ -1794,7 +1794,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.7.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3ac598666ae34653f9af01f22e8d3637ea16cc08"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9c4e547f5a9289a5c3c1b517b6b679d375e2f620"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1844,7 +1844,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3ac598666ae34653f9af01f22e8d3637ea16cc08"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9c4e547f5a9289a5c3c1b517b6b679d375e2f620"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1867,7 +1867,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3ac598666ae34653f9af01f22e8d3637ea16cc08"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9c4e547f5a9289a5c3c1b517b6b679d375e2f620"
 dependencies = [
  "async-trait",
  "futures-core",
@@ -1889,7 +1889,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.7.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3ac598666ae34653f9af01f22e8d3637ea16cc08"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9c4e547f5a9289a5c3c1b517b6b679d375e2f620"
 dependencies = [
  "aes",
  "as_variant",
@@ -1929,7 +1929,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3ac598666ae34653f9af01f22e8d3637ea16cc08"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9c4e547f5a9289a5c3c1b517b6b679d375e2f620"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -1957,7 +1957,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3ac598666ae34653f9af01f22e8d3637ea16cc08"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9c4e547f5a9289a5c3c1b517b6b679d375e2f620"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
@@ -1978,7 +1978,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3ac598666ae34653f9af01f22e8d3637ea16cc08"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9c4e547f5a9289a5c3c1b517b6b679d375e2f620"
 dependencies = [
  "base64 0.22.1",
  "blake3",
@@ -2760,7 +2760,7 @@ dependencies = [
 [[package]]
 name = "ruma"
 version = "0.10.1"
-source = "git+https://github.com/Hywan/ruma?branch=feat-sliding-sync-list-include-heroes#3d56fa8e83d04577bde5d585f6d1c709ca5d724e"
+source = "git+https://github.com/ruma/ruma/?rev=ee5e6b8c9e9489c88a1ba7411541201b6790d2d2#ee5e6b8c9e9489c88a1ba7411541201b6790d2d2"
 dependencies = [
  "assign",
  "js_int",
@@ -2775,7 +2775,7 @@ dependencies = [
 [[package]]
 name = "ruma-client-api"
 version = "0.18.0"
-source = "git+https://github.com/Hywan/ruma?branch=feat-sliding-sync-list-include-heroes#3d56fa8e83d04577bde5d585f6d1c709ca5d724e"
+source = "git+https://github.com/ruma/ruma/?rev=ee5e6b8c9e9489c88a1ba7411541201b6790d2d2#ee5e6b8c9e9489c88a1ba7411541201b6790d2d2"
 dependencies = [
  "as_variant",
  "assign",
@@ -2798,7 +2798,7 @@ dependencies = [
 [[package]]
 name = "ruma-common"
 version = "0.13.0"
-source = "git+https://github.com/Hywan/ruma?branch=feat-sliding-sync-list-include-heroes#3d56fa8e83d04577bde5d585f6d1c709ca5d724e"
+source = "git+https://github.com/ruma/ruma/?rev=ee5e6b8c9e9489c88a1ba7411541201b6790d2d2#ee5e6b8c9e9489c88a1ba7411541201b6790d2d2"
 dependencies = [
  "as_variant",
  "base64 0.22.1",
@@ -2830,7 +2830,7 @@ dependencies = [
 [[package]]
 name = "ruma-events"
 version = "0.28.1"
-source = "git+https://github.com/Hywan/ruma?branch=feat-sliding-sync-list-include-heroes#3d56fa8e83d04577bde5d585f6d1c709ca5d724e"
+source = "git+https://github.com/ruma/ruma/?rev=ee5e6b8c9e9489c88a1ba7411541201b6790d2d2#ee5e6b8c9e9489c88a1ba7411541201b6790d2d2"
 dependencies = [
  "as_variant",
  "indexmap 2.2.6",
@@ -2852,7 +2852,7 @@ dependencies = [
 [[package]]
 name = "ruma-federation-api"
 version = "0.9.0"
-source = "git+https://github.com/Hywan/ruma?branch=feat-sliding-sync-list-include-heroes#3d56fa8e83d04577bde5d585f6d1c709ca5d724e"
+source = "git+https://github.com/ruma/ruma/?rev=ee5e6b8c9e9489c88a1ba7411541201b6790d2d2#ee5e6b8c9e9489c88a1ba7411541201b6790d2d2"
 dependencies = [
  "js_int",
  "ruma-common",
@@ -2864,7 +2864,7 @@ dependencies = [
 [[package]]
 name = "ruma-identifiers-validation"
 version = "0.9.5"
-source = "git+https://github.com/Hywan/ruma?branch=feat-sliding-sync-list-include-heroes#3d56fa8e83d04577bde5d585f6d1c709ca5d724e"
+source = "git+https://github.com/ruma/ruma/?rev=ee5e6b8c9e9489c88a1ba7411541201b6790d2d2#ee5e6b8c9e9489c88a1ba7411541201b6790d2d2"
 dependencies = [
  "js_int",
  "thiserror",
@@ -2873,7 +2873,7 @@ dependencies = [
 [[package]]
 name = "ruma-macros"
 version = "0.13.0"
-source = "git+https://github.com/Hywan/ruma?branch=feat-sliding-sync-list-include-heroes#3d56fa8e83d04577bde5d585f6d1c709ca5d724e"
+source = "git+https://github.com/ruma/ruma/?rev=ee5e6b8c9e9489c88a1ba7411541201b6790d2d2#ee5e6b8c9e9489c88a1ba7411541201b6790d2d2"
 dependencies = [
  "once_cell",
  "proc-macro-crate",
@@ -3720,9 +3720,9 @@ checksum = "1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20"
 
 [[package]]
 name = "tokio"
-version = "1.37.0"
+version = "1.38.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1adbebffeca75fcfd058afa480fb6c0b81e165a0323f9c9d39c9697e37c46787"
+checksum = "ba4f4a02a7a80d6f274636f0aa95c7e383b912d41fe721a31f29e29698585a4a"
 dependencies = [
  "backtrace",
  "bytes",
@@ -3739,9 +3739,9 @@ dependencies = [
 
 [[package]]
 name = "tokio-macros"
-version = "2.2.0"
+version = "2.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5b8a1e28f2deaa14e508979454cb3a223b10b938b45af148bc0986de36f1923b"
+checksum = "5f5ae998a069d4b5aba8ee9dad856af7d520c3699e6159b185c2acd48155d39a"
 dependencies = [
  "proc-macro2",
  "quote",
