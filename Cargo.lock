@@ -1066,7 +1066,7 @@ checksum = "55ac459de2512911e4b674ce33cf20befaba382d05b62b008afc1c8b57cbf181"
 dependencies = [
  "futures-core",
  "futures-sink",
- "spin 0.9.8",
+ "spin",
 ]
 
 [[package]]
@@ -1665,11 +1665,11 @@ dependencies = [
 
 [[package]]
 name = "lazy_static"
-version = "1.4.0"
+version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
+checksum = "bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe"
 dependencies = [
- "spin 0.5.2",
+ "spin",
 ]
 
 [[package]]
@@ -1806,7 +1806,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.7.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#748f40c2505922689c49f84d2354afc4aa448a76"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3f1b9fe524008ab816d5336f69463e950e0b8fc6"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1855,7 +1855,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#748f40c2505922689c49f84d2354afc4aa448a76"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3f1b9fe524008ab816d5336f69463e950e0b8fc6"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1879,7 +1879,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#748f40c2505922689c49f84d2354afc4aa448a76"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3f1b9fe524008ab816d5336f69463e950e0b8fc6"
 dependencies = [
  "async-trait",
  "futures-core",
@@ -1901,7 +1901,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.7.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#748f40c2505922689c49f84d2354afc4aa448a76"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3f1b9fe524008ab816d5336f69463e950e0b8fc6"
 dependencies = [
  "aes",
  "as_variant",
@@ -1941,7 +1941,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#748f40c2505922689c49f84d2354afc4aa448a76"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3f1b9fe524008ab816d5336f69463e950e0b8fc6"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -1969,7 +1969,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#748f40c2505922689c49f84d2354afc4aa448a76"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3f1b9fe524008ab816d5336f69463e950e0b8fc6"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
@@ -1990,7 +1990,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#748f40c2505922689c49f84d2354afc4aa448a76"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3f1b9fe524008ab816d5336f69463e950e0b8fc6"
 dependencies = [
  "base64 0.22.1",
  "blake3",
@@ -2764,7 +2764,7 @@ dependencies = [
  "cfg-if",
  "getrandom",
  "libc",
- "spin 0.9.8",
+ "spin",
  "untrusted",
  "windows-sys 0.52.0",
 ]
@@ -3405,12 +3405,6 @@ dependencies = [
  "libc",
  "windows-sys 0.52.0",
 ]
-
-[[package]]
-name = "spin"
-version = "0.5.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6e63cff320ae2c57904679ba7cb63280a3dc4613885beafb148ee7bf9aa9042d"
 
 [[package]]
 name = "spin"
