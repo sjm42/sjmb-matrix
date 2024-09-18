@@ -391,9 +391,9 @@ checksum = "1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b"
 
 [[package]]
 name = "bytes"
-version = "1.7.1"
+version = "1.7.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8318a53db07bb3f8dca91a600466bdb3f2eaadeedfdbcf02e1accbad9271ba50"
+checksum = "428d9aa8fbc0670b7b8d6030a7fadd0f86151cae55e4dbbece15f3780a3dfaf3"
 
 [[package]]
 name = "bytesize"
@@ -412,9 +412,9 @@ dependencies = [
 
 [[package]]
 name = "cc"
-version = "1.1.19"
+version = "1.1.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2d74707dde2ba56f86ae90effb3b43ddd369504387e718014de010cec7959800"
+checksum = "45bcde016d64c21da4be18b655631e5ab6d3107607e71a73a9f53eb48aae23fb"
 dependencies = [
  "shlex",
 ]
@@ -1631,7 +1631,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.7.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#f576c72ef8cf4d735e3f91e9ec52aba0278c643f"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#7d1bbfaa32518cbba70056ad8b5984f0b1953f90"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1679,7 +1679,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#f576c72ef8cf4d735e3f91e9ec52aba0278c643f"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#7d1bbfaa32518cbba70056ad8b5984f0b1953f90"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1703,7 +1703,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#f576c72ef8cf4d735e3f91e9ec52aba0278c643f"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#7d1bbfaa32518cbba70056ad8b5984f0b1953f90"
 dependencies = [
  "async-trait",
  "futures-core",
@@ -1724,7 +1724,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.7.2"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#f576c72ef8cf4d735e3f91e9ec52aba0278c643f"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#7d1bbfaa32518cbba70056ad8b5984f0b1953f90"
 dependencies = [
  "aes",
  "as_variant",
@@ -1764,7 +1764,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#f576c72ef8cf4d735e3f91e9ec52aba0278c643f"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#7d1bbfaa32518cbba70056ad8b5984f0b1953f90"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -1792,7 +1792,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.7.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#f576c72ef8cf4d735e3f91e9ec52aba0278c643f"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#7d1bbfaa32518cbba70056ad8b5984f0b1953f90"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
@@ -1813,7 +1813,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#f576c72ef8cf4d735e3f91e9ec52aba0278c643f"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#7d1bbfaa32518cbba70056ad8b5984f0b1953f90"
 dependencies = [
  "base64 0.22.1",
  "blake3",
@@ -2542,7 +2542,7 @@ dependencies = [
 [[package]]
 name = "ruma"
 version = "0.10.1"
-source = "git+https://github.com/ruma/ruma?rev=92a35381b56ffa3c2a611287bb5011f574271478#92a35381b56ffa3c2a611287bb5011f574271478"
+source = "git+https://github.com/ruma/ruma?rev=1ae98db9c44f46a590f4c76baf5cef70ebb6970d#1ae98db9c44f46a590f4c76baf5cef70ebb6970d"
 dependencies = [
  "assign",
  "js_int",
@@ -2557,7 +2557,7 @@ dependencies = [
 [[package]]
 name = "ruma-client-api"
 version = "0.18.0"
-source = "git+https://github.com/ruma/ruma?rev=92a35381b56ffa3c2a611287bb5011f574271478#92a35381b56ffa3c2a611287bb5011f574271478"
+source = "git+https://github.com/ruma/ruma?rev=1ae98db9c44f46a590f4c76baf5cef70ebb6970d#1ae98db9c44f46a590f4c76baf5cef70ebb6970d"
 dependencies = [
  "as_variant",
  "assign",
@@ -2580,7 +2580,7 @@ dependencies = [
 [[package]]
 name = "ruma-common"
 version = "0.13.0"
-source = "git+https://github.com/ruma/ruma?rev=92a35381b56ffa3c2a611287bb5011f574271478#92a35381b56ffa3c2a611287bb5011f574271478"
+source = "git+https://github.com/ruma/ruma?rev=1ae98db9c44f46a590f4c76baf5cef70ebb6970d#1ae98db9c44f46a590f4c76baf5cef70ebb6970d"
 dependencies = [
  "as_variant",
  "base64 0.22.1",
@@ -2612,7 +2612,7 @@ dependencies = [
 [[package]]
 name = "ruma-events"
 version = "0.28.1"
-source = "git+https://github.com/ruma/ruma?rev=92a35381b56ffa3c2a611287bb5011f574271478#92a35381b56ffa3c2a611287bb5011f574271478"
+source = "git+https://github.com/ruma/ruma?rev=1ae98db9c44f46a590f4c76baf5cef70ebb6970d#1ae98db9c44f46a590f4c76baf5cef70ebb6970d"
 dependencies = [
  "as_variant",
  "indexmap",
@@ -2635,7 +2635,7 @@ dependencies = [
 [[package]]
 name = "ruma-federation-api"
 version = "0.9.0"
-source = "git+https://github.com/ruma/ruma?rev=92a35381b56ffa3c2a611287bb5011f574271478#92a35381b56ffa3c2a611287bb5011f574271478"
+source = "git+https://github.com/ruma/ruma?rev=1ae98db9c44f46a590f4c76baf5cef70ebb6970d#1ae98db9c44f46a590f4c76baf5cef70ebb6970d"
 dependencies = [
  "http",
  "js_int",
@@ -2649,7 +2649,7 @@ dependencies = [
 [[package]]
 name = "ruma-identifiers-validation"
 version = "0.9.5"
-source = "git+https://github.com/ruma/ruma?rev=92a35381b56ffa3c2a611287bb5011f574271478#92a35381b56ffa3c2a611287bb5011f574271478"
+source = "git+https://github.com/ruma/ruma?rev=1ae98db9c44f46a590f4c76baf5cef70ebb6970d#1ae98db9c44f46a590f4c76baf5cef70ebb6970d"
 dependencies = [
  "js_int",
  "thiserror",
@@ -2658,7 +2658,7 @@ dependencies = [
 [[package]]
 name = "ruma-macros"
 version = "0.13.0"
-source = "git+https://github.com/ruma/ruma?rev=92a35381b56ffa3c2a611287bb5011f574271478#92a35381b56ffa3c2a611287bb5011f574271478"
+source = "git+https://github.com/ruma/ruma?rev=1ae98db9c44f46a590f4c76baf5cef70ebb6970d#1ae98db9c44f46a590f4c76baf5cef70ebb6970d"
 dependencies = [
  "cfg-if",
  "once_cell",
@@ -3679,9 +3679,9 @@ checksum = "e91b56cd4cadaeb79bbf1a5645f6b4f8dc5bde8834ad5894a8db35fda9efa1fe"
 
 [[package]]
 name = "unicode-normalization"
-version = "0.1.23"
+version = "0.1.24"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a56d1686db2308d901306f92a263857ef59ea39678a5458e7cb17f01415101f5"
+checksum = "5033c97c4262335cded6d6fc3e5c18ab755e1a3dc96376350f3d8e9f009ad956"
 dependencies = [
  "tinyvec",
 ]
