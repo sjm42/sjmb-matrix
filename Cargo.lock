@@ -1252,7 +1252,7 @@ dependencies = [
  "http",
  "hyper",
  "hyper-util",
- "rustls 0.23.14",
+ "rustls 0.23.15",
  "rustls-pki-types",
  "tokio",
  "tokio-rustls",
@@ -1636,7 +1636,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.7.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ee4ef2eb539f25d69ea3582a80646e467adceafd"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a901506a536bf12b081eea6d6c70777d0fdcc565"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1684,7 +1684,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ee4ef2eb539f25d69ea3582a80646e467adceafd"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a901506a536bf12b081eea6d6c70777d0fdcc565"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1708,7 +1708,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ee4ef2eb539f25d69ea3582a80646e467adceafd"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a901506a536bf12b081eea6d6c70777d0fdcc565"
 dependencies = [
  "async-trait",
  "futures-core",
@@ -1729,7 +1729,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.7.2"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ee4ef2eb539f25d69ea3582a80646e467adceafd"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a901506a536bf12b081eea6d6c70777d0fdcc565"
 dependencies = [
  "aes",
  "as_variant",
@@ -1768,7 +1768,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ee4ef2eb539f25d69ea3582a80646e467adceafd"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a901506a536bf12b081eea6d6c70777d0fdcc565"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -1796,7 +1796,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.7.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ee4ef2eb539f25d69ea3582a80646e467adceafd"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a901506a536bf12b081eea6d6c70777d0fdcc565"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
@@ -1817,7 +1817,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.7.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ee4ef2eb539f25d69ea3582a80646e467adceafd"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a901506a536bf12b081eea6d6c70777d0fdcc565"
 dependencies = [
  "base64 0.22.1",
  "blake3",
@@ -2217,9 +2217,9 @@ dependencies = [
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.87"
+version = "1.0.88"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b3e4daa0dcf6feba26f985457cdf104d4b4256fc5a09547140f3631bb076b19a"
+checksum = "7c3a7fc5db1e57d5a779a352c8cdb57b29aa4c40cc69c3a68a7fedc815fbf2f9"
 dependencies = [
  "unicode-ident",
 ]
@@ -2258,7 +2258,7 @@ dependencies = [
  "quinn-proto",
  "quinn-udp",
  "rustc-hash",
- "rustls 0.23.14",
+ "rustls 0.23.15",
  "socket2",
  "thiserror",
  "tokio",
@@ -2275,7 +2275,7 @@ dependencies = [
  "rand",
  "ring",
  "rustc-hash",
- "rustls 0.23.14",
+ "rustls 0.23.15",
  "slab",
  "thiserror",
  "tinyvec",
@@ -2422,7 +2422,7 @@ dependencies = [
  "percent-encoding",
  "pin-project-lite",
  "quinn",
- "rustls 0.23.14",
+ "rustls 0.23.15",
  "rustls-pemfile 2.2.0",
  "rustls-pki-types",
  "serde",
@@ -2692,9 +2692,9 @@ dependencies = [
 
 [[package]]
 name = "rustls"
-version = "0.23.14"
+version = "0.23.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "415d9944693cb90382053259f89fbb077ea730ad7273047ec63b19bc9b160ba8"
+checksum = "5fbb44d7acc4e873d613422379f69f237a1b141928c02f6bc6ccfddddc2d7993"
 dependencies = [
  "once_cell",
  "ring",
@@ -3427,7 +3427,7 @@ version = "0.26.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0c7bc40d0e5a97695bb96e27995cd3a08538541b0a846f65bba7a359f36700d4"
 dependencies = [
- "rustls 0.23.14",
+ "rustls 0.23.15",
  "rustls-pki-types",
  "tokio",
 ]
