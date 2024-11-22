@@ -582,9 +582,9 @@ checksum = "773648b94d0e5d620f64f280777445740e61fe701025087ec8b57f45c791888b"
 
 [[package]]
 name = "cpufeatures"
-version = "0.2.15"
+version = "0.2.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0ca741a962e1b0bff6d724a1a0958b686406e853bb14061f218562e1896f95e6"
+checksum = "16b80225097f2e5ae4e7179dd2266824648f3e2f49d9134d584b76389d31c4c3"
 dependencies = [
  "libc",
 ]
@@ -1284,7 +1284,7 @@ dependencies = [
  "tokio",
  "tokio-rustls",
  "tower-service",
- "webpki-roots 0.26.6",
+ "webpki-roots 0.26.7",
 ]
 
 [[package]]
@@ -1631,9 +1631,9 @@ dependencies = [
 
 [[package]]
 name = "konst"
-version = "0.3.11"
+version = "0.3.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0964faf44d2c3e528ade7bd49c3544687cadcdee7641643469d43bd7259a5d88"
+checksum = "ed986a294ccbcc4cbb7de5a1cf8f62e2473d85cf220e72cb01afe20d49194481"
 dependencies = [
  "const_panic",
  "konst_kernel",
@@ -1642,9 +1642,9 @@ dependencies = [
 
 [[package]]
 name = "konst_kernel"
-version = "0.3.10"
+version = "0.3.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "722062725c1fc0d83cc017e873aac6a2a5ff16a88edfa190bdeb8bd393fcfd97"
+checksum = "599c1232f55c72c7fc378335a3efe1c878c92720838c8e6a4fd87784ef7764de"
 dependencies = [
  "typewit",
 ]
@@ -1798,7 +1798,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#e5ca44bb04bccbc64472fab22a3549b98d471244"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#48fbda844fbccbbded9fb3a4fec099ffd5ac6129"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1848,7 +1848,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#e5ca44bb04bccbc64472fab22a3549b98d471244"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#48fbda844fbccbbded9fb3a4fec099ffd5ac6129"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1875,7 +1875,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#e5ca44bb04bccbc64472fab22a3549b98d471244"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#48fbda844fbccbbded9fb3a4fec099ffd5ac6129"
 dependencies = [
  "async-trait",
  "eyeball-im",
@@ -1898,7 +1898,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#e5ca44bb04bccbc64472fab22a3549b98d471244"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#48fbda844fbccbbded9fb3a4fec099ffd5ac6129"
 dependencies = [
  "aes",
  "as_variant",
@@ -1937,7 +1937,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#e5ca44bb04bccbc64472fab22a3549b98d471244"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#48fbda844fbccbbded9fb3a4fec099ffd5ac6129"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -1965,7 +1965,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#e5ca44bb04bccbc64472fab22a3549b98d471244"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#48fbda844fbccbbded9fb3a4fec099ffd5ac6129"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
@@ -1986,7 +1986,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#e5ca44bb04bccbc64472fab22a3549b98d471244"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#48fbda844fbccbbded9fb3a4fec099ffd5ac6129"
 dependencies = [
  "base64 0.22.1",
  "blake3",
@@ -2386,9 +2386,9 @@ dependencies = [
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.91"
+version = "1.0.92"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "307e3004becf10f5a6e0d59d20f3cd28231b0e0827a96cd3e0ce6d14bc1e4bb3"
+checksum = "37d3544b3f2748c54e147655edb5025752e2303145b5aefb3c3ea2c78b973bb0"
 dependencies = [
  "unicode-ident",
 ]
@@ -2611,7 +2611,7 @@ dependencies = [
  "wasm-bindgen-futures",
  "wasm-streams",
  "web-sys",
- "webpki-roots 0.26.6",
+ "webpki-roots 0.26.7",
  "windows-registry",
 ]
 
@@ -4095,9 +4095,9 @@ checksum = "5f20c57d8d7db6d3b86154206ae5d8fba62dd39573114de97c2cb0578251f8e1"
 
 [[package]]
 name = "webpki-roots"
-version = "0.26.6"
+version = "0.26.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "841c67bff177718f1d4dfefde8d8f0e78f9b6589319ba88312f567fc5841a958"
+checksum = "5d642ff16b7e79272ae451b7322067cdc17cadf68c23264be9d94a32319efe7e"
 dependencies = [
  "rustls-pki-types",
 ]
