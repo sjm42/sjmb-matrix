@@ -1631,9 +1631,9 @@ dependencies = [
 
 [[package]]
 name = "konst"
-version = "0.3.12"
+version = "0.3.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ed986a294ccbcc4cbb7de5a1cf8f62e2473d85cf220e72cb01afe20d49194481"
+checksum = "b65f00fb3910881e52bf0850ae2a82aea411488a557e1c02820ceaa60963dce3"
 dependencies = [
  "const_panic",
  "konst_kernel",
