@@ -318,9 +318,9 @@ checksum = "a1d084b0137aaa901caf9f1e8b21daa6aa24d41cd806e111335541eff9683bd6"
 
 [[package]]
 name = "blake3"
-version = "1.5.4"
+version = "1.5.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d82033247fd8e890df8f740e407ad4d038debb9eb1f40533fffb32e7d17dc6f7"
+checksum = "b8ee0c1824c4dea5b5f81736aff91bae041d2c07ee1192bec91054e10e3e601e"
 dependencies = [
  "arrayref",
  "arrayvec",
@@ -1660,9 +1660,9 @@ dependencies = [
 
 [[package]]
 name = "libc"
-version = "0.2.165"
+version = "0.2.166"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fcb4d3d38eab6c5239a362fa8bae48c03baf980a6e7079f063942d563ef3533e"
+checksum = "c2ccc108bbc0b1331bd061864e7cd823c0cab660bbe6970e66e2c0614decde36"
 
 [[package]]
 name = "libm"
@@ -1798,7 +1798,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#c61f70727f8d8895eb77b79388603638c3ac7e68"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3e7d7e8a3178d6fedf5e97cf4110020111a36251"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1848,7 +1848,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#c61f70727f8d8895eb77b79388603638c3ac7e68"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3e7d7e8a3178d6fedf5e97cf4110020111a36251"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1875,7 +1875,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#c61f70727f8d8895eb77b79388603638c3ac7e68"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3e7d7e8a3178d6fedf5e97cf4110020111a36251"
 dependencies = [
  "async-trait",
  "eyeball-im",
@@ -1898,7 +1898,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#c61f70727f8d8895eb77b79388603638c3ac7e68"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3e7d7e8a3178d6fedf5e97cf4110020111a36251"
 dependencies = [
  "aes",
  "aquamarine",
@@ -1938,7 +1938,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#c61f70727f8d8895eb77b79388603638c3ac7e68"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3e7d7e8a3178d6fedf5e97cf4110020111a36251"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -1966,7 +1966,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#c61f70727f8d8895eb77b79388603638c3ac7e68"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3e7d7e8a3178d6fedf5e97cf4110020111a36251"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
@@ -1987,7 +1987,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#c61f70727f8d8895eb77b79388603638c3ac7e68"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3e7d7e8a3178d6fedf5e97cf4110020111a36251"
 dependencies = [
  "base64 0.22.1",
  "blake3",
@@ -2655,9 +2655,9 @@ dependencies = [
 
 [[package]]
 name = "rsa"
-version = "0.9.6"
+version = "0.9.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5d0e5124fcb30e76a7e79bfee683a2746db83784b86289f6251b54b7950a0dfc"
+checksum = "47c75d7c5c6b673e58bf54d8544a9f432e3a925b0e80f7cd3602ab5c50c55519"
 dependencies = [
  "const-oid",
  "digest",
@@ -3742,9 +3742,9 @@ dependencies = [
 
 [[package]]
 name = "tracing-attributes"
-version = "0.1.27"
+version = "0.1.28"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "34704c8d6ebcbc939824180af020566b01a7c01f80641264eba0999f6c2b6be7"
+checksum = "395ae124c09f9e6918a2310af6038fba074bcf474ac352496d5910dd59a2226d"
 dependencies = [
  "proc-macro2",
  "quote",
