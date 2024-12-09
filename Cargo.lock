@@ -932,9 +932,9 @@ dependencies = [
 
 [[package]]
 name = "fastrand"
-version = "2.2.0"
+version = "2.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "486f806e73c5707928240ddc295403b1b93c96a02038563881c4a2fd84b81ac4"
+checksum = "37909eebbb50d72f9059c3b6d82c0463f2ff062c9e95845c43a6c9c0355411be"
 
 [[package]]
 name = "fiat-crypto"
@@ -1784,7 +1784,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#bf6fa4cd5533de3d59ed3bc7714123961dbd8d31"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#42193f1b069211138401e4f17e76722686c884f6"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1821,7 +1821,7 @@ dependencies = [
  "serde_html_form",
  "serde_json",
  "tempfile",
- "thiserror 2.0.5",
+ "thiserror 2.0.6",
  "tokio",
  "tokio-stream",
  "tokio-util",
@@ -1835,7 +1835,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#bf6fa4cd5533de3d59ed3bc7714123961dbd8d31"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#42193f1b069211138401e4f17e76722686c884f6"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1853,7 +1853,7 @@ dependencies = [
  "ruma",
  "serde",
  "serde_json",
- "thiserror 2.0.5",
+ "thiserror 2.0.6",
  "tokio",
  "tracing",
  "unicode-normalization",
@@ -1862,7 +1862,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#bf6fa4cd5533de3d59ed3bc7714123961dbd8d31"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#42193f1b069211138401e4f17e76722686c884f6"
 dependencies = [
  "async-trait",
  "eyeball-im",
@@ -1873,7 +1873,7 @@ dependencies = [
  "ruma",
  "serde",
  "serde_json",
- "thiserror 2.0.5",
+ "thiserror 2.0.6",
  "tokio",
  "tracing",
  "tracing-subscriber",
@@ -1885,7 +1885,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#bf6fa4cd5533de3d59ed3bc7714123961dbd8d31"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#42193f1b069211138401e4f17e76722686c884f6"
 dependencies = [
  "aes",
  "aquamarine",
@@ -1911,7 +1911,7 @@ dependencies = [
  "serde_json",
  "sha2",
  "subtle",
- "thiserror 2.0.5",
+ "thiserror 2.0.6",
  "time",
  "tokio",
  "tokio-stream",
@@ -1925,7 +1925,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#bf6fa4cd5533de3d59ed3bc7714123961dbd8d31"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#42193f1b069211138401e4f17e76722686c884f6"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -1942,7 +1942,7 @@ dependencies = [
  "serde-wasm-bindgen",
  "serde_json",
  "sha2",
- "thiserror 2.0.5",
+ "thiserror 2.0.6",
  "tokio",
  "tracing",
  "wasm-bindgen",
@@ -1953,7 +1953,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#bf6fa4cd5533de3d59ed3bc7714123961dbd8d31"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#42193f1b069211138401e4f17e76722686c884f6"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
@@ -1965,7 +1965,7 @@ dependencies = [
  "rusqlite",
  "serde",
  "serde_json",
- "thiserror 2.0.5",
+ "thiserror 2.0.6",
  "tokio",
  "tracing",
  "vodozemac",
@@ -1974,7 +1974,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.8.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#bf6fa4cd5533de3d59ed3bc7714123961dbd8d31"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#42193f1b069211138401e4f17e76722686c884f6"
 dependencies = [
  "base64",
  "blake3",
@@ -1986,7 +1986,7 @@ dependencies = [
  "serde",
  "serde_json",
  "sha2",
- "thiserror 2.0.5",
+ "thiserror 2.0.6",
  "zeroize",
 ]
 
@@ -2416,7 +2416,7 @@ dependencies = [
  "rustc-hash",
  "rustls",
  "socket2",
- "thiserror 2.0.5",
+ "thiserror 2.0.6",
  "tokio",
  "tracing",
 ]
@@ -2435,7 +2435,7 @@ dependencies = [
  "rustls",
  "rustls-pki-types",
  "slab",
- "thiserror 2.0.5",
+ "thiserror 2.0.6",
  "tinyvec",
  "tracing",
  "web-time",
@@ -2692,7 +2692,7 @@ dependencies = [
  "serde",
  "serde_html_form",
  "serde_json",
- "thiserror 2.0.5",
+ "thiserror 2.0.6",
  "url",
  "web-time",
 ]
@@ -2720,7 +2720,7 @@ dependencies = [
  "serde",
  "serde_html_form",
  "serde_json",
- "thiserror 2.0.5",
+ "thiserror 2.0.6",
  "time",
  "tracing",
  "url",
@@ -2745,7 +2745,7 @@ dependencies = [
  "ruma-macros",
  "serde",
  "serde_json",
- "thiserror 2.0.5",
+ "thiserror 2.0.6",
  "tracing",
  "url",
  "web-time",
@@ -2772,7 +2772,7 @@ version = "0.10.0"
 source = "git+https://github.com/ruma/ruma?rev=c91499fc464adc865a7c99d0ce0b35982ad96711#c91499fc464adc865a7c99d0ce0b35982ad96711"
 dependencies = [
  "js_int",
- "thiserror 2.0.5",
+ "thiserror 2.0.6",
 ]
 
 [[package]]
@@ -2828,15 +2828,15 @@ dependencies = [
 
 [[package]]
 name = "rustix"
-version = "0.38.41"
+version = "0.38.42"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d7f649912bc1495e167a6edee79151c84b1bad49748cb4f1f1167f459f6224f6"
+checksum = "f93dc38ecbab2eb790ff964bb77fa94faf256fd3e73285fd7ba0903b76bedb85"
 dependencies = [
  "bitflags",
  "errno",
  "libc",
  "linux-raw-sys",
- "windows-sys 0.52.0",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -3467,11 +3467,11 @@ dependencies = [
 
 [[package]]
 name = "thiserror"
-version = "2.0.5"
+version = "2.0.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "643caef17e3128658ff44d85923ef2d28af81bb71e0d67bbfe1d76f19a73e053"
+checksum = "8fec2a1820ebd077e2b90c4df007bebf344cd394098a13c563957d0afc83ea47"
 dependencies = [
- "thiserror-impl 2.0.5",
+ "thiserror-impl 2.0.6",
 ]
 
 [[package]]
@@ -3487,9 +3487,9 @@ dependencies = [
 
 [[package]]
 name = "thiserror-impl"
-version = "2.0.5"
+version = "2.0.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "995d0bbc9995d1f19d28b7215a9352b0fc3cd3a2d2ec95c2cadc485cdedbcdde"
+checksum = "d65750cab40f4ff1929fb1ba509e9914eb756131cef4210da8d5d700d26f6312"
 dependencies = [
  "proc-macro2",
  "quote",
