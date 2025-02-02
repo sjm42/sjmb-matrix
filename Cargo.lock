@@ -2591,15 +2591,15 @@ dependencies = [
 
 [[package]]
 name = "readlock"
-version = "0.1.8"
+version = "0.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "072cfe5b1d2dcd38d20e18f85e9c9978b6cc08f0b373e9f1fff1541335622974"
+checksum = "188bbae3aa4739bd264e9204da5919b2c91dd87dcce5049cf04bdf6aa17c5012"
 
 [[package]]
 name = "readlock-tokio"
-version = "0.1.3"
+version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "867fac64d07214a87e5cf4e88b4ce855844a1cea243534392377d1ac2c911653"
+checksum = "29b1800712c0d75de4b0bda5483d46eaf8df757b81df5ca2bde53d5ac2e2c5b2"
 dependencies = [
  "tokio",
 ]
@@ -3500,9 +3500,9 @@ checksum = "13c2bddecc57b384dee18652358fb23172facb8a2c51ccc10d74c157bdea3292"
 
 [[package]]
 name = "syn"
-version = "2.0.96"
+version = "2.0.98"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d5d0adab1ae378d7f53bdebc67a39f1f151407ef230f0ce2883572f5d8985c80"
+checksum = "36147f1a48ae0ec2b5b3bc5b537d267457555a10dc06f3dbc8cb11ba3006d3b1"
 dependencies = [
  "proc-macro2",
  "quote",
