@@ -518,9 +518,9 @@ dependencies = [
 
 [[package]]
 name = "clap"
-version = "4.5.34"
+version = "4.5.35"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e958897981290da2a852763fe9cdb89cd36977a5d729023127095fa94d95e2ff"
+checksum = "d8aa86934b44c19c50f87cc2790e19f54f7a67aedb64101c2e1a2e5ecfb73944"
 dependencies = [
  "clap_builder",
  "clap_derive",
@@ -528,9 +528,9 @@ dependencies = [
 
 [[package]]
 name = "clap_builder"
-version = "4.5.34"
+version = "4.5.35"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "83b0f35019843db2160b5bb19ae09b4e6411ac33fc6a712003c33e03090e2489"
+checksum = "2414dbb2dd0695280da6ea9261e327479e9d37b0630f6b53ba2a11c60c679fd9"
 dependencies = [
  "anstream",
  "anstyle",
@@ -975,9 +975,9 @@ checksum = "28dea519a9695b9977216879a3ebfddf92f1c08c05d984f8996aecd6ecdc811d"
 
 [[package]]
 name = "flate2"
-version = "1.1.0"
+version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "11faaf5a5236997af9848be0bef4db95824b1d534ebc64d0f0c6cf3e67bd38dc"
+checksum = "7ced92e76e966ca2fd84c8f7aa01a4aea65b0eb6648d72f7c8f3e2764a67fece"
 dependencies = [
  "crc32fast",
  "miniz_oxide",
@@ -1885,7 +1885,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a0477842780b9f54288369dc460895a2e50dbe6f"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#d34e11b9f6a2cf23e6f4599b3f8b5afffe87bb0c"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1940,7 +1940,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a0477842780b9f54288369dc460895a2e50dbe6f"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#d34e11b9f6a2cf23e6f4599b3f8b5afffe87bb0c"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1967,7 +1967,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a0477842780b9f54288369dc460895a2e50dbe6f"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#d34e11b9f6a2cf23e6f4599b3f8b5afffe87bb0c"
 dependencies = [
  "async-trait",
  "eyeball-im",
@@ -1990,7 +1990,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a0477842780b9f54288369dc460895a2e50dbe6f"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#d34e11b9f6a2cf23e6f4599b3f8b5afffe87bb0c"
 dependencies = [
  "aes",
  "aquamarine",
@@ -2030,7 +2030,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a0477842780b9f54288369dc460895a2e50dbe6f"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#d34e11b9f6a2cf23e6f4599b3f8b5afffe87bb0c"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2058,7 +2058,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a0477842780b9f54288369dc460895a2e50dbe6f"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#d34e11b9f6a2cf23e6f4599b3f8b5afffe87bb0c"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
@@ -2080,7 +2080,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a0477842780b9f54288369dc460895a2e50dbe6f"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#d34e11b9f6a2cf23e6f4599b3f8b5afffe87bb0c"
 dependencies = [
  "base64",
  "blake3",
@@ -2986,9 +2986,9 @@ dependencies = [
 
 [[package]]
 name = "rustix"
-version = "1.0.3"
+version = "1.0.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e56a18552996ac8d29ecc3b190b4fdbb2d91ca4ec396de7bbffaf43f3d637e96"
+checksum = "d97817398dd4bb2e6da002002db259209759911da105da92bec29ccb12cf58bf"
 dependencies = [
  "bitflags",
  "errno",
