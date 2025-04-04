@@ -169,6 +169,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "archery"
+version = "1.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "eae2ed21cd55021f05707a807a5fc85695dafb98832921f6cfa06db67ca5b869"
+
+[[package]]
 name = "arrayref"
 version = "0.3.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -332,9 +338,9 @@ checksum = "a1d084b0137aaa901caf9f1e8b21daa6aa24d41cd806e111335541eff9683bd6"
 
 [[package]]
 name = "blake3"
-version = "1.8.0"
+version = "1.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "34a796731680be7931955498a16a10b2270c7762963d5d570fdbfe02dcbf314f"
+checksum = "389a099b34312839e16420d499a9cad9650541715937ffbdd40d36f49e77eeb3"
 dependencies = [
  "arrayref",
  "arrayvec",
@@ -916,7 +922,7 @@ dependencies = [
 [[package]]
 name = "eyeball"
 version = "0.8.8"
-source = "git+https://github.com/jplatte/eyeball?branch=main#b4ca8997db0ee3767bbc08a2aec788cac05c55ac"
+source = "git+https://github.com/jplatte/eyeball?branch=main#33fb102ab8f349a80f4d50770c4b0baab9b9cd20"
 dependencies = [
  "futures-core",
  "readlock",
@@ -928,11 +934,11 @@ dependencies = [
 
 [[package]]
 name = "eyeball-im"
-version = "0.6.0"
-source = "git+https://github.com/jplatte/eyeball?branch=main#b4ca8997db0ee3767bbc08a2aec788cac05c55ac"
+version = "0.7.0"
+source = "git+https://github.com/jplatte/eyeball?branch=main#33fb102ab8f349a80f4d50770c4b0baab9b9cd20"
 dependencies = [
  "futures-core",
- "imbl",
+ "imbl 5.0.0",
  "tokio",
  "tracing",
 ]
@@ -1567,8 +1573,22 @@ dependencies = [
  "bitmaps",
  "imbl-sized-chunks",
  "rand_core 0.6.4",
- "rand_xoshiro",
+ "rand_xoshiro 0.6.0",
  "serde",
+ "version_check",
+]
+
+[[package]]
+name = "imbl"
+version = "5.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e4308a675e4cfc1920f36a8f4d8fb62d5533b7da106844bd1ec51c6f1fa94a0c"
+dependencies = [
+ "archery",
+ "bitmaps",
+ "imbl-sized-chunks",
+ "rand_core 0.9.3",
+ "rand_xoshiro 0.7.0",
  "version_check",
 ]
 
@@ -1885,7 +1905,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dccd836dc64e7cb40fc76c814a895dd36ab16ddd"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f7179263a4c7775d253a29b13477f43f15b9293"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1905,7 +1925,7 @@ dependencies = [
  "gloo-timers",
  "growable-bloom-filter",
  "http",
- "imbl",
+ "imbl 4.0.1",
  "indexmap",
  "js_int",
  "language-tags",
@@ -1940,7 +1960,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dccd836dc64e7cb40fc76c814a895dd36ab16ddd"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f7179263a4c7775d253a29b13477f43f15b9293"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1967,14 +1987,14 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dccd836dc64e7cb40fc76c814a895dd36ab16ddd"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f7179263a4c7775d253a29b13477f43f15b9293"
 dependencies = [
  "async-trait",
  "eyeball-im",
  "futures-core",
  "futures-util",
  "gloo-timers",
- "imbl",
+ "imbl 4.0.1",
  "ruma",
  "serde",
  "serde_json",
@@ -1990,7 +2010,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dccd836dc64e7cb40fc76c814a895dd36ab16ddd"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f7179263a4c7775d253a29b13477f43f15b9293"
 dependencies = [
  "aes",
  "aquamarine",
@@ -2030,7 +2050,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dccd836dc64e7cb40fc76c814a895dd36ab16ddd"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f7179263a4c7775d253a29b13477f43f15b9293"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2058,7 +2078,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dccd836dc64e7cb40fc76c814a895dd36ab16ddd"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f7179263a4c7775d253a29b13477f43f15b9293"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
@@ -2080,7 +2100,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dccd836dc64e7cb40fc76c814a895dd36ab16ddd"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f7179263a4c7775d253a29b13477f43f15b9293"
 dependencies = [
  "base64",
  "blake3",
@@ -2126,9 +2146,9 @@ checksum = "cbf6f36070878c42c5233846cd3de24cf9016828fd47bc22957a687298bb21fc"
 
 [[package]]
 name = "miniz_oxide"
-version = "0.8.5"
+version = "0.8.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8e3e04debbb59698c15bacbb6d93584a8c0ca9cc3213cb423d31f760d8843ce5"
+checksum = "ff70ce3e48ae43fa075863cef62e8b43b71a4f2382229920e0df362592919430"
 dependencies = [
  "adler2",
 ]
@@ -2649,6 +2669,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6f97cdb2a36ed4183de61b2f824cc45c9f1037f28afe0a322e9fff4c108b5aaa"
 dependencies = [
  "rand_core 0.6.4",
+]
+
+[[package]]
+name = "rand_xoshiro"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f703f4665700daf5512dcca5f43afa6af89f09db47fb56be587f80636bda2d41"
+dependencies = [
+ "rand_core 0.9.3",
 ]
 
 [[package]]
