@@ -432,9 +432,9 @@ dependencies = [
 
 [[package]]
 name = "cc"
-version = "1.2.17"
+version = "1.2.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1fcb57c740ae1daf453ae85f16e37396f672b039e00d9d866e07ddb24e328e3a"
+checksum = "525046617d8376e3db1deffb079e91cef90a89fc3ca5c185bbf8c9ecdd15cd5c"
 dependencies = [
  "shlex",
 ]
@@ -779,9 +779,9 @@ dependencies = [
 
 [[package]]
 name = "deranged"
-version = "0.4.1"
+version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "28cfac68e08048ae1883171632c2aef3ebc555621ae56fbccce1cbf22dd7f058"
+checksum = "9c9e6a11ca8224451684bc0d7d5a7adbf8f2fd6887261a1cfc3c0432f9d4068e"
 dependencies = [
  "powerfmt",
 ]
@@ -879,9 +879,9 @@ checksum = "877a4ace8713b0bcf2a4e7eec82529c029f1d0619886d18145fea96c3ffe5c0f"
 
 [[package]]
 name = "errno"
-version = "0.3.10"
+version = "0.3.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "33d852cb9b869c2a9b3df2f71a3074817f01e1844f839a144f5fcef059a4eb5d"
+checksum = "976dd42dc7e85965fe702eb8164f21f450704bdde31faefd6471dba214cb594e"
 dependencies = [
  "libc",
  "windows-sys 0.59.0",
@@ -922,7 +922,8 @@ dependencies = [
 [[package]]
 name = "eyeball"
 version = "0.8.8"
-source = "git+https://github.com/jplatte/eyeball?branch=main#33fb102ab8f349a80f4d50770c4b0baab9b9cd20"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d93bd0ebf93d61d6332d3c09a96e97975968a44e19a64c947bde06e6baff383f"
 dependencies = [
  "futures-core",
  "readlock",
@@ -935,10 +936,11 @@ dependencies = [
 [[package]]
 name = "eyeball-im"
 version = "0.7.0"
-source = "git+https://github.com/jplatte/eyeball?branch=main#33fb102ab8f349a80f4d50770c4b0baab9b9cd20"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "43e8e9d31591be508826b875d8fe6056aebcaec3281ac0e45434ff303686c566"
 dependencies = [
  "futures-core",
- "imbl 5.0.0",
+ "imbl",
  "tokio",
  "tracing",
 ]
@@ -1566,20 +1568,6 @@ dependencies = [
 
 [[package]]
 name = "imbl"
-version = "4.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5ae128b3bc67ed43ec0a7bb1c337a9f026717628b3c4033f07ded1da3e854951"
-dependencies = [
- "bitmaps",
- "imbl-sized-chunks",
- "rand_core 0.6.4",
- "rand_xoshiro 0.6.0",
- "serde",
- "version_check",
-]
-
-[[package]]
-name = "imbl"
 version = "5.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e4308a675e4cfc1920f36a8f4d8fb62d5533b7da106844bd1ec51c6f1fa94a0c"
@@ -1588,7 +1576,8 @@ dependencies = [
  "bitmaps",
  "imbl-sized-chunks",
  "rand_core 0.9.3",
- "rand_xoshiro 0.7.0",
+ "rand_xoshiro",
+ "serde",
  "version_check",
 ]
 
@@ -1639,9 +1628,9 @@ dependencies = [
 
 [[package]]
 name = "indexmap"
-version = "2.8.0"
+version = "2.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3954d50fe15b02142bf25d3b8bdadb634ec3948f103d04ffe3031bc8fe9d7058"
+checksum = "cea70ddb795996207ad57735b50c5982d8844f38ba9ee5f1aedcfb708a2aa11e"
 dependencies = [
  "equivalent",
  "hashbrown 0.15.2",
@@ -1905,7 +1894,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f7179263a4c7775d253a29b13477f43f15b9293"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b4a8089b40c68f71f01678c3b54d392ce44e7c68"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1925,7 +1914,7 @@ dependencies = [
  "gloo-timers",
  "growable-bloom-filter",
  "http",
- "imbl 4.0.1",
+ "imbl",
  "indexmap",
  "js_int",
  "language-tags",
@@ -1960,7 +1949,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f7179263a4c7775d253a29b13477f43f15b9293"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b4a8089b40c68f71f01678c3b54d392ce44e7c68"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -1987,14 +1976,14 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f7179263a4c7775d253a29b13477f43f15b9293"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b4a8089b40c68f71f01678c3b54d392ce44e7c68"
 dependencies = [
  "async-trait",
  "eyeball-im",
  "futures-core",
  "futures-util",
  "gloo-timers",
- "imbl 4.0.1",
+ "imbl",
  "ruma",
  "serde",
  "serde_json",
@@ -2010,7 +1999,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f7179263a4c7775d253a29b13477f43f15b9293"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b4a8089b40c68f71f01678c3b54d392ce44e7c68"
 dependencies = [
  "aes",
  "aquamarine",
@@ -2050,7 +2039,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f7179263a4c7775d253a29b13477f43f15b9293"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b4a8089b40c68f71f01678c3b54d392ce44e7c68"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2078,7 +2067,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f7179263a4c7775d253a29b13477f43f15b9293"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b4a8089b40c68f71f01678c3b54d392ce44e7c68"
 dependencies = [
  "async-trait",
  "deadpool-sqlite",
@@ -2100,7 +2089,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.10.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9f7179263a4c7775d253a29b13477f43f15b9293"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b4a8089b40c68f71f01678c3b54d392ce44e7c68"
 dependencies = [
  "base64",
  "blake3",
@@ -2660,15 +2649,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "99d9a13982dcf210057a8a78572b2217b667c3beacbf3a0d8b454f6f82837d38"
 dependencies = [
  "getrandom 0.3.2",
-]
-
-[[package]]
-name = "rand_xoshiro"
-version = "0.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6f97cdb2a36ed4183de61b2f824cc45c9f1037f28afe0a322e9fff4c108b5aaa"
-dependencies = [
- "rand_core 0.6.4",
 ]
 
 [[package]]
@@ -3343,9 +3323,9 @@ dependencies = [
 
 [[package]]
 name = "smallvec"
-version = "1.14.0"
+version = "1.15.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7fcf8323ef1faaee30a44a340193b1ac6814fd9b7b4e88e9d4519a3e4abe1cfd"
+checksum = "8917285742e9f3e1683f0a9c4e6b57960b7314d0b08d30d1ecd426713ee2eee9"
 dependencies = [
  "serde",
 ]
