@@ -1249,7 +1249,7 @@ dependencies = [
  "futures-core",
  "futures-sink",
  "http",
- "indexmap 2.9.0",
+ "indexmap 2.10.0",
  "slab",
  "tokio",
  "tokio-util",
@@ -1660,9 +1660,9 @@ dependencies = [
 
 [[package]]
 name = "indexmap"
-version = "2.9.0"
+version = "2.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cea70ddb795996207ad57735b50c5982d8844f38ba9ee5f1aedcfb708a2aa11e"
+checksum = "fe4cd85333e22411419a0bcae1297d25e58c9443848b11dc6a86fefe8c78a661"
 dependencies = [
  "equivalent",
  "hashbrown 0.15.4",
@@ -1964,7 +1964,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.12.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#836c6437690feaa9a3083c9545453732659c9228"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#4046a597865233aeb5b5d67b8fe5a44fabe0a9fc"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -1985,7 +1985,7 @@ dependencies = [
  "gloo-timers",
  "http",
  "imbl",
- "indexmap 2.9.0",
+ "indexmap 2.10.0",
  "js_int",
  "language-tags",
  "matrix-sdk-base",
@@ -2019,7 +2019,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.12.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#836c6437690feaa9a3083c9545453732659c9228"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#4046a597865233aeb5b5d67b8fe5a44fabe0a9fc"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2046,7 +2046,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.12.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#836c6437690feaa9a3083c9545453732659c9228"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#4046a597865233aeb5b5d67b8fe5a44fabe0a9fc"
 dependencies = [
  "eyeball-im",
  "futures-core",
@@ -2069,7 +2069,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.12.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#836c6437690feaa9a3083c9545453732659c9228"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#4046a597865233aeb5b5d67b8fe5a44fabe0a9fc"
 dependencies = [
  "aes",
  "aquamarine",
@@ -2109,7 +2109,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.12.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#836c6437690feaa9a3083c9545453732659c9228"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#4046a597865233aeb5b5d67b8fe5a44fabe0a9fc"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2137,7 +2137,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.12.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#836c6437690feaa9a3083c9545453732659c9228"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#4046a597865233aeb5b5d67b8fe5a44fabe0a9fc"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2160,7 +2160,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.12.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#836c6437690feaa9a3083c9545453732659c9228"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#4046a597865233aeb5b5d67b8fe5a44fabe0a9fc"
 dependencies = [
  "base64 0.22.1",
  "blake3",
@@ -2983,7 +2983,7 @@ dependencies = [
  "form_urlencoded",
  "getrandom 0.2.16",
  "http",
- "indexmap 2.9.0",
+ "indexmap 2.10.0",
  "js-sys",
  "js_int",
  "konst",
@@ -3010,7 +3010,7 @@ version = "0.30.3"
 source = "git+https://github.com/ruma/ruma?rev=d1d53e2b7aaf9190f11a5465b9edf6a19fc5b59a#d1d53e2b7aaf9190f11a5465b9edf6a19fc5b59a"
 dependencies = [
  "as_variant",
- "indexmap 2.9.0",
+ "indexmap 2.10.0",
  "js_int",
  "js_option",
  "percent-encoding",
@@ -3309,7 +3309,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9d2de91cf02bbc07cde38891769ccd5d4f073d22a40683aa4bc7a95781aaa2c4"
 dependencies = [
  "form_urlencoded",
- "indexmap 2.9.0",
+ "indexmap 2.10.0",
  "itoa",
  "ryu",
  "serde",
@@ -3921,7 +3921,7 @@ version = "0.22.27"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "41fe8c660ae4257887cf66394862d21dbca4a6ddd26f04a3560410406a2f819a"
 dependencies = [
- "indexmap 2.9.0",
+ "indexmap 2.10.0",
  "serde",
  "serde_spanned",
  "toml_datetime",
