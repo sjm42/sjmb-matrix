@@ -751,9 +751,9 @@ dependencies = [
 
 [[package]]
 name = "deadpool-sqlite"
-version = "0.10.0"
+version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d84a12c51972a50e54895427e43743da9737af66395a609283be01ec72efd9fb"
+checksum = "9e531d0beb6d12daa84df0482bf89e06c7ed059551ae1d7313dc7531d37778fb"
 dependencies = [
  "deadpool",
  "deadpool-sync",
@@ -1812,9 +1812,9 @@ dependencies = [
 
 [[package]]
 name = "libsqlite3-sys"
-version = "0.31.0"
+version = "0.33.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ad8935b44e7c13394a179a438e0cebba0fe08fe01b54f152e29a93b5cf993fd4"
+checksum = "947e6816f7825b2b45027c2c32e7085da9934defa535de4a6a46b10a4d5257fa"
 dependencies = [
  "pkg-config",
  "vcpkg",
@@ -1964,7 +1964,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.12.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dd0336ee72ac7c513d6c4f82f7e768df5044a797"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a9ffe5fd72dba5874c843936096079c5e3850340"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -2019,7 +2019,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.12.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dd0336ee72ac7c513d6c4f82f7e768df5044a797"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a9ffe5fd72dba5874c843936096079c5e3850340"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2046,7 +2046,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.12.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dd0336ee72ac7c513d6c4f82f7e768df5044a797"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a9ffe5fd72dba5874c843936096079c5e3850340"
 dependencies = [
  "eyeball-im",
  "futures-core",
@@ -2069,7 +2069,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.12.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dd0336ee72ac7c513d6c4f82f7e768df5044a797"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a9ffe5fd72dba5874c843936096079c5e3850340"
 dependencies = [
  "aes",
  "aquamarine",
@@ -2109,7 +2109,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.12.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dd0336ee72ac7c513d6c4f82f7e768df5044a797"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a9ffe5fd72dba5874c843936096079c5e3850340"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2137,7 +2137,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.12.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dd0336ee72ac7c513d6c4f82f7e768df5044a797"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a9ffe5fd72dba5874c843936096079c5e3850340"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2160,7 +2160,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.12.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#dd0336ee72ac7c513d6c4f82f7e768df5044a797"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#a9ffe5fd72dba5874c843936096079c5e3850340"
 dependencies = [
  "base64 0.22.1",
  "blake3",
@@ -2841,9 +2841,9 @@ checksum = "2b15c43186be67a4fd63bee50d0303afffcef381492ebe2c5d87f324e1b8815c"
 
 [[package]]
 name = "reqwest"
-version = "0.12.20"
+version = "0.12.22"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eabf4c97d9130e2bf606614eb937e86edac8292eaa6f422f995d7e8de1eb1813"
+checksum = "cbc931937e6ca3a06e3b6c0aa7841849b160a90351d6ab467a8b9b9959767531"
 dependencies = [
  "async-compression",
  "base64 0.22.1",
@@ -3079,9 +3079,9 @@ dependencies = [
 
 [[package]]
 name = "rusqlite"
-version = "0.33.0"
+version = "0.35.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1c6d5e5acb6f6129fe3f7ba0a7fc77bca1942cb568535e18e7bc40262baf3110"
+checksum = "a22715a5d6deef63c637207afbe68d0c72c3f8d0022d7cf9714c442d6157606b"
 dependencies = [
  "bitflags 2.9.1",
  "fallible-iterator",
