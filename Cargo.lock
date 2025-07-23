@@ -1289,6 +1289,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "headers"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b3314d5adb5d94bcdf56771f2e50dbbc80bb4bdf88967526706205ac9eff24eb"
+dependencies = [
+ "base64 0.22.1",
+ "bytes",
+ "headers-core",
+ "http",
+ "httpdate",
+ "mime",
+ "sha1",
+]
+
+[[package]]
+name = "headers-core"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "54b4a22553d4242c49fddb9ba998a99962b5cc6f22cb5a3482bec22522403ce4"
+dependencies = [
+ "http",
+]
+
+[[package]]
 name = "heck"
 version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1357,6 +1381,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "http-auth"
+version = "0.1.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "150fa4a9462ef926824cf4519c84ed652ca8f4fbae34cb8af045b5cbcaf98822"
+dependencies = [
+ "memchr",
+]
+
+[[package]]
 name = "http-body"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1384,6 +1417,12 @@ name = "httparse"
 version = "1.10.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6dbf3de79e51f3d586ab4cb9d5c3e2c14aa28ed23d180cf89b4df0454a69cc87"
+
+[[package]]
+name = "httpdate"
+version = "1.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "df3b46402a9d5adb4c86a0cf463f42e19994e3ee891101b1841f30a545cb49a9"
 
 [[package]]
 name = "hyper"
@@ -1424,9 +1463,9 @@ dependencies = [
 
 [[package]]
 name = "hyper-util"
-version = "0.1.15"
+version = "0.1.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f66d5bd4c6f02bf0542fad85d626775bab9258cf795a4256dcaf3161114d1df"
+checksum = "8d9b05277c7e8da2c93a568989bb6207bef0112e8d17df7a6eda4a3cf143bc5e"
 dependencies = [
  "base64 0.22.1",
  "bytes",
@@ -1440,7 +1479,7 @@ dependencies = [
  "libc",
  "percent-encoding",
  "pin-project-lite",
- "socket2",
+ "socket2 0.6.0",
  "tokio",
  "tower-service",
  "tracing",
@@ -1679,9 +1718,9 @@ dependencies = [
 
 [[package]]
 name = "io-uring"
-version = "0.7.8"
+version = "0.7.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b86e202f00093dcba4275d4636b93ef9dd75d025ae560d2521b45ea28ab49013"
+checksum = "d93587f37623a1a17d94ef2bc9ada592f5465fe7732084ab7beefabe5c77c0c4"
 dependencies = [
  "bitflags 2.9.1",
  "cfg-if",
@@ -1964,7 +2003,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b482ccd31863f4bc26c08d86811b6ebcd211a978"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2710510786573e7910e0ee32384aa471dbc34493"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -2019,7 +2058,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b482ccd31863f4bc26c08d86811b6ebcd211a978"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2710510786573e7910e0ee32384aa471dbc34493"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2046,7 +2085,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b482ccd31863f4bc26c08d86811b6ebcd211a978"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2710510786573e7910e0ee32384aa471dbc34493"
 dependencies = [
  "eyeball-im",
  "futures-core",
@@ -2069,7 +2108,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b482ccd31863f4bc26c08d86811b6ebcd211a978"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2710510786573e7910e0ee32384aa471dbc34493"
 dependencies = [
  "aes",
  "aquamarine",
@@ -2109,7 +2148,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b482ccd31863f4bc26c08d86811b6ebcd211a978"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2710510786573e7910e0ee32384aa471dbc34493"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2137,7 +2176,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b482ccd31863f4bc26c08d86811b6ebcd211a978"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2710510786573e7910e0ee32384aa471dbc34493"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2161,7 +2200,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b482ccd31863f4bc26c08d86811b6ebcd211a978"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2710510786573e7910e0ee32384aa471dbc34493"
 dependencies = [
  "base64 0.22.1",
  "blake3",
@@ -2432,7 +2471,6 @@ version = "0.11.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1fd6780a80ae0c52cc120a26a1a42c1ae51b247a253e4e06113d23d2c2edd078"
 dependencies = [
- "phf_macros",
  "phf_shared 0.11.3",
 ]
 
@@ -2463,19 +2501,6 @@ checksum = "3c80231409c20246a13fddb31776fb942c38553c51e871f8cbd687a4cfb5843d"
 dependencies = [
  "phf_shared 0.11.3",
  "rand 0.8.5",
-]
-
-[[package]]
-name = "phf_macros"
-version = "0.11.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f84ac04429c13a7ff43785d75ad27569f2951ce0ffd30a3321230db2fc727216"
-dependencies = [
- "phf_generator",
- "phf_shared 0.11.3",
- "proc-macro2",
- "quote",
- "syn 2.0.104",
 ]
 
 [[package]]
@@ -2640,7 +2665,7 @@ dependencies = [
  "quinn-udp",
  "rustc-hash",
  "rustls 0.23.29",
- "socket2",
+ "socket2 0.5.10",
  "thiserror 2.0.12",
  "tokio",
  "tracing",
@@ -2677,7 +2702,7 @@ dependencies = [
  "cfg_aliases",
  "libc",
  "once_cell",
- "socket2",
+ "socket2 0.5.10",
  "tracing",
  "windows-sys 0.59.0",
 ]
@@ -2946,8 +2971,7 @@ dependencies = [
 [[package]]
 name = "ruma"
 version = "0.12.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c1d47e42b7dea75a468dea63a230f51331c58d690ca018ea1c6ac782ea98880c"
+source = "git+https://github.com/ruma/ruma?rev=7bae3d0c0b8edf008899ac2b04cf9722182eef68#7bae3d0c0b8edf008899ac2b04cf9722182eef68"
 dependencies = [
  "assign",
  "js_int",
@@ -2963,8 +2987,7 @@ dependencies = [
 [[package]]
 name = "ruma-client-api"
 version = "0.20.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3a9e9c613cfda4923b851c5d8bc442305905bee4f0c2b924564b00e71636c8d4"
+source = "git+https://github.com/ruma/ruma?rev=7bae3d0c0b8edf008899ac2b04cf9722182eef68#7bae3d0c0b8edf008899ac2b04cf9722182eef68"
 dependencies = [
  "as_variant",
  "assign",
@@ -2987,8 +3010,7 @@ dependencies = [
 [[package]]
 name = "ruma-common"
 version = "0.15.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "387e1898e868d32ff7b205e7db327361d5dcf635c00a8ae5865068607595a9cf"
+source = "git+https://github.com/ruma/ruma?rev=7bae3d0c0b8edf008899ac2b04cf9722182eef68#7bae3d0c0b8edf008899ac2b04cf9722182eef68"
 dependencies = [
  "as_variant",
  "base64 0.22.1",
@@ -3015,13 +3037,13 @@ dependencies = [
  "uuid",
  "web-time",
  "wildmatch",
+ "zeroize",
 ]
 
 [[package]]
 name = "ruma-events"
 version = "0.30.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3cdc7abec9bc2a9ca0b4831cc26ce97a6a8c39a0bde44a19281a719e861b4293"
+source = "git+https://github.com/ruma/ruma?rev=7bae3d0c0b8edf008899ac2b04cf9722182eef68#7bae3d0c0b8edf008899ac2b04cf9722182eef68"
 dependencies = [
  "as_variant",
  "indexmap 2.10.0",
@@ -3039,32 +3061,34 @@ dependencies = [
  "url",
  "web-time",
  "wildmatch",
+ "zeroize",
 ]
 
 [[package]]
 name = "ruma-federation-api"
 version = "0.11.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bb2a705c3911870782e036a3a8b676d0166c6c93800b84f6b8b23c981f78ef08"
+source = "git+https://github.com/ruma/ruma?rev=7bae3d0c0b8edf008899ac2b04cf9722182eef68#7bae3d0c0b8edf008899ac2b04cf9722182eef68"
 dependencies = [
+ "headers",
  "http",
+ "http-auth",
  "js_int",
  "mime",
  "ruma-common",
  "ruma-events",
  "serde",
  "serde_json",
+ "thiserror 2.0.12",
+ "tracing",
 ]
 
 [[package]]
 name = "ruma-html"
 version = "0.4.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "865afa2321e34fa836ea4c1d77ce0c2bb40f7d13fe18ee3e795091fd8d173a1d"
+source = "git+https://github.com/ruma/ruma?rev=7bae3d0c0b8edf008899ac2b04cf9722182eef68#7bae3d0c0b8edf008899ac2b04cf9722182eef68"
 dependencies = [
  "as_variant",
  "html5ever",
- "phf 0.11.3",
  "tracing",
  "wildmatch",
 ]
@@ -3072,8 +3096,7 @@ dependencies = [
 [[package]]
 name = "ruma-identifiers-validation"
 version = "0.10.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6ad674b5e5368c53a2c90fde7dac7e30747004aaf7b1827b72874a25fc06d4d8"
+source = "git+https://github.com/ruma/ruma?rev=7bae3d0c0b8edf008899ac2b04cf9722182eef68#7bae3d0c0b8edf008899ac2b04cf9722182eef68"
 dependencies = [
  "js_int",
  "thiserror 2.0.12",
@@ -3082,8 +3105,7 @@ dependencies = [
 [[package]]
 name = "ruma-macros"
 version = "0.15.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5ff13fbd6045a7278533390826de316d6116d8582ed828352661337b0c422e1c"
+source = "git+https://github.com/ruma/ruma?rev=7bae3d0c0b8edf008899ac2b04cf9722182eef68#7bae3d0c0b8edf008899ac2b04cf9722182eef68"
 dependencies = [
  "cfg-if",
  "proc-macro-crate",
@@ -3494,6 +3516,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "socket2"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "233504af464074f9d066d7b5416c5f9b894a5862a6506e306f7b816cdd6f1807"
+dependencies = [
+ "libc",
+ "windows-sys 0.59.0",
+]
+
+[[package]]
 name = "spin"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3852,7 +3884,7 @@ dependencies = [
  "pin-project-lite",
  "signal-hook-registry",
  "slab",
- "socket2",
+ "socket2 0.5.10",
  "tokio-macros",
  "windows-sys 0.52.0",
 ]
