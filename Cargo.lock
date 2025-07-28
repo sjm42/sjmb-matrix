@@ -1453,7 +1453,7 @@ dependencies = [
  "http",
  "hyper",
  "hyper-util",
- "rustls 0.23.30",
+ "rustls 0.23.29",
  "rustls-pki-types",
  "tokio",
  "tokio-rustls 0.26.2",
@@ -1841,9 +1841,9 @@ checksum = "1171693293099992e19cddea4e8b849964e9846f4acee11b3948bcc337be8776"
 
 [[package]]
 name = "libredox"
-version = "0.1.6"
+version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4488594b9328dee448adb906d8b126d9b7deb7cf5c22161ee591610bb1be83c0"
+checksum = "360e552c93fa0e8152ab463bc4c4837fce76a225df11dfaeea66c313de5e61f7"
 dependencies = [
  "bitflags 2.9.1",
  "libc",
@@ -2003,7 +2003,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ca89700dfe9f29dcd823bb10861807f9d75e0634"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#e2ad07881c68e44ac99cb9ef09fef2637d811c10"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -2058,7 +2058,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ca89700dfe9f29dcd823bb10861807f9d75e0634"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#e2ad07881c68e44ac99cb9ef09fef2637d811c10"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2085,7 +2085,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ca89700dfe9f29dcd823bb10861807f9d75e0634"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#e2ad07881c68e44ac99cb9ef09fef2637d811c10"
 dependencies = [
  "eyeball-im",
  "futures-core",
@@ -2108,7 +2108,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ca89700dfe9f29dcd823bb10861807f9d75e0634"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#e2ad07881c68e44ac99cb9ef09fef2637d811c10"
 dependencies = [
  "aes",
  "aquamarine",
@@ -2148,7 +2148,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ca89700dfe9f29dcd823bb10861807f9d75e0634"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#e2ad07881c68e44ac99cb9ef09fef2637d811c10"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2176,7 +2176,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ca89700dfe9f29dcd823bb10861807f9d75e0634"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#e2ad07881c68e44ac99cb9ef09fef2637d811c10"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2200,7 +2200,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ca89700dfe9f29dcd823bb10861807f9d75e0634"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#e2ad07881c68e44ac99cb9ef09fef2637d811c10"
 dependencies = [
  "base64 0.22.1",
  "blake3",
@@ -2438,7 +2438,7 @@ checksum = "bc838d2a56b5b1a6c25f55575dfc605fabb63bb2365f6c2353ef9159aa69e4a5"
 dependencies = [
  "cfg-if",
  "libc",
- "redox_syscall 0.5.16",
+ "redox_syscall 0.5.17",
  "smallvec",
  "windows-targets 0.52.6",
 ]
@@ -2664,7 +2664,7 @@ dependencies = [
  "quinn-proto",
  "quinn-udp",
  "rustc-hash",
- "rustls 0.23.30",
+ "rustls 0.23.29",
  "socket2 0.5.10",
  "thiserror 2.0.12",
  "tokio",
@@ -2684,7 +2684,7 @@ dependencies = [
  "rand 0.9.2",
  "ring 0.17.14",
  "rustc-hash",
- "rustls 0.23.30",
+ "rustls 0.23.29",
  "rustls-pki-types",
  "slab",
  "thiserror 2.0.12",
@@ -2816,9 +2816,9 @@ dependencies = [
 
 [[package]]
 name = "redox_syscall"
-version = "0.5.16"
+version = "0.5.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7251471db004e509f4e75a62cca9435365b5ec7bcdff530d612ac7c87c44a792"
+checksum = "5407465600fb0548f1442edf71dd20683c6ed326200ace4b1ef0763521bb3b77"
 dependencies = [
  "bitflags 2.9.1",
 ]
@@ -2897,7 +2897,7 @@ dependencies = [
  "percent-encoding",
  "pin-project-lite",
  "quinn",
- "rustls 0.23.30",
+ "rustls 0.23.29",
  "rustls-pki-types",
  "serde",
  "serde_json",
@@ -2971,7 +2971,7 @@ dependencies = [
 [[package]]
 name = "ruma"
 version = "0.12.5"
-source = "git+https://github.com/ruma/ruma?rev=de19ebaf71af620eb17abaefd92e43153f9d041d#de19ebaf71af620eb17abaefd92e43153f9d041d"
+source = "git+https://github.com/ruma/ruma?rev=184d4f85b201bc1e932a8344d78575e826f31efa#184d4f85b201bc1e932a8344d78575e826f31efa"
 dependencies = [
  "assign",
  "js_int",
@@ -2987,7 +2987,7 @@ dependencies = [
 [[package]]
 name = "ruma-client-api"
 version = "0.20.4"
-source = "git+https://github.com/ruma/ruma?rev=de19ebaf71af620eb17abaefd92e43153f9d041d#de19ebaf71af620eb17abaefd92e43153f9d041d"
+source = "git+https://github.com/ruma/ruma?rev=184d4f85b201bc1e932a8344d78575e826f31efa#184d4f85b201bc1e932a8344d78575e826f31efa"
 dependencies = [
  "as_variant",
  "assign",
@@ -3010,7 +3010,7 @@ dependencies = [
 [[package]]
 name = "ruma-common"
 version = "0.15.4"
-source = "git+https://github.com/ruma/ruma?rev=de19ebaf71af620eb17abaefd92e43153f9d041d#de19ebaf71af620eb17abaefd92e43153f9d041d"
+source = "git+https://github.com/ruma/ruma?rev=184d4f85b201bc1e932a8344d78575e826f31efa#184d4f85b201bc1e932a8344d78575e826f31efa"
 dependencies = [
  "as_variant",
  "base64 0.22.1",
@@ -3043,7 +3043,7 @@ dependencies = [
 [[package]]
 name = "ruma-events"
 version = "0.30.4"
-source = "git+https://github.com/ruma/ruma?rev=de19ebaf71af620eb17abaefd92e43153f9d041d#de19ebaf71af620eb17abaefd92e43153f9d041d"
+source = "git+https://github.com/ruma/ruma?rev=184d4f85b201bc1e932a8344d78575e826f31efa#184d4f85b201bc1e932a8344d78575e826f31efa"
 dependencies = [
  "as_variant",
  "indexmap 2.10.0",
@@ -3067,7 +3067,7 @@ dependencies = [
 [[package]]
 name = "ruma-federation-api"
 version = "0.11.2"
-source = "git+https://github.com/ruma/ruma?rev=de19ebaf71af620eb17abaefd92e43153f9d041d#de19ebaf71af620eb17abaefd92e43153f9d041d"
+source = "git+https://github.com/ruma/ruma?rev=184d4f85b201bc1e932a8344d78575e826f31efa#184d4f85b201bc1e932a8344d78575e826f31efa"
 dependencies = [
  "headers",
  "http",
@@ -3085,7 +3085,7 @@ dependencies = [
 [[package]]
 name = "ruma-html"
 version = "0.4.1"
-source = "git+https://github.com/ruma/ruma?rev=de19ebaf71af620eb17abaefd92e43153f9d041d#de19ebaf71af620eb17abaefd92e43153f9d041d"
+source = "git+https://github.com/ruma/ruma?rev=184d4f85b201bc1e932a8344d78575e826f31efa#184d4f85b201bc1e932a8344d78575e826f31efa"
 dependencies = [
  "as_variant",
  "html5ever",
@@ -3096,7 +3096,7 @@ dependencies = [
 [[package]]
 name = "ruma-identifiers-validation"
 version = "0.10.1"
-source = "git+https://github.com/ruma/ruma?rev=de19ebaf71af620eb17abaefd92e43153f9d041d#de19ebaf71af620eb17abaefd92e43153f9d041d"
+source = "git+https://github.com/ruma/ruma?rev=184d4f85b201bc1e932a8344d78575e826f31efa#184d4f85b201bc1e932a8344d78575e826f31efa"
 dependencies = [
  "js_int",
  "thiserror 2.0.12",
@@ -3105,7 +3105,7 @@ dependencies = [
 [[package]]
 name = "ruma-macros"
 version = "0.15.2"
-source = "git+https://github.com/ruma/ruma?rev=de19ebaf71af620eb17abaefd92e43153f9d041d#de19ebaf71af620eb17abaefd92e43153f9d041d"
+source = "git+https://github.com/ruma/ruma?rev=184d4f85b201bc1e932a8344d78575e826f31efa#184d4f85b201bc1e932a8344d78575e826f31efa"
 dependencies = [
  "cfg-if",
  "proc-macro-crate",
@@ -3179,9 +3179,9 @@ dependencies = [
 
 [[package]]
 name = "rustls"
-version = "0.23.30"
+version = "0.23.29"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "069a8df149a16b1a12dcc31497c3396a173844be3cac4bd40c9e7671fef96671"
+checksum = "2491382039b29b9b11ff08b76ff6c97cf287671dbb74f0be44bda389fffe9bd1"
 dependencies = [
  "once_cell",
  "ring 0.17.14",
@@ -3917,7 +3917,7 @@ version = "0.26.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8e727b36a1a0e8b74c376ac2211e40c2c8af09fb4013c60d910495810f008e9b"
 dependencies = [
- "rustls 0.23.30",
+ "rustls 0.23.29",
  "tokio",
 ]
 
@@ -4450,7 +4450,7 @@ version = "1.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6994d13118ab492c3c80c1f81928718159254c53c472bf9ce36f8dae4add02a7"
 dependencies = [
- "redox_syscall 0.5.16",
+ "redox_syscall 0.5.17",
  "wasite",
  "web-sys",
 ]
@@ -4566,7 +4566,7 @@ version = "0.60.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f2f500e4d28234f72040990ec9d39e3a6b950f9f22d3dba18416c35882612bcb"
 dependencies = [
- "windows-targets 0.53.2",
+ "windows-targets 0.53.3",
 ]
 
 [[package]]
@@ -4587,10 +4587,11 @@ dependencies = [
 
 [[package]]
 name = "windows-targets"
-version = "0.53.2"
+version = "0.53.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c66f69fcc9ce11da9966ddb31a40968cad001c5bedeb5c2b82ede4253ab48aef"
+checksum = "d5fe6031c4041849d7c496a8ded650796e7b6ecc19df1a431c1a363342e5dc91"
 dependencies = [
+ "windows-link",
  "windows_aarch64_gnullvm 0.53.0",
  "windows_aarch64_msvc 0.53.0",
  "windows_i686_gnu 0.53.0",
