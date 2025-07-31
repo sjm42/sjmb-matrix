@@ -293,9 +293,9 @@ checksum = "c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8"
 
 [[package]]
 name = "backon"
-version = "1.5.1"
+version = "1.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "302eaff5357a264a2c42f127ecb8bac761cf99749fc3dc95677e2743991f99e7"
+checksum = "592277618714fbcecda9a02ba7a8781f319d26532a88553bbacc77ba5d2b3a8d"
 dependencies = [
  "fastrand",
  "gloo-timers",
@@ -847,7 +847,7 @@ checksum = "e01a3366d27ee9890022452ee61b2b63a67e6f13f58900b651ff5665f0bb1fab"
 dependencies = [
  "libc",
  "option-ext",
- "redox_users 0.5.0",
+ "redox_users 0.5.1",
  "windows-sys 0.60.2",
 ]
 
@@ -1841,12 +1841,13 @@ checksum = "1171693293099992e19cddea4e8b849964e9846f4acee11b3948bcc337be8776"
 
 [[package]]
 name = "libredox"
-version = "0.1.8"
+version = "0.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "360e552c93fa0e8152ab463bc4c4837fce76a225df11dfaeea66c313de5e61f7"
+checksum = "391290121bad3d37fbddad76d8f5d1c1c314cfc646d143d7e07a3086ddff0ce3"
 dependencies = [
  "bitflags 2.9.1",
  "libc",
+ "redox_syscall 0.5.17",
 ]
 
 [[package]]
@@ -2003,7 +2004,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#8091094bbcd1e3f4867d8ee803a634219f325a78"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#540a11e7a8c5353f5566c6e6e76f23b92338cb39"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -2058,7 +2059,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#8091094bbcd1e3f4867d8ee803a634219f325a78"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#540a11e7a8c5353f5566c6e6e76f23b92338cb39"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2085,7 +2086,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#8091094bbcd1e3f4867d8ee803a634219f325a78"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#540a11e7a8c5353f5566c6e6e76f23b92338cb39"
 dependencies = [
  "eyeball-im",
  "futures-core",
@@ -2108,7 +2109,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#8091094bbcd1e3f4867d8ee803a634219f325a78"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#540a11e7a8c5353f5566c6e6e76f23b92338cb39"
 dependencies = [
  "aes",
  "aquamarine",
@@ -2148,7 +2149,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#8091094bbcd1e3f4867d8ee803a634219f325a78"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#540a11e7a8c5353f5566c6e6e76f23b92338cb39"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2176,7 +2177,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#8091094bbcd1e3f4867d8ee803a634219f325a78"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#540a11e7a8c5353f5566c6e6e76f23b92338cb39"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2200,7 +2201,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.13.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#8091094bbcd1e3f4867d8ee803a634219f325a78"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#540a11e7a8c5353f5566c6e6e76f23b92338cb39"
 dependencies = [
  "base64 0.22.1",
  "blake3",
@@ -2836,9 +2837,9 @@ dependencies = [
 
 [[package]]
 name = "redox_users"
-version = "0.5.0"
+version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dd6f9d3d47bdd2ad6945c5015a226ec6155d0bcdfd8f7cd29f86b71f8de99d2b"
+checksum = "78eaea1f52c56d57821be178b2d47e09ff26481a6042e8e042fcb0ced068b470"
 dependencies = [
  "getrandom 0.2.16",
  "libredox",
