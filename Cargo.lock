@@ -458,9 +458,9 @@ dependencies = [
 
 [[package]]
 name = "cc"
-version = "1.2.35"
+version = "1.2.36"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "590f9024a68a8c40351881787f1934dc11afd69090f5edb6831464694d836ea3"
+checksum = "5252b3d2648e5eedbc1a6f501e3c795e07025c1e93bbf8bbdd6eef7f447a6d54"
 dependencies = [
  "find-msvc-tools",
  "shlex",
@@ -1029,9 +1029,9 @@ checksum = "28dea519a9695b9977216879a3ebfddf92f1c08c05d984f8996aecd6ecdc811d"
 
 [[package]]
 name = "find-msvc-tools"
-version = "0.1.0"
+version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e178e4fba8a2726903f6ba98a6d221e76f9c12c650d5dc0e6afdc50677b49650"
+checksum = "7fd99930f64d146689264c637b5af2f0233a933bef0d8570e2526bf9e083192d"
 
 [[package]]
 name = "flate2"
@@ -1207,7 +1207,7 @@ dependencies = [
  "js-sys",
  "libc",
  "r-efi",
- "wasi 0.14.3+wasi-0.2.4",
+ "wasi 0.14.4+wasi-0.2.4",
  "wasm-bindgen",
 ]
 
@@ -2034,7 +2034,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.14.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#d25632507d84c737def073aab81a0d9ec2cada1a"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#412b7bbc7b49ece407aaa87b61776e6f4935b39f"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -2090,7 +2090,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.14.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#d25632507d84c737def073aab81a0d9ec2cada1a"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#412b7bbc7b49ece407aaa87b61776e6f4935b39f"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2117,7 +2117,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.14.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#d25632507d84c737def073aab81a0d9ec2cada1a"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#412b7bbc7b49ece407aaa87b61776e6f4935b39f"
 dependencies = [
  "eyeball-im",
  "futures-core",
@@ -2140,7 +2140,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.14.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#d25632507d84c737def073aab81a0d9ec2cada1a"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#412b7bbc7b49ece407aaa87b61776e6f4935b39f"
 dependencies = [
  "aes",
  "aquamarine",
@@ -2180,7 +2180,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.14.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#d25632507d84c737def073aab81a0d9ec2cada1a"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#412b7bbc7b49ece407aaa87b61776e6f4935b39f"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -2209,7 +2209,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.14.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#d25632507d84c737def073aab81a0d9ec2cada1a"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#412b7bbc7b49ece407aaa87b61776e6f4935b39f"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2233,7 +2233,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.14.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#d25632507d84c737def073aab81a0d9ec2cada1a"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#412b7bbc7b49ece407aaa87b61776e6f4935b39f"
 dependencies = [
  "base64 0.22.1",
  "blake3",
@@ -4139,9 +4139,9 @@ checksum = "1dccffe3ce07af9386bfd29e80c0ab1a8205a2fc34e4bcd40364df902cfa8f3f"
 
 [[package]]
 name = "typewit"
-version = "1.14.0"
+version = "1.14.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8e75c3b0d61c1d0e12b4b0fd5111f377c918e0227e9eb67434dcf9e6084646c6"
+checksum = "4c98488b93df24b7c794d6a58c4198d7a2abde676324beaca84f7fb5b39c0811"
 dependencies = [
  "typewit_proc_macros",
 ]
@@ -4341,9 +4341,9 @@ checksum = "ccf3ec651a847eb01de73ccad15eb7d99f80485de043efb2f370cd654f4ea44b"
 
 [[package]]
 name = "wasi"
-version = "0.14.3+wasi-0.2.4"
+version = "0.14.4+wasi-0.2.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6a51ae83037bdd272a9e28ce236db8c07016dd0d50c27038b3f407533c030c95"
+checksum = "88a5f4a424faf49c3c2c344f166f0662341d470ea185e939657aaff130f0ec4a"
 dependencies = [
  "wit-bindgen",
 ]
@@ -4767,9 +4767,9 @@ dependencies = [
 
 [[package]]
 name = "wit-bindgen"
-version = "0.45.0"
+version = "0.45.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "052283831dbae3d879dc7f51f3d92703a316ca49f91540417d38591826127814"
+checksum = "5c573471f125075647d03df72e026074b7203790d41351cd6edc96f46bcccd36"
 
 [[package]]
 name = "writeable"
@@ -4821,18 +4821,18 @@ dependencies = [
 
 [[package]]
 name = "zerocopy"
-version = "0.8.26"
+version = "0.8.27"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1039dd0d3c310cf05de012d8a39ff557cb0d23087fd44cad61df08fc31907a2f"
+checksum = "0894878a5fa3edfd6da3f88c4805f4c8558e2b996227a3d864f47fe11e38282c"
 dependencies = [
  "zerocopy-derive",
 ]
 
 [[package]]
 name = "zerocopy-derive"
-version = "0.8.26"
+version = "0.8.27"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9ecf5b4cc5364572d7f4c329661bcc82724222973f2cab6f050a4e5c22f75181"
+checksum = "88d2b8d9c68ad2b9e4340d7832716a4d21a22a1154777ad56ea55c51a9cf3831"
 dependencies = [
  "proc-macro2",
  "quote",
