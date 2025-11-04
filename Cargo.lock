@@ -1505,7 +1505,7 @@ dependencies = [
  "http",
  "hyper",
  "hyper-util",
- "rustls 0.23.34",
+ "rustls 0.23.35",
  "rustls-pki-types",
  "tokio",
  "tokio-rustls 0.26.4",
@@ -2047,19 +2047,19 @@ dependencies = [
 
 [[package]]
 name = "matrix-pickle"
-version = "0.2.1"
+version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4e2551de3bba2cc65b52dc6b268df6114011fe118ac24870fbcf1b35537bd721"
+checksum = "6c34e6db65145740459f2ca56623b40cd4e6000ffae2a7d91515fa82aa935dbf"
 dependencies = [
  "matrix-pickle-derive",
- "thiserror 1.0.69",
+ "thiserror 2.0.17",
 ]
 
 [[package]]
 name = "matrix-pickle-derive"
-version = "0.2.1"
+version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f75de44c3120d78e978adbcf6d453b20ba011f3c46363e52d1dbbc72f545e9fb"
+checksum = "a962fc9981f823f6555416dcb2ae9ae67ca412d767ee21ecab5150113ee6285b"
 dependencies = [
  "proc-macro-crate",
  "proc-macro-error2",
@@ -2071,7 +2071,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.14.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ea07d0199abb21d6d9dc1603f6bdafdfc9d5a3c8"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#81ff96d5695a024a51bc96b1557cee0598118031"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -2127,7 +2127,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.14.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ea07d0199abb21d6d9dc1603f6bdafdfc9d5a3c8"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#81ff96d5695a024a51bc96b1557cee0598118031"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2154,7 +2154,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.14.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ea07d0199abb21d6d9dc1603f6bdafdfc9d5a3c8"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#81ff96d5695a024a51bc96b1557cee0598118031"
 dependencies = [
  "eyeball-im",
  "futures-core",
@@ -2177,7 +2177,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.14.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ea07d0199abb21d6d9dc1603f6bdafdfc9d5a3c8"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#81ff96d5695a024a51bc96b1557cee0598118031"
 dependencies = [
  "aes",
  "aquamarine",
@@ -2217,7 +2217,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.14.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ea07d0199abb21d6d9dc1603f6bdafdfc9d5a3c8"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#81ff96d5695a024a51bc96b1557cee0598118031"
 dependencies = [
  "async-trait",
  "base64 0.22.1",
@@ -2247,7 +2247,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.14.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ea07d0199abb21d6d9dc1603f6bdafdfc9d5a3c8"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#81ff96d5695a024a51bc96b1557cee0598118031"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2272,7 +2272,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.14.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#ea07d0199abb21d6d9dc1603f6bdafdfc9d5a3c8"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#81ff96d5695a024a51bc96b1557cee0598118031"
 dependencies = [
  "base64 0.22.1",
  "blake3",
@@ -2721,7 +2721,7 @@ dependencies = [
  "quinn-proto",
  "quinn-udp",
  "rustc-hash",
- "rustls 0.23.34",
+ "rustls 0.23.35",
  "socket2",
  "thiserror 2.0.17",
  "tokio",
@@ -2741,7 +2741,7 @@ dependencies = [
  "rand 0.9.2",
  "ring 0.17.14",
  "rustc-hash",
- "rustls 0.23.34",
+ "rustls 0.23.35",
  "rustls-pki-types",
  "slab",
  "thiserror 2.0.17",
@@ -2954,7 +2954,7 @@ dependencies = [
  "percent-encoding",
  "pin-project-lite",
  "quinn",
- "rustls 0.23.34",
+ "rustls 0.23.35",
  "rustls-pki-types",
  "serde",
  "serde_json",
@@ -3249,9 +3249,9 @@ dependencies = [
 
 [[package]]
 name = "rustls"
-version = "0.23.34"
+version = "0.23.35"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6a9586e9ee2b4f8fab52a0048ca7334d7024eef48e2cb9407e3497bb7cab7fa7"
+checksum = "533f54bc6a7d4f647e46ad909549eda97bf5afc1585190ef692b4286b198bd8f"
 dependencies = [
  "once_cell",
  "ring 0.17.14",
@@ -4007,7 +4007,7 @@ version = "0.26.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1729aa945f29d91ba541258c8df89027d5792d85a8841fb65e8bf0f4ede4ef61"
 dependencies = [
- "rustls 0.23.34",
+ "rustls 0.23.35",
  "tokio",
 ]
 
