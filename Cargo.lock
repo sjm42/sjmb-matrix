@@ -1707,45 +1707,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "indexed_db_futures"
-version = "0.6.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "69ff41758cbd104e91033bb53bc449bec7eea65652960c81eddf3fc146ecea19"
-dependencies = [
- "accessory",
- "cfg-if",
- "delegate-display",
- "derive_more 2.1.0",
- "fancy_constructor",
- "futures-core",
- "indexed_db_futures_macros_internal",
- "js-sys",
- "sealed",
- "serde",
- "serde-wasm-bindgen",
- "smallvec",
- "thiserror 2.0.17",
- "tokio",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "wasm_evt_listener",
- "web-sys",
- "web-time",
-]
-
-[[package]]
-name = "indexed_db_futures_macros_internal"
-version = "1.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "caeba94923b68f254abef921cea7e7698bf4675fdd89d7c58bf1ed885b49a27d"
-dependencies = [
- "macroific",
- "proc-macro2",
- "quote",
- "syn 2.0.111",
-]
-
-[[package]]
 name = "indexmap"
 version = "1.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2060,7 +2021,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.15.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b4d7881a5869156e1db7fc0e2af109da5405d85d"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#acc66266c70daccf524f53072bdd081b2d9e1544"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -2116,7 +2077,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.15.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b4d7881a5869156e1db7fc0e2af109da5405d85d"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#acc66266c70daccf524f53072bdd081b2d9e1544"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2143,7 +2104,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.15.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b4d7881a5869156e1db7fc0e2af109da5405d85d"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#acc66266c70daccf524f53072bdd081b2d9e1544"
 dependencies = [
  "eyeball-im",
  "futures-core",
@@ -2166,7 +2127,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.15.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b4d7881a5869156e1db7fc0e2af109da5405d85d"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#acc66266c70daccf524f53072bdd081b2d9e1544"
 dependencies = [
  "aes",
  "aquamarine",
@@ -2206,7 +2167,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.15.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b4d7881a5869156e1db7fc0e2af109da5405d85d"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#acc66266c70daccf524f53072bdd081b2d9e1544"
 dependencies = [
  "async-trait",
  "base64 0.22.1",
@@ -2214,11 +2175,11 @@ dependencies = [
  "getrandom 0.2.16",
  "gloo-utils",
  "hkdf",
- "indexed_db_futures",
  "js-sys",
  "matrix-sdk-base",
  "matrix-sdk-crypto",
  "matrix-sdk-store-encryption",
+ "matrix_indexed_db_futures",
  "rmp-serde",
  "ruma",
  "serde",
@@ -2237,7 +2198,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.15.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b4d7881a5869156e1db7fc0e2af109da5405d85d"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#acc66266c70daccf524f53072bdd081b2d9e1544"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2264,7 +2225,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.15.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#b4d7881a5869156e1db7fc0e2af109da5405d85d"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#acc66266c70daccf524f53072bdd081b2d9e1544"
 dependencies = [
  "base64 0.22.1",
  "blake3",
@@ -2279,6 +2240,45 @@ dependencies = [
  "sha2",
  "thiserror 2.0.17",
  "zeroize",
+]
+
+[[package]]
+name = "matrix_indexed_db_futures"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "245ff6a224b4df7b0c90dda2dd5a6eb46112708d49e8bdd8b007fccb09fea8e4"
+dependencies = [
+ "accessory",
+ "cfg-if",
+ "delegate-display",
+ "derive_more 2.1.0",
+ "fancy_constructor",
+ "futures-core",
+ "js-sys",
+ "matrix_indexed_db_futures_macros_internal",
+ "sealed",
+ "serde",
+ "serde-wasm-bindgen",
+ "smallvec",
+ "thiserror 2.0.17",
+ "tokio",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "wasm_evt_listener",
+ "web-sys",
+ "web-time",
+]
+
+[[package]]
+name = "matrix_indexed_db_futures_macros_internal"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b428aee5c0fe9e5babd29e99d289b7f64718c444989aac0442d1fd6d3e3f66d1"
+dependencies = [
+ "macroific",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.111",
 ]
 
 [[package]]
