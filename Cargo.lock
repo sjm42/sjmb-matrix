@@ -2849,15 +2849,15 @@ dependencies = [
 
 [[package]]
 name = "readlock"
-version = "0.1.9"
+version = "0.1.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "188bbae3aa4739bd264e9204da5919b2c91dd87dcce5049cf04bdf6aa17c5012"
+checksum = "6961798ceb493ecff2e50d3d9a6a9108124ee8298f81484d0ff623b6c32469e9"
 
 [[package]]
 name = "readlock-tokio"
-version = "0.1.4"
+version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "29b1800712c0d75de4b0bda5483d46eaf8df757b81df5ca2bde53d5ac2e2c5b2"
+checksum = "5f78bdff9b59a104cb171ceecc310c25e60ca02d7a95895afff559edd711fa1b"
 dependencies = [
  "tokio",
 ]
