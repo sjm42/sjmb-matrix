@@ -749,10 +749,6 @@ name = "decancer"
 version = "3.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a9244323129647178bf41ac861a2cdb9d9c81b9b09d3d0d1de9cd302b33b8a1d"
-dependencies = [
- "lazy_static",
- "regex",
-]
 
 [[package]]
 name = "delegate-display"
@@ -2026,7 +2022,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.16.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#770808701911d51da26763c3d69856b73c03d5ca"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2ff33cd354603315ce91216396f1d74044669753"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -2083,7 +2079,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.16.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#770808701911d51da26763c3d69856b73c03d5ca"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2ff33cd354603315ce91216396f1d74044669753"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2110,7 +2106,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.16.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#770808701911d51da26763c3d69856b73c03d5ca"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2ff33cd354603315ce91216396f1d74044669753"
 dependencies = [
  "eyeball-im",
  "futures-core",
@@ -2133,7 +2129,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.16.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#770808701911d51da26763c3d69856b73c03d5ca"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2ff33cd354603315ce91216396f1d74044669753"
 dependencies = [
  "aes",
  "aquamarine",
@@ -2173,7 +2169,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.16.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#770808701911d51da26763c3d69856b73c03d5ca"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2ff33cd354603315ce91216396f1d74044669753"
 dependencies = [
  "async-trait",
  "base64 0.22.1",
@@ -2204,7 +2200,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.16.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#770808701911d51da26763c3d69856b73c03d5ca"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2ff33cd354603315ce91216396f1d74044669753"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2231,7 +2227,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.16.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#770808701911d51da26763c3d69856b73c03d5ca"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2ff33cd354603315ce91216396f1d74044669753"
 dependencies = [
  "base64 0.22.1",
  "blake3",
@@ -2512,7 +2508,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f8ed6a7761f76e3b9f92dfb0a60a6a6477c61024b775147ff0973a02653abaf2"
 dependencies = [
  "digest",
- "hmac",
 ]
 
 [[package]]
@@ -3843,7 +3838,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "655da9c7eb6305c55742045d5a8d2037996d61d8de95806335c7c86ce0f82e9c"
 dependencies = [
  "fastrand",
- "getrandom 0.3.4",
  "once_cell",
  "rustix",
  "windows-sys 0.61.2",
@@ -3911,9 +3905,9 @@ dependencies = [
 
 [[package]]
 name = "time"
-version = "0.3.46"
+version = "0.3.47"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9da98b7d9b7dad93488a84b8248efc35352b0b2657397d4167e7ad67e5d535e5"
+checksum = "743bd48c283afc0388f9b8827b976905fb217ad9e647fae3a379a9283c4def2c"
 dependencies = [
  "deranged",
  "itoa",
@@ -3932,9 +3926,9 @@ checksum = "7694e1cfe791f8d31026952abf09c69ca6f6fa4e1a1229e18988f06a04a12dca"
 
 [[package]]
 name = "time-macros"
-version = "0.2.26"
+version = "0.2.27"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "78cc610bac2dcee56805c99642447d4c5dbde4d01f752ffea0199aee1f601dc4"
+checksum = "2e70e4c5a0e0a8a4823ad65dfe1a6930e4f4d756dcd9dd7939022b5e8c501215"
 dependencies = [
  "num-conv",
  "time-core",
