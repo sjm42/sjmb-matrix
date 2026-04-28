@@ -25,8 +25,8 @@ pub struct UrlCtx {
 }
 
 pub async fn start_db<S>(db_url: S) -> anyhow::Result<DbCtx>
-    where
-        S: AsRef<str>,
+where
+    S: AsRef<str>,
 {
     let dbc = sqlx::PgPool::connect(db_url.as_ref()).await?;
     let db = DbCtx {

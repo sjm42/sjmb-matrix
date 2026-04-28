@@ -16,9 +16,9 @@ pub struct OptsCommon {
     pub trace: bool,
 
     #[arg(
-    short,
-    long,
-    default_value = "$HOME/sjmb_matrix/config/sjmb_matrix.json"
+        short,
+        long,
+        default_value = "$HOME/sjmb_matrix/config/sjmb_matrix.json"
     )]
     pub bot_config: String,
 }
@@ -47,10 +47,7 @@ impl OptsCommon {
             .with_target(false)
             .init();
 
-        info!(
-            "Starting up {name} v{}...",
-            env!("CARGO_PKG_VERSION")
-        );
+        info!("Starting up {name} v{}...", env!("CARGO_PKG_VERSION"));
         debug!("Git branch: {}", env!("GIT_BRANCH"));
         debug!("Git commit: {}", env!("GIT_COMMIT"));
         debug!("Source timestamp: {}", env!("SOURCE_TIMESTAMP"));

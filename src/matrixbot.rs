@@ -6,10 +6,10 @@ use ::serde::{Deserialize, Serialize};
 use anyhow::anyhow;
 use chrono::*;
 use matrix_sdk::{
-    Client,
+    Client, RoomState,
     config::SyncSettings,
     room::Room,
-    RoomState, ruma::events::room::message::{MessageType, OriginalSyncRoomMessageEvent},
+    ruma::events::room::message::{MessageType, OriginalSyncRoomMessageEvent},
 };
 use once_cell::sync::OnceCell;
 use regex::Regex;
@@ -138,7 +138,7 @@ async fn handle_msg(
         Ok(Some(m)) => m.name().to_string(),
         _ => "UNKNOWN".into(),
     }
-        .ws_convert();
+    .ws_convert();
 
     let room_name = room.name().unwrap_or_else(|| "NONE".to_string());
     let room_name = room_name.ws_convert();
