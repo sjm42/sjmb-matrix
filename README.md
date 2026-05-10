@@ -56,6 +56,8 @@ The bot currently uses password login:
 4. Accept joins as needed from the bot account or homeserver UI.
 5. Run the bot and confirm it logs incoming text messages at `INFO` level.
 
+By default the bot is built without Matrix end-to-end encryption support. This keeps the runtime focused on normal room message sync and avoids starting Matrix SDK key-backup tasks that require a configured Matrix recovery/backup key. If encrypted-room support is needed, build with `--features e2e-encryption` and configure recovery for the bot account.
+
 ## Database expectations
 
 The code expects an existing PostgreSQL database with these tables:
@@ -85,7 +87,7 @@ Room labels are stored as `matrix-{room_name}` after whitespace is converted to 
 - `-t`, `--trace`: `TRACE` logs.
 - `-b`, `--bot-config <PATH>`: config JSON path. Environment expansion is supported, for example `$HOME/...`.
 
-If none of `verbose`, `debug`, or `trace` are set, log level defaults to `ERROR`.
+If none of `verbose`, `debug`, or `trace` are set, log level defaults to `ERROR`. The built-in filter applies the selected level to `sjmb_matrix` and keeps dependency logs at `WARN` when verbose logging is enabled. Set `RUST_LOG` to override this.
 
 ## Program internals
 

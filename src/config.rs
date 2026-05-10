@@ -3,6 +3,7 @@
 use std::env;
 
 use clap::Parser;
+use tracing_subscriber::EnvFilter;
 
 use crate::*;
 
@@ -41,9 +42,23 @@ impl OptsCommon {
         }
     }
 
+    fn get_log_filter(&self) -> String {
+        let app_level = self.get_loglevel().as_str().to_ascii_lowercase();
+        let dependency_level = if self.verbose || self.debug || self.trace {
+            "warn"
+        } else {
+            "error"
+        };
+
+        format!("{dependency_level},sjmb_matrix={app_level}")
+    }
+
     pub fn start_pgm(&self, name: &str) {
+        let filter = EnvFilter::try_from_default_env()
+            .unwrap_or_else(|_| EnvFilter::new(self.get_log_filter()));
+
         tracing_subscriber::fmt()
-            .with_max_level(self.get_loglevel())
+            .with_env_filter(filter)
             .with_target(false)
             .init();
 
