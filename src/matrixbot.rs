@@ -13,7 +13,7 @@ use matrix_sdk::{
 };
 use once_cell::sync::OnceCell;
 use regex::Regex;
-use tokio::sync::mpsc::{self, UnboundedReceiver, UnboundedSender};
+use tokio::sync::mpsc::{self, Receiver, Sender};
 
 use crate::*;
 
@@ -35,7 +35,15 @@ pub struct Bot {
 #[derive(Debug)]
 struct BotState {
     bot: Arc<Bot>,
-    tx: UnboundedSender<(Arc<Bot>, OriginalSyncRoomMessageEvent, Room, Client)>,
+    db: DbCtx,
+    tx: Sender<QueuedMessage>,
+}
+
+struct QueuedMessage {
+    bot: Arc<Bot>,
+    db: DbCtx,
+    event: OriginalSyncRoomMessageEvent,
+    room: Room,
 }
 
 static MY_BOT: OnceCell<BotState> = OnceCell::new();
@@ -79,13 +87,13 @@ impl Bot {
         let mut handles = vec![];
         let me = Arc::new(self);
         let bot = me.clone();
-        let (tx, rx) =
-            mpsc::unbounded_channel::<(Arc<Bot>, OriginalSyncRoomMessageEvent, Room, Client)>();
+        let db = start_db(&bot.url_log_db).await?;
+        let (tx, rx) = mpsc::channel::<QueuedMessage>(MESSAGE_QUEUE_BOUND);
 
         handles.push(tokio::spawn(async move { handle_messages(rx).await }));
 
         bot.client.as_ref().unwrap().add_event_handler(handle_event);
-        MY_BOT.set(BotState { bot, tx }).ok();
+        MY_BOT.set(BotState { bot, db, tx }).ok();
         MY_BOT
             .get()
             .as_ref()
@@ -102,17 +110,27 @@ impl Bot {
     }
 }
 
-async fn handle_event(ev: OriginalSyncRoomMessageEvent, room: Room, client: Client) {
+async fn handle_event(ev: OriginalSyncRoomMessageEvent, room: Room, _client: Client) {
     let bot = MY_BOT.get().unwrap();
-    bot.tx.send((bot.bot.clone(), ev, room, client)).unwrap();
+    if bot
+        .tx
+        .send(QueuedMessage {
+            bot: bot.bot.clone(),
+            db: bot.db.clone(),
+            event: ev,
+            room,
+        })
+        .await
+        .is_err()
+    {
+        error!("Matrix msg queue receiver is closed");
+    }
 }
 
-async fn handle_messages(
-    mut rx: UnboundedReceiver<(Arc<Bot>, OriginalSyncRoomMessageEvent, Room, Client)>,
-) {
-    while let Some((bot, event, room, _client)) = rx.recv().await {
+async fn handle_messages(mut rx: Receiver<QueuedMessage>) {
+    while let Some(queued) = rx.recv().await {
         // debug!("Got message: {msg:#?}");
-        if let Err(e) = handle_msg(bot, event, room).await {
+        if let Err(e) = handle_msg(queued.bot, queued.db, queued.event, queued.room).await {
             error!("Matrix msg handling failed: {e:?}");
         }
     }
@@ -120,6 +138,7 @@ async fn handle_messages(
 
 async fn handle_msg(
     bot: Arc<Bot>,
+    db: DbCtx,
     event: OriginalSyncRoomMessageEvent,
     room: Room,
 ) -> anyhow::Result<()> {
@@ -151,14 +170,17 @@ async fn handle_msg(
         .ok_or_else(|| anyhow!("No url_regex_re"))?
         .captures_iter(text)
     {
-        let url_s = url_cap[1].to_string();
+        let Some(url_match) = url_cap.get(1) else {
+            error!("Configured url_regex matched without capture group 1");
+            continue;
+        };
+        let url_s = url_match.as_str().to_string();
         info!("*** on {room_name} detected url: {url_s}");
-        let mut dbc = start_db(&bot.url_log_db).await?;
 
         info!(
             "Urllog: inserted {} row(s)",
             db_add_url(
-                &mut dbc,
+                &db,
                 &UrlCtx {
                     ts: Utc::now().timestamp(),
                     chan: format!("matrix-{}", room_name),

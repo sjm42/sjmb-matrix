@@ -2,6 +2,8 @@
 
 pub use tracing::*;
 
+pub const MESSAGE_QUEUE_BOUND: usize = 256;
+
 pub use config::*;
 pub use db_util::*;
 pub use matrixbot::*;
