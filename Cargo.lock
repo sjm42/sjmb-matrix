@@ -1864,7 +1864,7 @@ dependencies = [
  "bitflags",
  "libc",
  "plain",
- "redox_syscall 0.8.0",
+ "redox_syscall 0.8.1",
 ]
 
 [[package]]
@@ -2011,7 +2011,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.17.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#c0fde339b92a801aae082d1515fcc8f6d7d5e259"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3a9fd9f790785d752de81671360129357433aa3f"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -2072,7 +2072,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.17.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#c0fde339b92a801aae082d1515fcc8f6d7d5e259"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3a9fd9f790785d752de81671360129357433aa3f"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2098,7 +2098,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.17.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#c0fde339b92a801aae082d1515fcc8f6d7d5e259"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3a9fd9f790785d752de81671360129357433aa3f"
 dependencies = [
  "eyeball-im",
  "futures-core",
@@ -2121,7 +2121,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.17.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#c0fde339b92a801aae082d1515fcc8f6d7d5e259"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3a9fd9f790785d752de81671360129357433aa3f"
 dependencies = [
  "aes",
  "aquamarine",
@@ -2161,7 +2161,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.17.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#c0fde339b92a801aae082d1515fcc8f6d7d5e259"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3a9fd9f790785d752de81671360129357433aa3f"
 dependencies = [
  "async-trait",
  "base64",
@@ -2192,7 +2192,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.17.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#c0fde339b92a801aae082d1515fcc8f6d7d5e259"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3a9fd9f790785d752de81671360129357433aa3f"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2219,7 +2219,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.17.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#c0fde339b92a801aae082d1515fcc8f6d7d5e259"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#3a9fd9f790785d752de81671360129357433aa3f"
 dependencies = [
  "base64",
  "blake3",
@@ -2845,9 +2845,9 @@ dependencies = [
 
 [[package]]
 name = "redox_syscall"
-version = "0.8.0"
+version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7c7591fa2c6b601dfcfe5f043f65a1c39fcdf50efefcd7f1572e538c1f4b398d"
+checksum = "5b44b894f2a6e36457d665d1e08c3866add6ed5e70050c1b4ba8a8ddedb02ce7"
 dependencies = [
  "bitflags",
 ]
@@ -2966,9 +2966,9 @@ dependencies = [
 
 [[package]]
 name = "ruma"
-version = "0.15.1"
+version = "0.16.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e420da038fd6529af5abffe21df50ba122e1b4a84db05c02ec05b5ab0a21a320"
+checksum = "ee4fe5bfacdb0e95e733da3b6c37d98edf46447a4a8e8dea824e0da266d8ad59"
 dependencies = [
  "assign",
  "js_int",
@@ -2982,9 +2982,9 @@ dependencies = [
 
 [[package]]
 name = "ruma-client-api"
-version = "0.23.1"
+version = "0.24.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3a793e13cc9c354385e4f635b5eca581abe76169a9fafd8c530918f9b19f8d63"
+checksum = "bf7ca43a888ca569168d7e3901f4dd14a777b860bb19f4c08e35414162eb261c"
 dependencies = [
  "as_variant",
  "assign",
@@ -3005,9 +3005,9 @@ dependencies = [
 
 [[package]]
 name = "ruma-common"
-version = "0.18.0"
+version = "0.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b69b11cb6ccf0e27c3c44c50e2e4799337921c66d4e6a490c084f18c5b4481ec"
+checksum = "2c3b4f00112791b490acce57df1ce3eb3f88899b045bebcff8a29f75369640cc"
 dependencies = [
  "as_variant",
  "base64",
@@ -3039,9 +3039,9 @@ dependencies = [
 
 [[package]]
 name = "ruma-events"
-version = "0.33.0"
+version = "0.34.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c96e3c39ab1b692086d02513fe0c24400d864060880bbd2716cb5544f5923131"
+checksum = "85d2f90830fc131691349b96a69ff53444eb6c3e8dc7869c77961b43cfaf3344"
 dependencies = [
  "as_variant",
  "indexmap",
@@ -3060,9 +3060,9 @@ dependencies = [
 
 [[package]]
 name = "ruma-html"
-version = "0.7.0"
+version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c1d81a7300e8623dbf5e6d73e700f0277fce6824849d77779ed997ec4e280b97"
+checksum = "48d33a944650f4bbd2188dd204d39dd87a9a1498f14b3a13252910c90ed7cd43"
 dependencies = [
  "as_variant",
  "html5ever",
@@ -3082,9 +3082,9 @@ dependencies = [
 
 [[package]]
 name = "ruma-macros"
-version = "0.18.0"
+version = "0.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6ac022103cd7829721476d3df79d16125be159e99527c8ddb27f125e7b674e5c"
+checksum = "c8cfb39eaa9b9fd389126ff941e060b496add5cbbfef559d80c46e571dda459c"
 dependencies = [
  "as_variant",
  "cfg-if",
@@ -3157,9 +3157,9 @@ dependencies = [
 
 [[package]]
 name = "rustls-native-certs"
-version = "0.8.3"
+version = "0.8.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "612460d5f7bea540c490b2b6395d8e34a953e52b491accd6c86c8164c5932a63"
+checksum = "dab5152771c58876a2146916e53e35057e1a4dfa2b9df0f0305b07f611fdea4d"
 dependencies = [
  "openssl-probe",
  "rustls-pki-types",
