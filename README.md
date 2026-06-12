@@ -21,6 +21,7 @@
 - `build.rs`: injects build metadata (`GIT_BRANCH`, `GIT_COMMIT`, `SOURCE_TIMESTAMP`, `RUSTC_VERSION`).
 - `config/sjmb_matrix.json`: example runtime config.
 - `install.sh`: copies the release binary to `$HOME/sjmb_matrix/bin`.
+- `rust-toolchain.toml`: selects the stable Rust toolchain for local builds.
 
 ## Runtime configuration
 
@@ -126,9 +127,12 @@ If none of `verbose`, `debug`, or `trace` are set, log level defaults to `ERROR`
 
 ## Building and installing
 
+This project tracks the stable Rust toolchain through `rust-toolchain.toml`.
+
 Build and verify:
 
 ```sh
+cargo fmt --check
 cargo test
 cargo clippy --all-targets -- -D warnings
 cargo build --release
@@ -141,6 +145,19 @@ Install the release binary with:
 ```
 
 The install script copies `target/release/sjmb_matrix` to `$HOME/sjmb_matrix/bin`.
+
+## Dependency maintenance
+
+Direct dependencies are listed explicitly in `Cargo.toml`. The Matrix SDK is intentionally pulled from the upstream git repository with `bundled-sqlite` enabled, so keep that storage feature unless system SQLite is deliberately reintroduced.
+
+Useful dependency checks:
+
+```sh
+cargo update --dry-run
+cargo outdated --root-deps-only
+```
+
+When updating `sqlx`, keep the Tokio runtime and Rustls TLS features enabled alongside PostgreSQL support.
 
 ## License
 
