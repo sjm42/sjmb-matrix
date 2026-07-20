@@ -228,7 +228,7 @@ checksum = "ae36dc4177970ef04fde5178d3e2429882def40e57a451f919c098f72baa6cec"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 3.0.0",
+ "syn 3.0.2",
 ]
 
 [[package]]
@@ -1036,9 +1036,9 @@ dependencies = [
 
 [[package]]
 name = "fastrand"
-version = "2.4.1"
+version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9f1f227452a390804cdb637b74a86990f2a7d7ba4b7d5693aac9b4dd6defd8d6"
+checksum = "da7c62ceae207dd37ea5b845da6a0696c799f85e97da1ab5b7910be3c1c80223"
 
 [[package]]
 name = "fiat-crypto"
@@ -1999,7 +1999,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.18.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#1dc0f01a5acb84febcf3629aa98b41d325cd2732"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#5226a7521dfd244496e475bf3767fffc2e7c6549"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -2055,7 +2055,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.18.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#1dc0f01a5acb84febcf3629aa98b41d325cd2732"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#5226a7521dfd244496e475bf3767fffc2e7c6549"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2081,7 +2081,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.18.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#1dc0f01a5acb84febcf3629aa98b41d325cd2732"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#5226a7521dfd244496e475bf3767fffc2e7c6549"
 dependencies = [
  "eyeball-im",
  "futures-core",
@@ -2104,7 +2104,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.18.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#1dc0f01a5acb84febcf3629aa98b41d325cd2732"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#5226a7521dfd244496e475bf3767fffc2e7c6549"
 dependencies = [
  "aes",
  "aquamarine",
@@ -2144,7 +2144,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.18.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#1dc0f01a5acb84febcf3629aa98b41d325cd2732"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#5226a7521dfd244496e475bf3767fffc2e7c6549"
 dependencies = [
  "async-trait",
  "base64",
@@ -2175,7 +2175,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.18.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#1dc0f01a5acb84febcf3629aa98b41d325cd2732"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#5226a7521dfd244496e475bf3767fffc2e7c6549"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2202,7 +2202,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.18.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#1dc0f01a5acb84febcf3629aa98b41d325cd2732"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#5226a7521dfd244496e475bf3767fffc2e7c6549"
 dependencies = [
  "base64",
  "blake3",
@@ -3265,7 +3265,7 @@ checksum = "e7a5d71263a5a7d47b41f6b3f06ba276f10cc18b0931f1799f710578e2309348"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 3.0.0",
+ "syn 3.0.2",
 ]
 
 [[package]]
@@ -3283,9 +3283,9 @@ dependencies = [
 
 [[package]]
 name = "serde_json"
-version = "1.0.150"
+version = "1.0.151"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e8014e44b4736ed0538adeecded0fce2a272f22dc9578a7eb6b2d9993c74cfb9"
+checksum = "c841b55ecdae098c80dcae9cf767f6f8a0c2cdb3416bbef72181df4d0fe73f14"
 dependencies = [
  "itoa",
  "memchr",
@@ -3411,7 +3411,7 @@ checksum = "8ee5873ec9cce0195efcb7a4e9507a04cd49aec9c83d0389df45b1ef7ba2e649"
 
 [[package]]
 name = "sjmb_matrix"
-version = "1.4.4"
+version = "1.4.5"
 dependencies = [
  "anyhow",
  "build-data",
@@ -3660,9 +3660,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "3.0.0"
+version = "3.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f2fac314a64dc9a36e61a9eb4261a5e9bbfbc922b27e518af97bc32b926cf967"
+checksum = "a207d6d6a2b7fc470b80443726053f18a2481b7e1eee970597051596567987a3"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -3747,7 +3747,7 @@ checksum = "43cbfe0cf76104d42a574802844187e84a305e531ed54455f11fbde0f10541cd"
 dependencies = [
  "proc-macro2",
  "quote",
- "syn 3.0.0",
+ "syn 3.0.2",
 ]
 
 [[package]]
