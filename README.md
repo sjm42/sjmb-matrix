@@ -9,7 +9,6 @@
 - Filters for text messages.
 - Extracts URLs from message text using a configured regular expression.
 - Inserts detected URLs into a PostgreSQL `url` table.
-- Updates a `url_changed` marker table after inserts.
 
 ## Project layout
 
@@ -71,13 +70,9 @@ create table url (
     nick text not null,
     url text not null
 );
-
-create table url_changed (
-    last bigint not null
-);
 ```
 
-`db_add_url()` inserts into `url` and then updates `url_changed.last`. Ensure `url_changed` has at least one row before running the bot.
+`db_add_url()` only inserts into `url`. Database change notifications are handled by PostgreSQL triggers managed by `urlharvest-rs`; this bot does not require or update the legacy `url_changed` table.
 
 Room labels are stored as `matrix-{room_name}` after whitespace is converted to underscores. Sender display names receive the same whitespace normalization.
 
@@ -123,7 +118,6 @@ If none of `verbose`, `debug`, or `trace` are set, log level defaults to `ERROR`
 
 - Executes `insert into url (seen, channel, nick, url) values (...)`.
 - Retries up to `RETRY_CNT = 5` with `RETRY_SLEEP = 1s` on failure.
-- Calls `db_mark_change()` (`update url_changed set last = $1`) if `update_change` is true.
 
 ## Building and installing
 

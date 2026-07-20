@@ -14,7 +14,6 @@ const RETRY_SLEEP: u64 = 1;
 #[derive(Clone, Debug)]
 pub struct DbCtx {
     pub dbc: Pool<Postgres>,
-    pub update_change: bool,
 }
 
 #[derive(Debug)]
@@ -30,21 +29,8 @@ where
     S: AsRef<str>,
 {
     let dbc = sqlx::PgPool::connect(db_url.as_ref()).await?;
-    let db = DbCtx {
-        dbc,
-        update_change: true,
-    };
+    let db = DbCtx { dbc };
     Ok(db)
-}
-
-const SQL_UPDATE_CHANGE: &str = "update url_changed set last = $1";
-
-pub async fn db_mark_change(dbc: &Pool<Postgres>) -> anyhow::Result<()> {
-    sqlx::query(SQL_UPDATE_CHANGE)
-        .bind(Utc::now().timestamp())
-        .execute(dbc)
-        .await?;
-    Ok(())
 }
 
 const SQL_INSERT_URL: &str = "insert into url \
@@ -77,24 +63,13 @@ pub async fn db_add_url(db: &DbCtx, ur: &UrlCtx) -> anyhow::Result<u64> {
 }
 
 async fn db_add_url_once(db: &DbCtx, ur: &UrlCtx) -> anyhow::Result<u64> {
-    let mut tx = db.dbc.begin().await?;
-
     let res = sqlx::query(SQL_INSERT_URL)
         .bind(ur.ts)
         .bind(&ur.chan)
         .bind(&ur.nick)
         .bind(&ur.url)
-        .execute(&mut *tx)
+        .execute(&db.dbc)
         .await?;
-
-    if db.update_change {
-        sqlx::query(SQL_UPDATE_CHANGE)
-            .bind(Utc::now().timestamp())
-            .execute(&mut *tx)
-            .await?;
-    }
-
-    tx.commit().await?;
     Ok(res.rows_affected())
 }
 
