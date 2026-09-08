@@ -168,9 +168,9 @@ dependencies = [
 
 [[package]]
 name = "async-compression"
-version = "0.4.44"
+version = "0.4.45"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "515a1f282e33d55983c499d7e9e87082e81cbc32974825bf9032f928392d5844"
+checksum = "24a8ec73eb862508b7041723c89386365894b4e7d9f6998bf1b8529e5b0ee254"
 dependencies = [
  "compression-codecs",
  "compression-core",
@@ -560,9 +560,9 @@ dependencies = [
 
 [[package]]
 name = "compression-codecs"
-version = "0.4.39"
+version = "0.4.40"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2fe67f2944eef52fc7b106b8c9450d243a88701a0c065f7f57235e76abaed7df"
+checksum = "100590da849306918656ffbb22576bbdfc1382b50ad10d1d50ec177d3b205fb2"
 dependencies = [
  "compression-core",
  "flate2",
@@ -1353,9 +1353,9 @@ dependencies = [
 
 [[package]]
 name = "hashlink"
-version = "0.12.1"
+version = "0.12.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "32069d97bb81e38fa67eab65e3393bf804bb85969f2bc06bf13f64aef5aba248"
+checksum = "a596f1b20ed2cc5ecac41a164aaebc7258057060f06c0cf7a2ba3991ee7990fb"
 dependencies = [
  "hashbrown 0.17.1",
 ]
@@ -2070,7 +2070,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.18.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2c2cf6e7028ac71cce996104b0ab343db8602992"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#1c431fe9a819d20923864ffb2162853638648926"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -2126,7 +2126,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.18.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2c2cf6e7028ac71cce996104b0ab343db8602992"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#1c431fe9a819d20923864ffb2162853638648926"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2142,6 +2142,7 @@ dependencies = [
  "regex",
  "ruma",
  "serde",
+ "serde_bytes",
  "serde_json",
  "thiserror 2.0.20",
  "tokio",
@@ -2152,7 +2153,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.18.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2c2cf6e7028ac71cce996104b0ab343db8602992"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#1c431fe9a819d20923864ffb2162853638648926"
 dependencies = [
  "eyeball-im",
  "futures-core",
@@ -2175,7 +2176,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.18.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2c2cf6e7028ac71cce996104b0ab343db8602992"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#1c431fe9a819d20923864ffb2162853638648926"
 dependencies = [
  "aes",
  "as_variant",
@@ -2214,7 +2215,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.18.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2c2cf6e7028ac71cce996104b0ab343db8602992"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#1c431fe9a819d20923864ffb2162853638648926"
 dependencies = [
  "async-trait",
  "base64 0.23.1",
@@ -2246,7 +2247,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.18.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2c2cf6e7028ac71cce996104b0ab343db8602992"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#1c431fe9a819d20923864ffb2162853638648926"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2273,7 +2274,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.18.0"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2c2cf6e7028ac71cce996104b0ab343db8602992"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#1c431fe9a819d20923864ffb2162853638648926"
 dependencies = [
  "base64 0.23.1",
  "blake3",
@@ -3072,7 +3073,7 @@ dependencies = [
  "bitflags",
  "fallible-iterator",
  "fallible-streaming-iterator",
- "hashlink 0.12.1",
+ "hashlink 0.12.2",
  "libsqlite3-sys",
  "smallvec",
 ]
@@ -3107,9 +3108,9 @@ dependencies = [
 
 [[package]]
 name = "rustls"
-version = "0.23.43"
+version = "0.23.44"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0283386ce02abc0151e1761d08802dfe86c173b0b494af5cbc086574e453da06"
+checksum = "6725596c3f2c3a0aef021139e145d4eafe314a6623e4680ca83852b2c67ab2ba"
 dependencies = [
  "aws-lc-rs",
  "once_cell",
