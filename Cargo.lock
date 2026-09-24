@@ -1725,7 +1725,7 @@ dependencies = [
  "jni-sys",
  "log",
  "simd_cesu8",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "walkdir",
  "windows-link",
 ]
@@ -2011,7 +2011,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b3d65d46b7379dd0afa4a42f9b2269821d31afdee0111b5e0d74e3bee03553a0"
 dependencies = [
  "matrix-pickle-derive",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
 ]
 
 [[package]]
@@ -2029,7 +2029,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk"
 version = "0.19.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2997e7c7ba05d1d154c957fb5a6ef2ce5b17fce3"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9c9a786185eaa26cf16d6445c119e8ff215fa420"
 dependencies = [
  "anyhow",
  "anymap2",
@@ -2070,7 +2070,7 @@ dependencies = [
  "serde_json",
  "sha2 0.11.0",
  "tempfile",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "tokio",
  "tokio-stream",
  "tokio-util",
@@ -2083,7 +2083,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-base"
 version = "0.19.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2997e7c7ba05d1d154c957fb5a6ef2ce5b17fce3"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9c9a786185eaa26cf16d6445c119e8ff215fa420"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2101,7 +2101,7 @@ dependencies = [
  "serde",
  "serde_bytes",
  "serde_json",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "tokio",
  "tracing",
  "unicode-normalization",
@@ -2110,7 +2110,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-common"
 version = "0.19.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2997e7c7ba05d1d154c957fb5a6ef2ce5b17fce3"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9c9a786185eaa26cf16d6445c119e8ff215fa420"
 dependencies = [
  "eyeball-im",
  "futures-core",
@@ -2121,7 +2121,7 @@ dependencies = [
  "ruma",
  "serde",
  "serde_json",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "tokio",
  "tracing",
  "tracing-subscriber",
@@ -2133,7 +2133,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-crypto"
 version = "0.19.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2997e7c7ba05d1d154c957fb5a6ef2ce5b17fce3"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9c9a786185eaa26cf16d6445c119e8ff215fa420"
 dependencies = [
  "aes",
  "as_variant",
@@ -2158,7 +2158,7 @@ dependencies = [
  "serde_json",
  "sha2 0.11.0",
  "subtle",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "time",
  "tokio",
  "tokio-stream",
@@ -2172,7 +2172,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-indexeddb"
 version = "0.19.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2997e7c7ba05d1d154c957fb5a6ef2ce5b17fce3"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9c9a786185eaa26cf16d6445c119e8ff215fa420"
 dependencies = [
  "async-trait",
  "base64 0.23.1",
@@ -2192,7 +2192,7 @@ dependencies = [
  "serde_bytes",
  "serde_json",
  "sha2 0.11.0",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "tokio",
  "tracing",
  "uuid",
@@ -2204,7 +2204,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-sqlite"
 version = "0.19.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2997e7c7ba05d1d154c957fb5a6ef2ce5b17fce3"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9c9a786185eaa26cf16d6445c119e8ff215fa420"
 dependencies = [
  "as_variant",
  "async-trait",
@@ -2222,7 +2222,7 @@ dependencies = [
  "serde",
  "serde_json",
  "serde_path_to_error",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "tokio",
  "tracing",
  "vodozemac",
@@ -2232,7 +2232,7 @@ dependencies = [
 [[package]]
 name = "matrix-sdk-store-encryption"
 version = "0.19.1"
-source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#2997e7c7ba05d1d154c957fb5a6ef2ce5b17fce3"
+source = "git+https://github.com/matrix-org/matrix-rust-sdk.git#9c9a786185eaa26cf16d6445c119e8ff215fa420"
 dependencies = [
  "base64 0.23.1",
  "blake3",
@@ -2247,7 +2247,7 @@ dependencies = [
  "serde_bytes",
  "serde_json",
  "sha2 0.11.0",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "zeroize",
 ]
 
@@ -2269,7 +2269,7 @@ dependencies = [
  "serde",
  "serde-wasm-bindgen",
  "smallvec",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "tokio",
  "wasm-bindgen",
  "wasm-bindgen-futures",
@@ -2631,7 +2631,7 @@ dependencies = [
  "rustc-hash",
  "rustls",
  "socket2",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "tokio",
  "tracing",
  "web-time",
@@ -2654,7 +2654,7 @@ dependencies = [
  "rustls",
  "rustls-pki-types",
  "slab",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "tinyvec",
  "tracing",
  "web-time",
@@ -2791,7 +2791,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "60dc65c0ff1a7ae1294b0c67b9f14baf70b644404010370171787bfac1038fc0"
 dependencies = [
  "libredox",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
 ]
 
 [[package]]
@@ -2929,7 +2929,7 @@ dependencies = [
  "serde",
  "serde_html_form",
  "serde_json",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "url",
  "web-time",
 ]
@@ -2958,7 +2958,7 @@ dependencies = [
  "serde",
  "serde_html_form",
  "serde_json",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "time",
  "tracing",
  "url",
@@ -2982,7 +2982,7 @@ dependencies = [
  "ruma-macros",
  "serde",
  "serde_json",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "tracing",
  "web-time",
  "wildmatch",
@@ -3008,7 +3008,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9d6cff00317675f487c4e7ccfb18875a14c5a14867b51d13f2a826053f03c432"
 dependencies = [
  "js_int",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
 ]
 
 [[package]]
@@ -3570,7 +3570,7 @@ dependencies = [
  "serde_json",
  "sha2 0.10.9",
  "smallvec",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "tokio",
  "tokio-stream",
  "tracing",
@@ -3644,7 +3644,7 @@ dependencies = [
  "smallvec",
  "sqlx-core",
  "stringprep",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "tracing",
  "whoami",
 ]
@@ -3787,11 +3787,11 @@ dependencies = [
 
 [[package]]
 name = "thiserror"
-version = "2.0.20"
+version = "2.0.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ec86235f5fcc2a73650310756d2ac5b138a5780bbbdfae3eeccec992c435ba4f"
+checksum = "09e52cb86a36cede5cb101bf8908837b3e4c6e5e59fe7fd85c23fb56200d189e"
 dependencies = [
- "thiserror-impl 2.0.20",
+ "thiserror-impl 2.0.21",
 ]
 
 [[package]]
@@ -3807,9 +3807,9 @@ dependencies = [
 
 [[package]]
 name = "thiserror-impl"
-version = "2.0.20"
+version = "2.0.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bc04cd3e1236dd4a98afca4569f2deb3f120e5422a4023be2cb683f8486292af"
+checksum = "fe5197923287db20a58125f0bc85c062f7f2c892de97b18c356f9efb14b28524"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -4249,7 +4249,7 @@ dependencies = [
  "serde_json",
  "sha2 0.11.0",
  "subtle",
- "thiserror 2.0.20",
+ "thiserror 2.0.21",
  "x25519-dalek",
  "zeroize",
 ]
