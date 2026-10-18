@@ -152,13 +152,32 @@ impl Bot {
             let client = timeout(STARTUP_TIMEOUT, state.connect(Some(&password)))
                 .await
                 .context("Matrix login exceeded 30 seconds")??;
+            #[cfg(feature = "e2e-encryption")]
+            {
+                // Login has already saved the credentials. Keep the runtime and
+                // store alive while the SDK finishes its background setup.
+                info!("Finishing Matrix encryption initialization");
+                if timeout(
+                    STARTUP_TIMEOUT,
+                    client.encryption().wait_for_e2ee_initialization_tasks(),
+                )
+                .await
+                .is_err()
+                {
+                    warn!(
+                        "Matrix session was saved, but encryption initialization exceeded 30 seconds; start the bot normally to resume"
+                    );
+                }
+            }
             println!(
                 "Saved Matrix session for {} / {} (sjmb-matrix).",
                 client.user_id().unwrap(),
                 client.device_id().unwrap()
             );
+            println!("You can remove matrix_password from the config.");
+            #[cfg(feature = "e2e-encryption")]
             println!(
-                "You can remove matrix_password from the config. Next, run --verify DESKTOP_DEVICE_ID."
+                "If this device is not already verified, run --verify DESKTOP_DEVICE_ID. Otherwise start the bot normally."
             );
             Ok(())
         };
@@ -640,6 +659,50 @@ mod tests {
             .await
             .unwrap()
             .unwrap();
+    }
+
+    #[cfg(feature = "e2e-encryption")]
+    #[tokio::test]
+    async fn login_waits_for_encryption_initialization_before_returning() {
+        let server = homeserver().await;
+        let (requested, mut request_seen) = watch::channel(false);
+        Mock::given(|request: &Request| {
+            request
+                .url
+                .path()
+                .ends_with("/m.secret_storage.default_key")
+        })
+        .respond_with(move |_: &Request| {
+            requested.send_replace(true);
+            ResponseTemplate::new(404)
+                .set_body_json(json!({"errcode": "M_NOT_FOUND", "error": "No secret storage"}))
+                .set_delay(Duration::from_millis(250))
+        })
+        .with_priority(1)
+        .mount(&server)
+        .await;
+        let temporary = tempfile::tempdir().unwrap();
+        let directory = temporary.path().join("state");
+        let mut config = config();
+        config["matrix_server"] = server.uri().into();
+        config["matrix_user_id"] = USER.into();
+        config["matrix_state_dir"] = directory.to_str().unwrap().into();
+        let login = parse(&config).unwrap().login();
+        tokio::pin!(login);
+        timeout(Duration::from_secs(20), async {
+            tokio::select! {
+                result = &mut login => panic!("Login returned before encryption initialization: {result:?}"),
+                result = request_seen.changed() => result.unwrap(),
+            }
+            // Keep the command alive while the SDK is awaiting the delayed response.
+            assert!(timeout(Duration::from_millis(50), &mut login).await.is_err());
+            login.await.unwrap();
+        })
+        .await
+        .unwrap();
+        let saved: Value =
+            serde_json::from_slice(&fs::read(directory.join("session.json")).unwrap()).unwrap();
+        assert_eq!(saved["session"]["access_token"], "first-token");
     }
 
     #[cfg(not(feature = "e2e-encryption"))]

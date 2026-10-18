@@ -76,6 +76,10 @@ retried with `--login`; the chosen device ID and store are retained. Running `--
 reauthenticates that same device. You can remove `matrix_password` from the config after setup, or omit it entirely
 and use the password prompt.
 
+After saving the session, `--login` waits up to 30 seconds for the SDK's encryption initialization before exiting.
+If that wait expires, the session remains saved and initialization resumes on normal startup. Reauthenticating an
+already-verified device does not require another verification.
+
 Find your existing desktop session's device ID in that client's session/security settings. With the bot service
 still stopped, request verification with that specific device on the same account:
 
