@@ -166,6 +166,10 @@ distinct when metadata is unavailable. `seen` stores the Matrix event's original
 
 If none of `verbose`, `debug`, or `trace` are set, log level defaults to `ERROR`. The built-in filter applies the selected level to `sjmb_matrix` and keeps dependency logs at `WARN` when verbose logging is enabled. Set `RUST_LOG` to override this.
 
+Ordinary logging sets `matrix_sdk_crypto::backups=error` to silence the SDK's repeated warnings when backups are
+not configured. This hides all warnings from that backup module while keeping its errors visible. Other modules
+keep their normal log levels. Use `--debug`, `--trace`, or an explicit `RUST_LOG` filter to include backup warnings.
+
 Application message output is reduced to a single line and bounded to 4 KiB; room and sender console labels are
 bounded separately. Bot `Debug` output redacts credentials and the database URL. Message bodies and URLs can still
 contain private information, and overriding dependency log levels with `RUST_LOG` can expose SDK payloads.

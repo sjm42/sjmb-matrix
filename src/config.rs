@@ -53,7 +53,12 @@ impl OptsCommon {
             "error"
         };
 
-        format!("{dependency_level},sjmb_matrix={app_level}")
+        let mut filter = format!("{dependency_level},sjmb_matrix={app_level}");
+        if !self.debug && !self.trace {
+            // SDK 0.19 warns on every sync when backups are not configured.
+            filter.push_str(",matrix_sdk_crypto::backups=error");
+        }
+        filter
     }
 
     pub fn start_pgm(&self, name: &str) -> anyhow::Result<()> {
@@ -72,6 +77,50 @@ impl OptsCommon {
         debug!("Source timestamp: {}", env!("SOURCE_TIMESTAMP"));
         debug!("Compiler version: {}", env!("RUSTC_VERSION"));
         Ok(())
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn backup_errors_and_other_modules_warnings_remain_visible() {
+        for (flag, custom_filter, show_backup_warnings) in [
+            ("-v", false, false),
+            ("--debug", false, true),
+            ("--trace", false, true),
+            ("-v", true, true),
+        ] {
+            let opts = OptsCommon::parse_from(["sjmb_matrix", flag]);
+            let custom_filter = custom_filter.then(|| EnvFilter::new("warn,sjmb_matrix=info"));
+            let filter = custom_filter.unwrap_or_else(|| EnvFilter::new(opts.get_log_filter()));
+            let file = tempfile::NamedTempFile::new().unwrap();
+            let subscriber = tracing_fmt()
+                .with_env_filter(filter)
+                .with_target(false)
+                .with_ansi(false)
+                .without_time()
+                .with_writer(file.reopen().unwrap())
+                .finish();
+            with_default(subscriber, || {
+                warn!(target: "matrix_sdk_crypto::backups", "backup warning");
+                error!(target: "matrix_sdk_crypto::backups", "backup error");
+                warn!(target: "matrix_sdk_crypto::olm", "encryption warning");
+                warn!(target: "sjmb_matrix", "app warning");
+                info!(target: "sjmb_matrix", "app ready");
+            });
+            let output = fs::read_to_string(file.path()).unwrap();
+            assert_eq!(
+                output.contains("backup warning"),
+                show_backup_warnings,
+                "{output}"
+            );
+            assert!(output.contains("backup error"));
+            assert!(output.contains("encryption warning"));
+            assert!(output.contains("app warning"));
+            assert!(output.contains("app ready"));
+        }
     }
 }
 

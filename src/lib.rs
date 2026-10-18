@@ -89,6 +89,8 @@ pub use tokio::{
     net::TcpListener,
 };
 #[cfg(test)]
+pub use tracing::subscriber::with_default;
+#[cfg(test)]
 pub use wiremock::{Mock, MockServer, Request, ResponseTemplate, matchers::any};
 
 pub const MESSAGE_QUEUE_BOUND: usize = 256;
