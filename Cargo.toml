@@ -52,7 +52,7 @@ build-data = "0.3"
 
 
 [profile.release]
-lto = "fat"
+lto = "thin"
 opt-level = 3
 
 # EOF
