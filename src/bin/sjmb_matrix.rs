@@ -1,4 +1,4 @@
-// bin/sjmb_slack.rs
+// bin/sjmb_matrix.rs
 
 use clap::Parser;
 use std::env;
@@ -9,10 +9,16 @@ use sjmb_matrix::*;
 async fn main() -> anyhow::Result<()> {
     let mut opts = OptsCommon::parse();
     opts.finish()?;
-    opts.start_pgm(env!("CARGO_BIN_NAME"));
+    opts.start_pgm(env!("CARGO_BIN_NAME"))?;
 
     let bot = Bot::new(&opts).await?;
-    bot.run().await?;
+    if opts.login {
+        bot.login().await?;
+    } else if let Some(device) = opts.verify.as_deref() {
+        bot.verify(device).await?;
+    } else {
+        bot.run().await?;
+    }
 
     Ok(())
 }
