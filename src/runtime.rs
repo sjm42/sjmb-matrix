@@ -1,12 +1,4 @@
-use std::{future::Future, sync::Arc};
-
-use anyhow::{Context, bail};
-use tokio::{
-    sync::watch,
-    time::{Duration, interval, timeout},
-};
-
-use crate::harvest::Counters;
+use crate::*;
 
 const DRAIN_TIMEOUT: Duration = Duration::from_secs(10);
 
@@ -54,7 +46,7 @@ pub(crate) async fn supervise(
     let drained = timeout(DRAIN_TIMEOUT, &mut worker).await;
     counters.report();
     if drained.is_err() {
-        tracing::error!("Matrix message drain exceeded 10 seconds; queued URLs may be lost");
+        error!("Matrix message drain exceeded 10 seconds; queued URLs may be lost");
     }
     result?;
     drained.context("Matrix message drain exceeded 10 seconds; queued URLs may be lost")?;
@@ -63,11 +55,6 @@ pub(crate) async fn supervise(
 
 #[cfg(test)]
 mod tests {
-    use std::{
-        future::pending,
-        sync::atomic::{AtomicBool, Ordering},
-    };
-
     use super::*;
 
     #[tokio::test]

@@ -1,5 +1,4 @@
-use serde_json::{Value, json};
-use wiremock::{Mock, MockServer, Request, ResponseTemplate, matchers::any};
+use crate::*;
 
 pub(crate) const USER: &str = "@me:example.org";
 pub(crate) const ROOM: &str = "!live:example.org";

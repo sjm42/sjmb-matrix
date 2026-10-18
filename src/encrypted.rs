@@ -1,16 +1,6 @@
 //! Short-lived retries for live ciphertext whose room key has not arrived yet.
-use std::{collections::VecDeque, sync::atomic::Ordering};
 
-use matrix_sdk::{
-    Room, RoomState,
-    ruma::{OwnedEventId, events::room::encrypted::OriginalSyncRoomEncryptedEvent, serde::Raw},
-};
-use tokio::time::{Duration, Instant, timeout};
-
-use crate::{
-    harvest::Counters,
-    matrixbot::{QueuedMessage, prepare_message},
-};
+use crate::*;
 
 pub(crate) const MAX_CIPHERTEXT_BYTES: usize = 128 * 1024;
 const PENDING_CAPACITY: usize = 128;
@@ -71,10 +61,6 @@ impl PendingEvents {
         {
             Ok(Ok(event)) if !event.kind.is_utd() => {
                 // Apply the same message/text filtering as ordinary callbacks.
-                use matrix_sdk::ruma::events::{
-                    AnySyncMessageLikeEvent, AnySyncTimelineEvent,
-                    room::message::SyncRoomMessageEvent,
-                };
                 match event.raw().deserialize().ok()? {
                     AnySyncTimelineEvent::MessageLike(AnySyncMessageLikeEvent::RoomMessage(
                         SyncRoomMessageEvent::Original(event),
@@ -99,16 +85,6 @@ impl PendingEvents {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::{
-        session::SessionStore,
-        test_support::{ROOM, USER, homeserver},
-    };
-    use futures_util::StreamExt;
-    use matrix_sdk::encryption::vodozemac::{
-        Curve25519PublicKey, Curve25519SecretKey, Ed25519Keypair,
-        megolm::{GroupSession, InboundGroupSession, SessionConfig},
-    };
-    use serde_json::json;
 
     #[tokio::test]
     async fn live_ciphertext_is_retried_after_key_arrival_and_survives_sdk_store_restore() {
@@ -159,7 +135,7 @@ mod tests {
         let export =
             matrix_sdk_crypto::encrypt_room_key_export(&[key], "fixture-password", 1).unwrap();
         let path = root.path().join("fixture.keys");
-        std::fs::write(&path, export).unwrap();
+        fs::write(&path, export).unwrap();
         client
             .encryption()
             .import_room_keys(path, "fixture-password")

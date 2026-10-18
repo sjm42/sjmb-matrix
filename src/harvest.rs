@@ -1,7 +1,4 @@
-use std::sync::atomic::{AtomicUsize, Ordering};
-
-use regex::Regex;
-use url::Url;
+use crate::*;
 
 pub(crate) const MAX_MESSAGE_BYTES: usize = 64 * 1024;
 pub(crate) const MAX_URL_BYTES: usize = 8 * 1024;
@@ -29,12 +26,12 @@ impl Counters {
         ] {
             let count = counter.swap(0, Ordering::Relaxed);
             if count > 0 {
-                tracing::error!(count, reason, "Harvest input discarded");
+                error!(count, reason, "Harvest input discarded");
             }
         }
         let count = self.duplicates.swap(0, Ordering::Relaxed);
         if count > 0 {
-            tracing::debug!(count, "Ignored repeated Matrix event IDs");
+            debug!(count, "Ignored repeated Matrix event IDs");
         }
     }
 }

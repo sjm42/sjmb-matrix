@@ -1,10 +1,5 @@
 // config.rs
 
-use std::env;
-
-use clap::Parser;
-use tracing_subscriber::EnvFilter;
-
 use crate::*;
 
 #[derive(Debug, Clone, Parser)]
@@ -65,11 +60,11 @@ impl OptsCommon {
         let filter = EnvFilter::try_from_default_env()
             .unwrap_or_else(|_| EnvFilter::new(self.get_log_filter()));
 
-        tracing_subscriber::fmt()
+        tracing_fmt()
             .with_env_filter(filter)
             .with_target(false)
             .try_init()
-            .map_err(|error| anyhow::anyhow!("Could not initialize tracing: {error}"))?;
+            .map_err(|error| anyhow!("Could not initialize tracing: {error}"))?;
 
         info!("Starting up {name} v{}...", env!("CARGO_PKG_VERSION"));
         debug!("Git branch: {}", env!("GIT_BRANCH"));

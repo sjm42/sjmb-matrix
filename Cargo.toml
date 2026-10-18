@@ -1,6 +1,6 @@
 [package]
 name = "sjmb_matrix"
-version = "1.6.0"
+version = "1.6.1"
 edition = "2024"
 resolver = "2"
 authors = ["Sami J. Mäkinen <sjm@iki.fi>"]
@@ -11,9 +11,6 @@ keywords = ["matrix", "bot"]
 license = "MIT OR Apache-2.0"
 
 
-#[dependencies.matrix-sdk]
-#aquamarine = "0.5"
-
 [features]
 default = ["e2e-encryption"]
 e2e-encryption = ["matrix-sdk/e2e-encryption"]
@@ -23,7 +20,7 @@ anyhow = "1.0"
 chrono = "0.4"
 clap = { version = "4.6", features = ["derive"] }
 futures-util = "0.3"
-matrix-sdk = { git = "https://github.com/matrix-org/matrix-rust-sdk.git", default-features = false, features = [
+matrix-sdk = { version = "0.19", default-features = false, features = [
     "anyhow",
     "bundled-sqlite",
     "rustls-aws-lc-rs",
@@ -47,7 +44,7 @@ tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 url = "2.5"
 
 [dev-dependencies]
-matrix-sdk-crypto = { git = "https://github.com/matrix-org/matrix-rust-sdk.git", default-features = false }
+matrix-sdk-crypto = { version = "0.19", default-features = false }
 wiremock = "0.6"
 
 [build-dependencies]

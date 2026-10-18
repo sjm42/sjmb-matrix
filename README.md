@@ -100,6 +100,10 @@ room state and key exchanges are processed, while that sync's room-message backl
 syncs process live messages and normal reconnect catch-up. No explicit history pagination or backup-key recovery is
 performed. URLs sent while the process is stopped may be skipped, consistent with best-effort harvesting.
 
+With `--verbose`, startup reports opening the state/store, restoring the session and completing the initial sync.
+`Watching joined Matrix rooms for new messages` means startup is complete. A connected bot can then remain quiet
+until a supported message arrives; there is no periodic INFO heartbeat.
+
 The state directory is private (`0700` on Unix), and the credential file and lock are `0600`. Only one process may
 own it; stop the service before `--login` or `--verify`. The directory binds one configured account, homeserver,
 device and encryption build setting. A mismatch, corrupt credential file, or missing store stops startup instead of
@@ -114,6 +118,12 @@ and verification again. The local store passphrase is separate from your Matrix 
 
 Old bot sessions created before this change remain in your account. After verifying the new persistent device,
 you can remove those old sessions in your Matrix client. Do not remove your active desktop or new bot session.
+
+The bot sends an application-specific User-Agent identifying `sjmb-matrix`, its version, OS and architecture.
+Matrix Authentication Service uses this metadata for the account page's device heading, separately from the
+`sjmb-matrix` device display name. Older sessions may still show "Unknown device" because this metadata is recorded
+at login. Stop the service and run `--login` once with the updated binary and the same config/state directory to
+refresh the login metadata while retaining the device ID and encryption keys, then restart normally.
 
 HTTPS/TLS protects the connection independently of room E2EE. The bot decrypts messages locally and writes harvested
 URLs into ordinary PostgreSQL text columns; INFO logging also includes plaintext message content.
@@ -256,7 +266,7 @@ The install script copies `target/release/sjmb_matrix` to `$HOME/sjmb_matrix/bin
 
 ## Dependency maintenance
 
-Direct dependencies are listed explicitly in `Cargo.toml`. The Matrix SDK is intentionally pulled from the upstream git repository with `bundled-sqlite` enabled, so keep that storage feature unless system SQLite is deliberately reintroduced.
+Direct dependencies are listed explicitly in `Cargo.toml`. The Matrix SDK and its crypto test dependency use the released `0.19.1` crates from crates.io. Keep `bundled-sqlite` enabled unless system SQLite is deliberately reintroduced. The SDK's event cache remains inactive because the bot never subscribes to it; automatic back-pagination is explicitly disabled.
 
 Useful dependency checks:
 

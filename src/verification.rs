@@ -1,20 +1,4 @@
-use std::io::{IsTerminal, Write};
-
-use anyhow::{Context, bail, ensure};
-use futures_util::StreamExt;
-use matrix_sdk::{
-    Client,
-    encryption::verification::{
-        SasState, SasVerification, Verification, VerificationRequest, VerificationRequestState,
-        format_emojis,
-    },
-    ruma::{DeviceId, events::key::verification::VerificationMethod},
-};
-use tokio::time::{Duration, timeout};
-
-use crate::{
-    harvest::log_text, matrixbot::sync_client, runtime::shutdown_signal, session::SessionStore,
-};
+use crate::*;
 
 pub(crate) async fn verify(
     client: &Client,
@@ -22,7 +6,7 @@ pub(crate) async fn verify(
     device_id: &str,
 ) -> anyhow::Result<()> {
     ensure!(
-        std::io::stdin().is_terminal(),
+        io::stdin().is_terminal(),
         "--verify requires an interactive terminal"
     );
     let user = client
@@ -62,10 +46,10 @@ pub(crate) async fn verify(
         compare_emojis(&sas).await
     };
     let result = tokio::select! {
-        result = timeout(Duration::from_secs(180), flow) => result.unwrap_or_else(|_| Err(anyhow::anyhow!("Verification exceeded three minutes"))),
-        result = sync_client(client) => result.and_then(|()| Err(anyhow::anyhow!("Matrix sync stopped during verification"))),
+        result = timeout(Duration::from_secs(180), flow) => result.unwrap_or_else(|_| Err(anyhow!("Verification exceeded three minutes"))),
+        result = sync_client(client) => result.and_then(|()| Err(anyhow!("Matrix sync stopped during verification"))),
         result = state.persistence_failed() => result,
-        result = shutdown_signal() => result.and_then(|()| Err(anyhow::anyhow!("Verification interrupted"))),
+        result = shutdown_signal() => result.and_then(|()| Err(anyhow!("Verification interrupted"))),
     };
     if result.is_err()
         && let Some(request) = request
@@ -137,12 +121,12 @@ async fn compare_emojis(sas: &SasVerification) -> anyhow::Result<()> {
 
 async fn confirm_prompt() -> anyhow::Result<bool> {
     let (tx, rx) = tokio::sync::oneshot::channel();
-    std::thread::spawn(move || {
-        let result = (|| -> std::io::Result<bool> {
+    thread::spawn(move || {
+        let result = (|| -> io::Result<bool> {
             print!("Do all seven emojis match? Type yes to confirm: ");
-            std::io::stdout().flush()?;
+            io::stdout().flush()?;
             let mut input = String::new();
-            std::io::stdin().read_line(&mut input)?;
+            io::stdin().read_line(&mut input)?;
             Ok(confirmation(&input))
         })();
         let _ = tx.send(result);

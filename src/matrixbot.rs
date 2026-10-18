@@ -1,37 +1,4 @@
-use std::{
-    collections::{HashSet, VecDeque},
-    fmt,
-    fs::File,
-    future::Future,
-    io::Read,
-    sync::{Arc, atomic::Ordering},
-};
-
-use anyhow::{Context, anyhow, ensure};
-use matrix_sdk::{
-    Client, HttpError, RoomState,
-    config::SyncSettings,
-    room::Room,
-    ruma::{
-        OwnedEventId, OwnedUserId,
-        api::error::{ErrorKind, RetryAfter},
-        events::room::message::{MessageType, OriginalSyncRoomMessageEvent},
-    },
-};
-use regex::Regex;
-use serde::Deserialize;
-use tokio::{
-    sync::{mpsc, watch},
-    time::{Duration, Instant, sleep, timeout},
-};
-use url::Url;
-
-use crate::{
-    harvest::{Counters, MAX_MESSAGE_BYTES, extract_urls, log_text},
-    runtime::{shutdown_signal, supervise},
-    session::{SessionStore, password_prompt},
-    *,
-};
+use crate::*;
 
 const CONFIG_BYTES: u64 = 1024 * 1024;
 const STARTUP_TIMEOUT: Duration = Duration::from_secs(30);
@@ -162,6 +129,7 @@ impl Bot {
             "url_regex requires capture group 1"
         );
         bot.url_re = Some(regex);
+        info!("Configuration validated");
         Ok(bot)
     }
 
@@ -244,7 +212,9 @@ impl Bot {
                 let client = state.connect(None).await?;
                 // Establish a current baseline without harvesting startup backlog.
                 // The SDK still processes room state and to-device key messages.
+                info!("Starting initial Matrix sync");
                 client.sync_once(SyncSettings::default().timeout(Duration::ZERO)).await.context("Initial Matrix sync failed; use --login if the saved session was revoked")?;
+                info!(rooms = client.joined_rooms().len(), "Initial Matrix sync complete");
                 Ok::<_, anyhow::Error>((client, state))
             }) => result.context("Matrix startup exceeded 30 seconds")??,
         };
@@ -269,10 +239,6 @@ impl Bot {
         let key_updates = Arc::new(tokio::sync::Notify::new());
         #[cfg(feature = "e2e-encryption")]
         let _encrypted_guard = {
-            use matrix_sdk::{
-                event_handler::RawEvent,
-                ruma::{events::room::encrypted::OriginalSyncRoomEncryptedEvent, serde::Raw},
-            };
             let counters = counters.clone();
             let handle = client.add_event_handler(
                 move |event: OriginalSyncRoomEncryptedEvent, room: Room, raw: RawEvent| {
@@ -304,19 +270,22 @@ impl Bot {
             .await
             .context("Matrix encryption was not initialized")?;
         let (drain, requested) = watch::channel(false);
+        info!(
+            e2ee = cfg!(feature = "e2e-encryption"),
+            "Watching joined Matrix rooms for new messages"
+        );
         supervise(
             async {
                 let key_listener = async {
                     #[cfg(feature = "e2e-encryption")]
                     {
-                        use futures_util::StreamExt;
                         while keys.next().await.is_some() {
                             key_updates.notify_one();
                         }
                         Err::<(), _>(anyhow!("Matrix room-key stream stopped"))
                     }
                     #[cfg(not(feature = "e2e-encryption"))]
-                    std::future::pending::<anyhow::Result<()>>().await
+                    future::pending::<anyhow::Result<()>>().await
                 };
                 tokio::select! {
                     result = sync_client(&client) => result,
@@ -371,7 +340,7 @@ fn sync_retry_delay(error: &matrix_sdk::Error, backoff: Duration) -> Option<Dura
             let retry_after = match limit.retry_after.as_ref() {
                 Some(RetryAfter::Delay(delay)) => Some(*delay),
                 Some(RetryAfter::DateTime(date)) => {
-                    date.duration_since(std::time::SystemTime::now()).ok()
+                    date.duration_since(time::SystemTime::now()).ok()
                 }
                 _ => None,
             };
@@ -438,14 +407,14 @@ async fn handle_messages(
             #[cfg(feature = "e2e-encryption")]
             tokio::select! { _ = retry.tick() => {}, _ = keys.notified() => {} }
             #[cfg(not(feature = "e2e-encryption"))]
-            std::future::pending::<()>().await
+            future::pending::<()>().await
         };
         let message = tokio::select! {
             _ = drain.changed(), if !draining => {
                 draining = true;
                 rx.close();
                 #[cfg(feature = "e2e-encryption")]
-                std::mem::take(&mut pending).discard(counters);
+                mem::take(&mut pending).discard(counters);
                 continue;
             },
             _ = retry_ready, if retry_enabled => {
@@ -617,10 +586,6 @@ mod tests {
 
     #[test]
     fn sync_retries_transient_errors_and_observes_server_retry_after() {
-        use matrix_sdk::ruma::api::{
-            client::uiaa::UiaaResponse,
-            error::{ErrorBody, FromHttpResponseError},
-        };
         let error = |status, body| {
             let api = matrix_sdk::ruma::api::error::Error::new(status, body);
             matrix_sdk::Error::from(HttpError::from(FromHttpResponseError::Server(
@@ -680,13 +645,6 @@ mod tests {
     #[cfg(not(feature = "e2e-encryption"))]
     #[tokio::test]
     async fn matrix_admission_preserves_event_time_and_drain_closes_live_senders() {
-        use matrix_sdk::config::RequestConfig;
-        use matrix_sdk::{authentication::matrix::MatrixSession, ruma::api::MatrixVersion};
-        use tokio::{
-            io::{AsyncReadExt, AsyncWriteExt},
-            net::TcpListener,
-        };
-
         let listener = TcpListener::bind("127.0.0.1:0").await.unwrap();
         let client = Client::builder()
             .homeserver_url(format!("http://{}", listener.local_addr().unwrap()))

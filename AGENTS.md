@@ -8,7 +8,7 @@ This repository contains `sjmb_matrix`, a Rust Matrix bot that watches joined Ma
 - Do not revert unrelated user changes. Check `git status --short` before and after edits.
 - Prefer small, direct patches. Use `cargo fmt` after touching Rust code.
 - Keep dependencies explicit in `Cargo.toml`; avoid broad `0` version requirements.
-- The Matrix SDK currently uses the upstream git dependency with `bundled-sqlite`. Do not switch back to system SQLite unless the environment has `libsqlite3` available and the user requests it.
+- The Matrix SDK and its crypto test dependency use released crates from crates.io with `bundled-sqlite`. Do not switch back to system SQLite unless the environment has `libsqlite3` available and the user requests it.
 - `sqlx` is configured for PostgreSQL with the Tokio runtime and Rustls TLS. Preserve those capabilities when updating it.
 - There are no checked-in migrations. Database table expectations are documented in `README.md`.
 

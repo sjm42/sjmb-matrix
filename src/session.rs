@@ -1,18 +1,6 @@
 //! One local owner for a Matrix device, its tokens and its SDK store.
-use std::{
-    fs::{self, File, OpenOptions},
-    io::{Read, Write},
-    path::{Path, PathBuf},
-    sync::{Arc, Mutex},
-};
 
-use anyhow::{Context, anyhow, bail, ensure};
-use matrix_sdk::{
-    Client, SessionTokens, authentication::matrix::MatrixSession, config::RequestConfig,
-};
-use rand::distr::{Alphanumeric, SampleString};
-use serde::{Deserialize, Serialize};
-use tokio::{sync::watch, time::Duration};
+use crate::*;
 
 const SESSION_BYTES: u64 = 64 * 1024;
 
@@ -41,6 +29,10 @@ impl SessionStore {
         user: &str,
         login: bool,
     ) -> anyhow::Result<Arc<Self>> {
+        info!(
+            "Opening Matrix state directory {}",
+            crate::harvest::log_text(directory, 1024)
+        );
         let directory = PathBuf::from(directory);
         private_directory(&directory)?;
         let lock_path = directory.join("session.lock");
@@ -49,7 +41,6 @@ impl SessionStore {
         options.read(true).write(true).create(true).truncate(false);
         #[cfg(unix)]
         {
-            use std::os::unix::fs::OpenOptionsExt;
             options.mode(0o600);
         }
         let lock = options
@@ -113,7 +104,7 @@ impl SessionStore {
                 );
                 saved
             }
-            Err(error) if error.kind() == std::io::ErrorKind::NotFound => {
+            Err(error) if error.kind() == io::ErrorKind::NotFound => {
                 ensure!(login, "No saved Matrix session; run with --login once");
                 ensure!(
                     !directory.join("store").exists(),
@@ -167,9 +158,17 @@ impl SessionStore {
         );
         let builder = Client::builder()
             .homeserver_url(&homeserver)
+            // MAS uses the model/OS segments to label legacy-login sessions.
+            .user_agent(format!(
+                "sjmb-matrix/{} (sjmb-matrix; {}; {})",
+                env!("CARGO_PKG_VERSION"),
+                env::consts::OS,
+                env::consts::ARCH,
+            ))
             .respect_login_well_known(false)
             .sqlite_store(self.directory.join("store"), Some(&passphrase))
-            .with_event_cache(false)
+            // SDK 0.19 keeps the event cache inactive unless subscribed to.
+            // This bot uses live event handlers and never subscribes to it.
             .with_enable_automatic_back_pagination(false)
             .handle_refresh_tokens()
             .request_config(RequestConfig::new().timeout(Duration::from_secs(15)));
@@ -181,10 +180,16 @@ impl SessionStore {
                 backup_download_strategy: matrix_sdk::encryption::BackupDownloadStrategy::Manual,
             })
             .with_enable_share_history_on_invite(false);
+        info!("Opening encrypted Matrix SDK store");
+        let opened_at = time::Instant::now();
         let client = builder
             .build()
             .await
             .context("Could not open Matrix SDK store")?;
+        info!(
+            elapsed_ms = opened_at.elapsed().as_millis(),
+            "Matrix SDK store opened"
+        );
         let reload = self.clone();
         let save = self.clone();
         client.set_session_callbacks(
@@ -204,6 +209,10 @@ impl SessionStore {
                 .map_or(configured_user.as_str(), |session| {
                     session.meta.user_id.as_str()
                 });
+            info!(
+                device = device_id,
+                "Logging in to Matrix with the saved device identity"
+            );
             client
                 .matrix_auth()
                 .login_username(login_user, password)
@@ -215,8 +224,10 @@ impl SessionStore {
                 .context("Matrix login failed; retry explicitly with --login")?;
             self.save_client(&client)?;
         } else {
+            info!(device = device_id, "Restoring saved Matrix session");
             client.matrix_auth().restore_session(previous.unwrap(), Default::default()).await
                 .context("Could not restore Matrix device; reauthenticate explicitly with --login if needed")?;
+            info!("Matrix session restored");
         }
         Ok(client)
     }
@@ -295,7 +306,6 @@ fn private_directory(path: &Path) -> anyhow::Result<()> {
     builder.recursive(true);
     #[cfg(unix)]
     {
-        use std::os::unix::fs::DirBuilderExt;
         builder.mode(0o700);
     }
     builder.create(path)?;
@@ -306,7 +316,6 @@ fn private_directory(path: &Path) -> anyhow::Result<()> {
     );
     #[cfg(unix)]
     {
-        use std::os::unix::fs::PermissionsExt;
         ensure!(
             metadata.permissions().mode() & 0o077 == 0,
             "Matrix state directory must be private (chmod 700)"
@@ -324,14 +333,13 @@ fn check_private_file(path: &Path) -> anyhow::Result<()> {
             );
             #[cfg(unix)]
             {
-                use std::os::unix::fs::PermissionsExt;
                 ensure!(
                     metadata.permissions().mode() & 0o077 == 0,
                     "Matrix session files must be private (chmod 600)"
                 );
             }
         }
-        Err(error) if error.kind() == std::io::ErrorKind::NotFound => {}
+        Err(error) if error.kind() == io::ErrorKind::NotFound => {}
         Err(error) => return Err(error.into()),
     }
     Ok(())
@@ -341,7 +349,7 @@ fn check_private_file(path: &Path) -> anyhow::Result<()> {
 /// runtime shutdown waiting for an unfinished terminal read after SIGTERM.
 pub(crate) async fn password_prompt() -> anyhow::Result<String> {
     let (tx, rx) = tokio::sync::oneshot::channel();
-    std::thread::spawn(move || {
+    thread::spawn(move || {
         let _ = tx.send(rpassword::prompt_password("Matrix password: "));
     });
     rx.await
@@ -376,7 +384,6 @@ mod tests {
         assert_eq!(store.saved.lock().unwrap().device_id, id);
         #[cfg(unix)]
         {
-            use std::os::unix::fs::PermissionsExt;
             assert_eq!(
                 fs::metadata(path).unwrap().permissions().mode() & 0o777,
                 0o700
@@ -409,7 +416,6 @@ mod tests {
 
     #[tokio::test]
     async fn sdk_restore_keeps_device_keys_and_refreshed_credentials() {
-        use crate::test_support::{USER, homeserver};
         let server = homeserver().await;
         let temporary = tempfile::tempdir().unwrap();
         let root = temporary.path().join("state");
@@ -478,7 +484,6 @@ mod tests {
 
     #[tokio::test]
     async fn token_save_failure_requests_service_stop_and_missing_store_is_rejected() {
-        use crate::test_support::{USER, homeserver};
         let server = homeserver().await;
         let temporary = tempfile::tempdir().unwrap();
         let root = temporary.path().join("state");

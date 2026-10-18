@@ -1,10 +1,4 @@
-use anyhow::{Context, anyhow, ensure};
-use chrono::Utc;
-use sqlx::{
-    Pool, Postgres,
-    postgres::{PgConnectOptions, PgPoolOptions},
-};
-use tokio::time::{Duration, timeout};
+use crate::*;
 
 const DB_JOB_TIMEOUT: Duration = Duration::from_secs(8);
 
@@ -119,12 +113,11 @@ pub async fn db_check_url(
 #[cfg(test)]
 mod tests {
     use super::*;
-    use tokio::{io::AsyncReadExt, net::TcpListener};
 
     #[tokio::test]
     #[ignore = "requires SJMB_MATRIX_TEST_DATABASE_URL pointing to a disposable PostgreSQL database"]
     async fn postgres_inserts_empty_lookups_errors_and_statement_deadlines() {
-        let db = start_db(std::env::var("SJMB_MATRIX_TEST_DATABASE_URL").unwrap())
+        let db = start_db(env::var("SJMB_MATRIX_TEST_DATABASE_URL").unwrap())
             .await
             .unwrap();
         // TEMP objects belong to one session. Keep this integration test on a
